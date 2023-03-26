@@ -1,3 +1,7 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
@@ -103,5 +107,21 @@ a {
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+
+.login-container{
+  width: 40%;
+}
+
+@media (max-width: 800px) {
+  .login-container {
+    width: 70%;
+    margin-right: 1.5rem;
+  }
+
+  .eduweb-img{
+    display: none;
   }
 }
