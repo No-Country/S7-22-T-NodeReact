@@ -2,11 +2,11 @@ import { Router } from "express";
 
 export class BaseRouter<T> {
   private router = Router();
-  private Troutes: T;
+  private controller: T;
 
-  constructor(Trotuer: { new (): T }) {
+  constructor(Tcontroller: { new (): T }) {
     this.router;
-    this.Troutes = new Trotuer();
+    this.controller = new Tcontroller();
     this.routes();
   }
 
