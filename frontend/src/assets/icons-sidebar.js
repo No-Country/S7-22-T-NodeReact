@@ -1,4 +1,4 @@
-// ? All the SVG components was made with https://react-svgr.com/playground/
+// ? All the SVG components was made with https://react-svgr.com/playground/   :p
 
 export const HomeIcon = (props) => (
   <svg

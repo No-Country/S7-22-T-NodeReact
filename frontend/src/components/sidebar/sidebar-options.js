@@ -1,4 +1,4 @@
-import { HomeIcon, SubjectsIcon, StarIcon, CalendarIcon, MessageIcon } from '@/assets/icons';
+import { HomeIcon, SubjectsIcon, StarIcon, CalendarIcon, MessageIcon } from '@/assets/icons-sidebar';
 
 export const options = [
   { id: 1, label: 'Opción 1', url: '/opcion-1', icon: <HomeIcon /> },
