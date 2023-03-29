@@ -10,7 +10,10 @@
       }
     ],
     "env": {
-      "MONGODB_URI": "@db_uri",
-      "JWT_SECRET": "@jwt_s"
+        "PORT":"",
+        "PASS_DB":"",
+        "NAME_DB":"",
+        "USERNAME_DB":"",
+        "HOST_DB":""
     }
 }
