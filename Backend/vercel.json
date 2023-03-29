@@ -10,10 +10,10 @@
       }
     ],
     "env": {
-        "PORT":"",
-        "PASS_DB":"",
-        "NAME_DB":"",
-        "USERNAME_DB":"",
-        "HOST_DB":""
+        "PORT":"@port",
+        "PASS_DB":"@pass_db",
+        "NAME_DB":"@name_db",
+        "USERNAME_DB":"@username_db",
+        "HOST_DB":"@host_db"
     }
 }
