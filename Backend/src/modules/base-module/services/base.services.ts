@@ -6,8 +6,6 @@ class BaseServices {
   }
 
   protected async getAll() {
-
-    
     
   }
   protected async getOne(id: number) {

@@ -1,17 +1,19 @@
+import "reflect-metadata";
 import "dotenv/config";
 
-import Database from "./config/db/postgreSql";
-import { Routes } from "./router";
+import { AppDataSource } from "./config/db/postgreSql";
+import { BaseRouter } from "./modules/base-module/routes/base.routes";
 import cors from "cors";
 import express from "express";
 
 class App {
   private app = express();
   private PORT = process.env.PORT || 3000;
-  private router = new Routes();
+  private router = new BaseRouter();
 
   constructor() {
     this.config();
+    this.db();
   }
 
   private config() {
@@ -19,15 +21,20 @@ class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors());
 
+    this.app.use(this.router.getRouter());
+
+
     this.app.listen(this.PORT, () => {
       console.log(`Server running on port ${this.PORT}`);
     });
   }
 
   private db() {
-    Database.sync()
-      .then(() => console.log("Successful synchronization of models with the database."))
-      .catch((error) => console.error("Error when synchronizing models with the database:", error));
+    AppDataSource.initialize()
+      .then(() => {
+        console.log("Database ok");
+      })
+      .catch((error) => console.log(error));
   }
 }
 
