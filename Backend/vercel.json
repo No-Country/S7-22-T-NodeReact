@@ -1,0 +1,16 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "dist/main.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      {
+        "src": "/api/(.*)",
+        "dest": "dist/main.js"
+      }
+    ],
+    "env": {
+      "MONGODB_URI": "@db_uri",
+      "JWT_SECRET": "@jwt_s"
+    }
+}
