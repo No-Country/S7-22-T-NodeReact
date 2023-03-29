@@ -23,7 +23,7 @@ class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors());
 
-    this.app.use("/api", this.router.routes());
+    this.app.use("/", this.router.routes());
 
     this.app.listen(this.PORT, () => {
       console.log(`Server running on port ${this.PORT}`);
