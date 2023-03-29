@@ -5,11 +5,12 @@ import { AppDataSource } from "./config/db/postgreSql";
 import { RoutesApp } from "./shared/router";
 import cors from "cors";
 import express from "express";
+import { UserRolesRouter } from "./modules/UserRoles/UserRoles.route";
 
 class App {
   private app = express();
   private PORT = process.env.PORT || 3000;
-  private router = new RoutesApp();
+  private router = new UserRolesRouter();
   
   
 
@@ -23,7 +24,7 @@ class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors());
 
-    this.app.use("/api", this.router.routes());
+    this.app.use("/api", this.router.routes);
 
     this.app.listen(this.PORT, () => {
       console.log(`Server running on port ${this.PORT}`);
