@@ -1,15 +1,17 @@
-import "reflect-metadata";
 import "dotenv/config";
+import "reflect-metadata";
 
 import { AppDataSource } from "./config/db/postgreSql";
-import { BaseRouter } from "./modules/base-module/routes/base.routes";
+import { RoutesApp } from "./shared/router";
 import cors from "cors";
 import express from "express";
 
 class App {
   private app = express();
   private PORT = process.env.PORT || 3000;
-  private router = new BaseRouter();
+  private router = new RoutesApp();
+  
+  
 
   constructor() {
     this.config();
@@ -21,8 +23,7 @@ class App {
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors());
 
-    this.app.use(this.router.getRouter());
-
+    this.app.use("/api", this.router.routes());
 
     this.app.listen(this.PORT, () => {
       console.log(`Server running on port ${this.PORT}`);
@@ -32,10 +33,12 @@ class App {
   private db() {
     AppDataSource.initialize()
       .then(() => {
-        console.log("Database ok");
+        console.log("Database connected");
       })
       .catch((error) => console.log(error));
   }
+
+ 
 }
 
 new App();

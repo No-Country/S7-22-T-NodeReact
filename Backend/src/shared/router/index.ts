@@ -1,13 +1,17 @@
+import { LoginRoutes } from "../../modules/auth/routes/login.routes"
 import { Router } from "express"
+import { UserRolesRouter } from "../../modules/UserRoles/UserRoles.route";
+import express from 'express';
 
-export class Routes {
+export class RoutesApp {
+  public router: express.Application 
   constructor() {
-    this.routes()
-
+    
+    console.log("Usando router index")
   }
 
-  protected routes(): Router[]{
+  public routes(): Router[]{
 
-    return []
+    return [new LoginRoutes().router, new UserRolesRouter().router]
   }
 }

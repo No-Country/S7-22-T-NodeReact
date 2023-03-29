@@ -1,12 +1,13 @@
 import { Request, Response } from "express";
 
 import { UserRoles } from "./UserRoles.entity";
-import { UserRolesServices } from './UserRoles.services';
 
-export class UserRolesController extends UserRolesServices {
+// import { UserRolesServices } from './UserRoles.services';
+
+export class UserRolesController {
 
   constructor() {
-    super()
+    
   }
   async createRole(req: Request, res: Response) {
     const { RoleName } = req.body;

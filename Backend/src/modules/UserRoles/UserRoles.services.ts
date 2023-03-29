@@ -1,17 +1,17 @@
-import { UserRoles } from './UserRoles.entity';
+// import { UserRoles } from './UserRoles.entity';
 
-export class UserRolesServices {
+// export class UserRolesServices {
 
-  constructor() {
+//   constructor() {
 
-  }
+//   }
 
-  public findAll(){
+//   public findAll(){
 
   
-      console.log("aquu")
+//       console.log("aquu")
       
     
     
-  }
-}
+//   }
+// }
