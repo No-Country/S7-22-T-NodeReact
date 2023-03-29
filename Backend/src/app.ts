@@ -1,8 +1,7 @@
 import "dotenv/config";
 import "reflect-metadata";
-
 import { AppDataSource } from "./config/db/postgreSql";
-import { RoutesApp } from "./shared/router";
+// import { RoutesApp } from "./shared/router";
 import cors from "cors";
 import express from "express";
 import { UserRolesRouter } from "./modules/UserRoles/UserRoles.route";
@@ -10,7 +9,7 @@ import { UserRolesRouter } from "./modules/UserRoles/UserRoles.route";
 class App {
   private app = express();
   private PORT = process.env.PORT || 3000;
-
+  // private router = new RoutesApp();
   
   
 

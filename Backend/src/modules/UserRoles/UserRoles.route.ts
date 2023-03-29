@@ -6,7 +6,7 @@ export class UserRolesRouter extends BaseRouter<UserRolesController> {
     super(UserRolesController);
   }
   routes(): void {
-    this.router.get("/roles", (req, res) => this.controller.showAllRoles(req, res));
+    this.router.get("/roles/", (req, res) => this.controller.showAllRoles(req, res));
     this.router.post("/roles/add", (req, res) => this.controller.createRole(req, res));
     this.router.put("/roles/update", (req, res) => this.controller.createRole(req, res));
   }
