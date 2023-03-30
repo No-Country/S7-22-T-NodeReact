@@ -5,6 +5,7 @@ import { AppDataSource } from "./config/db/postgreSql";
 import { RoutesApp } from "./shared/router";
 import cors from "cors";
 import express from "express";
+import morgan from "morgan"
 
 class App {
   private app = express();
@@ -22,6 +23,7 @@ class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors());
+    this.app.use(morgan("dev"))
 
     this.app.use("/api", this.router.routes());
 
