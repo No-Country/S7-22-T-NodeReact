@@ -1,12 +1,10 @@
 import { Column, Entity } from "typeorm";
-import { UUID, randomUUID } from "crypto";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
 import { User } from "./interfaces/user.interface";
 
 @Entity()
 export class UserEntity extends BaseEntityApp implements User {
-
   @Column()
   name: string;
 
@@ -26,5 +24,5 @@ export class UserEntity extends BaseEntityApp implements User {
   email: string;
 
   @Column()
-  password: string
+  password: string;
 }

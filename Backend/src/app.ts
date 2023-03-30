@@ -5,14 +5,12 @@ import { AppDataSource } from "./config/db/postgreSql";
 import { RoutesApp } from "./shared/router";
 import cors from "cors";
 import express from "express";
-import morgan from "morgan"
+import morgan from "morgan";
 
 class App {
   private app = express();
   private PORT = process.env.PORT || 3000;
   private router = new RoutesApp();
-  
-  
 
   constructor() {
     this.config();
@@ -23,7 +21,7 @@ class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors());
-    this.app.use(morgan("dev"))
+    this.app.use(morgan("dev"));
 
     this.app.use("/api", this.router.routes());
 
@@ -39,8 +37,6 @@ class App {
       })
       .catch((error) => console.log(error));
   }
-
- 
 }
 
 new App();
