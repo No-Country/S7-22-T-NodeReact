@@ -4,8 +4,8 @@ function Grupos() {
   return (
     <div className='bg-blue-900 '>
     <div className='p-12'>
-      <div class="flex flex-row justify-between items-center w-full">
-  <div class="flex flex-row space-x-60 w-full">
+      <div className="flex flex-row justify-between items-center w-full">
+  <div className="flex flex-row space-x-60 w-full">
     <a href="#" class="text-white font-bold">Opción</a>
     <a href="#" class="text-white font-bold">Opción</a>
     <a href="#" class="text-white font-bold">Opción</a>
@@ -14,7 +14,7 @@ function Grupos() {
   </div>
   
 </div>
-<div class="w-full h-1 bg-white"></div>
+<div className="w-full h-1 bg-white"></div>
       <div className="flex justify-between mt-10" >
         <button className="w-[241px] h-[85px] rounded-[10px] bg-blue-100 mx-49">Botón 1</button>
         <button className="w-[241px] h-[85px] rounded-[10px] bg-blue-100 mx-49">Botón 2</button>
@@ -23,7 +23,7 @@ function Grupos() {
       </div>
       <div className="grid grid-cols-3 gap-4">
         <div>
-        <h2 class=" font-bold text-white text-2xl leading-6 mt-14 mb-10">Alumnos</h2>
+        <h2 className=" font-bold text-white text-2xl leading-6 mt-14 mb-10">Alumnos</h2>
         <div className="bg-[#D9D9D9] p-4 overflow-y-scroll h-[804px] w-[359px] rounded-lg " >
   {Array.from({ length: 20 }).map((_, i) => (
     <div key={i} className="flex items-center space-x-4 m-2 bg-white rounded-lg overflow-hidden w-260 h-55">
@@ -40,7 +40,7 @@ function Grupos() {
 </div>
         </div>
         <div>
-        <h2 class=" font-bold text-white text-2xl leading-6 mt-14 mb-10">Profesores</h2>
+        <h2 className=" font-bold text-white text-2xl leading-6 mt-14 mb-10">Profesores</h2>
         <div className="bg-[#D9D9D9] p-4 overflow-y-scroll h-[804px] w-[359px] rounded-lg " >
   {Array.from({ length: 20 }).map((_, i) => (
     <div key={i} className="flex items-center space-x-4 m-2 bg-white rounded-lg overflow-hidden w-260 h-55">
@@ -57,7 +57,7 @@ function Grupos() {
 </div>
         </div>
         <div>
-        <h2 class=" font-bold text-white text-2xl leading-6 mt-14 mb-10">Enlace rápidos</h2>
+        <h2 className=" font-bold text-white text-2xl leading-6 mt-14 mb-10">Enlace rápidos</h2>
           <ul className="list-disc list-inside">
             <li><a href="#">Enlace rápido 1</a></li>
             <li><a href="#">Enlace rápido 2</a></li>
