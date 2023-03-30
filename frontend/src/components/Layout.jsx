@@ -20,7 +20,7 @@ const Layout = ({ children }) => {
 
     return (
         <div className='flex'>
-            <div className='hidden lg:fixed lg:w-60 lg:h-screen bg-secondary lg:flex lg:flex-col'>
+            <div className='hidden lg:fixed lg:w-56 lg:h-screen bg-secondary lg:flex lg:flex-col'>
                 {menuItems.map((option, id) => {
                     return (
                         <div key={id} className='flex items-center h-20'>
@@ -30,7 +30,7 @@ const Layout = ({ children }) => {
                 )}
             </div>
 
-            <div className='w-full lg:ml-60'>
+            <div className='w-full lg:ml-56'>
                 <div className='bg-secondary h-16 flex items-center justify-between px-5'>
                     <h1 className='text-h3 font-semibold'>Admin</h1>
 
