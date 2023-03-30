@@ -2,15 +2,12 @@ import { Router } from "express";
 
 export class BaseRouter<T> {
   public router = Router();
-  protected controller: T;
+  public controller: T;
 
-  constructor(Controller: { new (): T }) {
-    this.routes()
-    this.controller = new Controller()
+  constructor(Controller: { new (): T }, path:string) {
+    this.routes(path);
+    this.controller = new Controller();
   }
 
-  routes() {
-    
-  }
- 
+  routes(path: string) {}
 }

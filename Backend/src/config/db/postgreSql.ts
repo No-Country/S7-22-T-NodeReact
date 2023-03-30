@@ -1,5 +1,5 @@
 import { DataSource } from "typeorm";
-import { LoginEntity } from "../../modules/auth/entity/login.entity";
+import { UserEntity } from "../../modules/user/user.entity";
 import { UserRoles } from "../../modules/UserRoles/UserRoles.entity";
 
 export const AppDataSource = new DataSource({
@@ -11,7 +11,7 @@ export const AppDataSource = new DataSource({
   database: process.env.NAME_DB,
   synchronize: true,
   logging: false,
-  entities: [ UserRoles ],
+  entities: [ UserRoles, UserEntity ],
   subscribers: [],
   migrations: [],
 });
