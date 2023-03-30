@@ -18,9 +18,9 @@ export default function Home() {
           {/*<Sidebar />*/}
           <Layout>
               <form>
-                  <InputField label={'Name'} type={'text'} value={name} onChange={setName} />
+                  <InputField label={'Last name'} type={'text'} value={name} onChange={setName} />
                   <InputField label={'Email'} type={'email'} value={email} onChange={setEmail} />
-                  <Button type={'submit'} text={'Login'} onClick={handleSubmit} />
+                  <Button type={'submit'} text={'Registrame'} onClick={handleSubmit} />
               </form>
           </Layout>
       </>

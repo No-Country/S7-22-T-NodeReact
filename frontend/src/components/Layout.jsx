@@ -11,7 +11,7 @@ const menuItems = [
     { label: 'Perfil', url: '/perfil' },
 ];
 
-const Layout = ({ children }) => {
+const Layout = ({ children, name }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleMenu = () => {
