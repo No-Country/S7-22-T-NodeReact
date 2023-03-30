@@ -2,13 +2,16 @@ import { Request, Response } from "express";
 
 import { UserEntity } from "./user.entity";
 import { UserServices } from "./user.services";
+import { hashPassword } from "./utils/passworEncrypt";
+import { mailGenerator } from "./utils/mailGenerator";
+import { randomUUID } from "crypto";
 
 export class UserController extends UserServices {
   constructor() {
     super();
   }
 
-  async getUsers(req: Request, res: Response) {
+  async getAll(req: Request, res: Response) {
     try {
       const users = await this.getServices();
 
@@ -21,10 +24,9 @@ export class UserController extends UserServices {
     }
   }
 
-  async getUserById(req: Request, res: Response) {
+  async getById(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      
       const user = await this.getServicesById(Number(id));
 
       if (!user)
@@ -42,12 +44,16 @@ export class UserController extends UserServices {
     }
   }
 
-  async addUser(req: Request, res: Response) {
+  async post(req: Request, res: Response) {
     const body: UserEntity = req.body;
     try {
-      body.email = `${body.name.toLowerCase()}.${body.lastName.toLowerCase()}@eduwweb.com`;
+
+      //TODO Generates password standar example: dni, after change for first login 
+      const pass = randomUUID()
+      body.email = mailGenerator(body.name, body.lastName);
+      body.password = await hashPassword(pass)
       const user = await this.postService(body);
-      console.log(user);
+
       res.status(200).json({
         status: true,
         user,
@@ -57,7 +63,7 @@ export class UserController extends UserServices {
     }
   }
 
-  async updateUser(req: Request, res: Response) {
+  async put(req: Request, res: Response) {
     const { id } = req.params;
     const body: UserEntity = req.body;
     try {
@@ -69,29 +75,28 @@ export class UserController extends UserServices {
           msg: "User not found",
         });
 
-       await this.putService(Number(id), body);
-       const user2 = await this.getServicesById(Number(id));
+      await this.putService(Number(id), body);
+      const user2 = await this.getServicesById(Number(id));
 
       res.status(200).json({
         status: true,
-        user2
-        
+        user2,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
     }
   }
 
-  async deleteUser(req: Request, res: Response) {
+  async delete(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const user = await this.getServicesById(Number(id));
+       const user = await this.getServicesById(Number(id));
 
-      if (!user)
-        return res.status(404).json({
-          status: false,
-          msg: "User not found",
-        });
+      // if (!user)
+      //   return res.status(404).json({
+      //     status: false,
+      //     msg: "User not found",
+      //   });
 
       await this.deleteService(Number(id));
       res.status(200).json({

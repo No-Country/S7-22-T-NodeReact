@@ -1,6 +1,6 @@
 import { DataSource } from "typeorm";
+import { RolesEntity } from "../../modules/roles/roles.entity";
 import { UserEntity } from "../../modules/user/user.entity";
-import { UserRoles } from "../../modules/UserRoles/UserRoles.entity";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -11,7 +11,7 @@ export const AppDataSource = new DataSource({
   database: process.env.NAME_DB,
   synchronize: true,
   logging: false,
-  entities: [ UserRoles, UserEntity ],
+  entities: [ RolesEntity, UserEntity ],
   subscribers: [],
   migrations: [],
   ssl:true
