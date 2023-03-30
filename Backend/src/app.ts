@@ -1,5 +1,6 @@
 import "dotenv/config";
 import "reflect-metadata";
+
 import { AppDataSource } from "./config/db/postgreSql";
 import { RoutesApp } from "./shared/router";
 import cors from "cors";
@@ -22,7 +23,6 @@ class App {
     this.app.use(express.json());
     this.app.use(express.urlencoded({ extended: true }));
     this.app.use(cors());
-    
     const userRolesRouter = new UserRolesRouter();
     this.app.use("/", userRolesRouter.router);
 
