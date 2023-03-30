@@ -8,13 +8,13 @@ export class BaseMiddlewares {
   constructor() {}
 
   async checkId(req: Request, res: Response, nex: NextFunction) {
-    const { id } = req.body;
+    const { id } = req.params;
     try {
       const idCheck = await this.service.getServicesById(Number(id));
       if (!idCheck)
         return res.status(404).json({
           status: false,
-          msg: "User not found",
+          msg: "ID not found",
         });
 
       return nex();
