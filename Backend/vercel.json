@@ -1,0 +1,18 @@
+{
+    "version": 2,
+    "builds": [
+      { "src": "dist/app.js", "use": "@vercel/node" }
+    ],
+    "routes": [
+      {
+        "src": "/(.*)",
+        "dest": "dist/app.js"
+      }
+    ],
+    "env": {
+      "NAME_DB":"@name_db_2",
+      "USERNAME_DB":"@username_db_2",
+      "PASS_DB":"@pass_db_2",
+      "HOST_DB":"@host_db_2"
+    }
+}
