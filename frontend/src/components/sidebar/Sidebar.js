@@ -13,10 +13,10 @@ function Sidebar() {
     return (
       <nav className="w-[246px] bg-[#a9bed1] absolute left-0 top-0 flex  justify-center h-full rounded-tr-3xl">
         <div className="bg-[#cbdcec] h-[100px] w-full absolute top-0 rounded-tr-3xl">
-        <img src="/eduweb.png" alt="" width="55" className='m-3 ml-8'/>
+            <img src="/eduweb.png" alt="" width="55" className='m-3 ml-8'/>
         </div>
         <div>
-        <ul className="text-center mt-[8rem]">{sidebarOptions}</ul>
+            <ul className="text-center mt-[8rem]">{sidebarOptions}</ul>
         </div>
       </nav>
     );
