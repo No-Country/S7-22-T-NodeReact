@@ -14,6 +14,7 @@ module.exports = {
         'white': '#FFFFFF',
         'black': '#202223',
         'danger': '#D82C0D',
+        'danger-bg': '#FFF4F4',
         'success': '#008060',
         'grey': '#E4E5E7',
         'primary': '#022647',
@@ -22,6 +23,7 @@ module.exports = {
         'placeholder': '#6D7175',
         'border': '#8C9196',
         'disabled-bg': '#F1F2F3',
+        'disabled-bg-light': '#FAFBFB',
         'disabled-text': '#8C9196',
       },
       fontSize: {
