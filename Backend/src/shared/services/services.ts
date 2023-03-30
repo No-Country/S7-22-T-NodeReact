@@ -1,15 +1,24 @@
-import { AppDataSource } from "../../config/db/postgreSql";
-import { BaseEntity } from "typeorm";
+export class BaseServices<T> {
+  public entityArray: T[];
+  public entity: T;
 
-export class BaseServices extends BaseEntity {
-  protected service = AppDataSource.manager;
-  repository = AppDataSource.getRepository
-  
+  constructor() {}
 
-  constructor() {
-    super()
-    
+  async getServices(): Promise<T[]> {
+    return this.entityArray;
   }
 
+  async getServicesById(id: number): Promise<T | null> {
+    return this.entity;
+  }
 
+  async postService(data: T): Promise<T | null> {
+    return this.entity;
+  }
+  async putService(id: number, data: T): Promise<T | null> {
+    return this.entity;
+  }
+  async deleteService(id: number): Promise<T | null> {
+    return this.entity;
+  }
 }

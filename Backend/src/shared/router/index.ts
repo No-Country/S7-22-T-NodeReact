@@ -1,6 +1,6 @@
-import { LoginRoutes } from "../../modules/auth/routes/login.routes"
 import { Router } from "express"
 import { UserRolesRouter } from "../../modules/UserRoles/UserRoles.route";
+import { UserRoutes } from "../../modules/user/user.routes";
 import express from 'express';
 
 export class RoutesApp {
@@ -12,6 +12,6 @@ export class RoutesApp {
 
   public routes(): Router[]{
 
-    return [new LoginRoutes().router, new UserRolesRouter().router]
+    return [ new UserRolesRouter().router, new UserRoutes().router]
   }
 }
