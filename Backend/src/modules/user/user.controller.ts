@@ -47,11 +47,10 @@ export class UserController extends UserServices {
   async post(req: Request, res: Response) {
     const body: UserEntity = req.body;
     try {
-
-      //TODO Generates password standar example: dni, after change for first login 
-      const pass = randomUUID()
+      //TODO Generates password standar example: dni, after change for first login
+      const pass = randomUUID();
       body.email = mailGenerator(body.name, body.lastName);
-      body.password = await hashPassword(pass)
+      body.password = await hashPassword(pass);
       const user = await this.postService(body);
 
       res.status(200).json({
@@ -65,10 +64,10 @@ export class UserController extends UserServices {
 
   async put(req: Request, res: Response) {
     const { id } = req.params;
-    const body: UserEntity = req.body;
+    const body = req.body;
     try {
       const user = await this.getServicesById(Number(id));
-      console.log(body);
+      
       if (!user)
         return res.status(404).json({
           status: false,
@@ -76,11 +75,11 @@ export class UserController extends UserServices {
         });
 
       await this.putService(Number(id), body);
-      const user2 = await this.getServicesById(Number(id));
+      const userUpdate = await this.getServicesById(Number(id));
 
       res.status(200).json({
         status: true,
-        user2,
+        userUpdate,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
@@ -90,13 +89,7 @@ export class UserController extends UserServices {
   async delete(req: Request, res: Response) {
     const { id } = req.params;
     try {
-       const user = await this.getServicesById(Number(id));
-
-      // if (!user)
-      //   return res.status(404).json({
-      //     status: false,
-      //     msg: "User not found",
-      //   });
+      const user = await this.getServicesById(Number(id));
 
       await this.deleteService(Number(id));
       res.status(200).json({

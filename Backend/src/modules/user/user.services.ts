@@ -7,10 +7,6 @@ export class UserServices extends BaseServices<UserEntity> {
     super();
   }
 
-  // async getServices(): Promise<UserEntity[]> {
-  //   return await UserEntity.find();
-  // }
-
   async getServices(): Promise<UserEntity[]> {
     return await UserEntity.find();
   }
