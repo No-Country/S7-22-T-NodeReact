@@ -1,4 +1,7 @@
+import { BaseMiddlewares } from "../../shared/middleware/baseMiddleware";
 
-export class RolesMiddlewares {
-  
+export class RolesMiddlewares extends BaseMiddlewares {
+  constructor() {
+    super()
+  }
 }

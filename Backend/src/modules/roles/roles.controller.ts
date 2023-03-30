@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 
+import { RolesEntity } from "./roles.entity";
 import { RolesServices } from "./roles.services";
 
 export class RolesController extends RolesServices {
@@ -19,6 +20,20 @@ export class RolesController extends RolesServices {
     }
   }
 
+  async getById(req: Request, res: Response) {
+    const { id } = req.params;
+    try {
+      const role = await this.getServicesById(Number(id));
+
+      res.status(200).json({
+        status: true,
+        role,
+      });
+    } catch (error) {
+      res.status(500).json({ msg: error });
+    }
+  }
+
   async post(req: Request, res: Response) {
     const body = req.body;
     try {
@@ -27,6 +42,37 @@ export class RolesController extends RolesServices {
       res.status(200).json({
         status: true,
         newRole,
+      });
+    } catch (error) {
+      res.status(500).json({ msg: error });
+    }
+  }
+
+  async put(req: Request, res: Response) {
+    const { id } = req.params;
+    const body: RolesEntity = req.body;
+    try {
+      await this.putService(Number(id), body);
+      const roleUpdate = await this.getServicesById(Number(id));
+
+      res.status(200).json({
+        status: true,
+        roleUpdate,
+      });
+    } catch (error) {
+      res.status(500).json({ msg: error });
+    }
+  }
+
+  async delete(req: Request, res: Response) {
+    const { id } = req.params;
+    try {
+      const role = await this.getServicesById(Number(id));
+
+      await this.deleteService(Number(id));
+      res.status(200).json({
+        status: true,
+        role,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
