@@ -1,17 +1,13 @@
-import { Router } from "express"
-import { UserRolesRouter } from "../../modules/UserRoles/UserRoles.route";
+import { RolesRouter } from "../../modules/roles/roles.route";
+import { Router } from "express";
 import { UserRoutes } from "../../modules/user/user.routes";
-import express from 'express';
+import express from "express";
 
 export class RoutesApp {
-  public router: express.Application 
-  constructor() {
-    
-    console.log("Usando router index")
-  }
+  public router: express.Application;
+  constructor() {}
 
-  public routes(): Router[]{
-
-    return [ new UserRolesRouter().router, new UserRoutes().router]
+  public routes(): Router[] {
+    return [new RolesRouter().router, new UserRoutes().router];
   }
 }

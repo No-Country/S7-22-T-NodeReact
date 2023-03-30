@@ -5,4 +5,5 @@ export interface User {
   phone: number;
   cuil: string;
   address: string;
+  password: string;
 }
