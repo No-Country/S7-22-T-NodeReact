@@ -10,7 +10,7 @@
       }
     ],
     "env": {
-        "PORT":"@port_2",
+        "PORT":"@port",
         "PASS_DB":"@pass_db",
         "NAME_DB":"@name_db",
         "USERNAME_DB":"@username_db",
