@@ -14,4 +14,5 @@ export const AppDataSource = new DataSource({
   entities: [ UserRoles ],
   subscribers: [],
   migrations: [],
+  ssl:true
 });
