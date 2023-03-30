@@ -1,4 +1,4 @@
-const InputField = ({ label, name, type, placeholder, disabled, value, onChange }) => {
+const InputField = ({ label, name, type, placeholder, disabled, error, value, onChange }) => {
     const handleChange = (e) => {
         onChange(e.target.value);
     }
@@ -13,8 +13,9 @@ const InputField = ({ label, name, type, placeholder, disabled, value, onChange 
                 disabled={disabled}
                 value={value}
                 onChange={handleChange}
-                className="border border-border rounded-md px-3 py-2 text-body focus:outline-none focus:border-primary"
+                className={`border ${error ? 'border-danger focus:border-danger bg-danger-bg' : 'border-border focus:border-primary' } ${disabled ? 'bg-disabled-bg-light border-grey' : ''} rounded-md px-3 py-2 text-body focus:outline-none`}
             />
+            {error && <p className='text-body-sm mt-0.5 text-danger'>{error}</p>}
         </div>
     )
 }

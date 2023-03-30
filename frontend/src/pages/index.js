@@ -1,6 +1,7 @@
 import Sidebar from "@/components/sidebar/Sidebar";
 import Button from "@/components/Button";
 import InputField from "@/components/InputField";
+import Layout from "@/components/Layout";
 import { useState } from "react";
 
 export default function Home() {
@@ -15,11 +16,13 @@ export default function Home() {
   return (
       <>
           {/*<Sidebar />*/}
-          <form className='px-5'>
-              <InputField label={'Name'} type={'text'} value={name} onChange={setName} />
-              <InputField label={'Email'} type={'email'} value={email} onChange={setEmail} />
-              <Button type={'submit'} text={'Login'} variant={'disabled'} onClick={handleSubmit} />
-          </form>
+          <Layout>
+              <form>
+                  <InputField label={'Name'} type={'text'} value={name} onChange={setName} />
+                  <InputField label={'Email'} type={'email'} value={email} onChange={setEmail} />
+                  <Button type={'submit'} text={'Login'} onClick={handleSubmit} />
+              </form>
+          </Layout>
       </>
   )
 }
