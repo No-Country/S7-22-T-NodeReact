@@ -32,5 +32,4 @@ export class RolesServices extends BaseServices<RolesEntity> {
     role?.remove();
     return role;
   }
-
 }
