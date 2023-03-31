@@ -6,9 +6,9 @@ import { SchoolCareers } from "./interfaces/schoolCareers.interfaces";
 export class SchoolCareersEntity extends BaseEntityApp implements SchoolCareers{
     
     @Column()
-    schoolId:number
+    schoolId:number;
 
     @Column()
-    careerId:number
+    careerId:number;
     
 }
