@@ -5,6 +5,7 @@ import express from "express";
 import { SchoolRoutes } from "../../modules/school/school.routes";
 import { CareerRoutes } from "../../modules/careers/careers.routes";
 import { SchoolCareerRoutes } from "../../modules/schoolCareers/schoolCareers.routes";
+import { SubjectsRoutes } from "../../modules/subjects/subjects.routes";
 
 export class RoutesApp {
   public router: express.Application;
@@ -16,7 +17,8 @@ export class RoutesApp {
       new UserRoutes().router, 
       new SchoolRoutes().router, 
       new CareerRoutes().router,
-      new SchoolCareerRoutes().router
+      new SchoolCareerRoutes().router,
+      new SubjectsRoutes().router
     ];
   }
 }

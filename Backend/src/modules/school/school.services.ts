@@ -8,12 +8,12 @@ export class SchoolServices extends BaseServices<SchoolEntity> {
   }
 
   async getSchoolService(): Promise<SchoolEntity[]> {
-    return await SchoolEntity.find()
+    return await SchoolEntity.find();
   }
 
   async getSchoolByIdService(id: number): Promise<SchoolEntity | null>{
-    const school = await SchoolEntity.findOneBy({ id })
-    return school
+    const school = await SchoolEntity.findOneBy({ id });
+    return school;
   }
 
   async postSchoolServices(data: SchoolEntity): Promise<SchoolEntity | null> {
@@ -29,7 +29,7 @@ export class SchoolServices extends BaseServices<SchoolEntity> {
 
   async deleteSchoolService(id: number): Promise<SchoolEntity | null> {
     const school = await SchoolEntity.findOneBy({ id });
-    school?.remove()
-    return school
+    school?.remove();
+    return school;
   }
 }
