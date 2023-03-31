@@ -13,7 +13,7 @@ export class SchoolController extends SchoolServices {
       const schools = await this.getSchoolService();
       res.status(200).json({
         status: true,
-        schools
+        schools,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
@@ -24,15 +24,10 @@ export class SchoolController extends SchoolServices {
     const { id } = req.params;
     try {
       const school = await this.getSchoolByIdService(Number(id));
-      if (!school)
-        return res.status(404).json({
-          status: false,
-          msg: "School not found"
-        });
 
       res.status(200).json({
         status: true,
-        school
+        school,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
@@ -57,34 +52,27 @@ export class SchoolController extends SchoolServices {
     const { id } = req.params;
     const body: SchoolEntity = req.body;
     try {
-      const school = await this.getSchoolByIdService(Number(id));
-      if (!school)
-        return res.status(404).json({
-          status: false,
-          msg: "School not found"
-        });
-
       await this.putSchoolService(Number(id), body);
-      const school2 = await this.getSchoolByIdService(Number(id));
+      const schoolUpdate = await this.getSchoolByIdService(Number(id));
       res.status(200).json({
         status: true,
-        school2,
+        schoolUpdate,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
     }
   }
 
-  async deleteSchool(req: Request, res: Response){
-    const {id} = req.params;
-    try{
+  async deleteSchool(req: Request, res: Response) {
+    const { id } = req.params;
+    try {
       const school = await this.getSchoolByIdService(Number(id));
       await this.deleteSchoolService(Number(id));
       res.status(200).json({
         status: true,
-        school
+        school,
       });
-    }catch(error) {
+    } catch (error) {
       res.status(500).json({ msg: error });
     }
   }

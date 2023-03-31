@@ -29,12 +29,6 @@ export class UserController extends UserServices {
     try {
       const user = await this.getServicesById(Number(id));
 
-      if (!user)
-        return res.status(404).json({
-          status: false,
-          msg: "User not found",
-        });
-
       res.status(200).json({
         status: true,
         user,
@@ -66,14 +60,6 @@ export class UserController extends UserServices {
     const { id } = req.params;
     const body = req.body;
     try {
-      const user = await this.getServicesById(Number(id));
-      
-      if (!user)
-        return res.status(404).json({
-          status: false,
-          msg: "User not found",
-        });
-
       await this.putService(Number(id), body);
       const userUpdate = await this.getServicesById(Number(id));
 
