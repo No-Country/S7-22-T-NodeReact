@@ -10,32 +10,32 @@ export class SchoolController extends SchoolServices {
 
   async getSchools(req: Request, res: Response) {
     try {
-      const schools = await this.getSchoolService()
+      const schools = await this.getSchoolService();
       res.status(200).json({
         status: true,
         schools
-      })
+      });
     } catch (error) {
       res.status(500).json({ msg: error });
     }
   }
 
   async getSchoolbyId(req: Request, res: Response) {
-    const { id } = req.params
+    const { id } = req.params;
     try {
-      const school = await this.getSchoolByIdService(Number(id))
+      const school = await this.getSchoolByIdService(Number(id));
       if (!school)
         return res.status(404).json({
           status: false,
           msg: "School not found"
-        })
+        });
 
       res.status(200).json({
         status: true,
         school
-      })
+      });
     } catch (error) {
-      res.status(500).json({ msg: error })
+      res.status(500).json({ msg: error });
     }
   }
 
@@ -55,37 +55,37 @@ export class SchoolController extends SchoolServices {
 
   async putSchool(req: Request, res: Response) {
     const { id } = req.params;
-    const body: SchoolEntity = req.body
+    const body: SchoolEntity = req.body;
     try {
-      const school = await this.getSchoolByIdService(Number(id))
+      const school = await this.getSchoolByIdService(Number(id));
       if (!school)
         return res.status(404).json({
           status: false,
           msg: "School not found"
-        })
+        });
 
-      await this.putSchoolService(Number(id), body)
-      const school2 = await this.getSchoolByIdService(Number(id))
+      await this.putSchoolService(Number(id), body);
+      const school2 = await this.getSchoolByIdService(Number(id));
       res.status(200).json({
         status: true,
         school2,
-      })
+      });
     } catch (error) {
       res.status(500).json({ msg: error });
     }
   }
 
   async deleteSchool(req: Request, res: Response){
-    const {id} = req.params
+    const {id} = req.params;
     try{
-      const school = await this.getSchoolByIdService(Number(id))
-      await this.deleteSchoolService(Number(id))
+      const school = await this.getSchoolByIdService(Number(id));
+      await this.deleteSchoolService(Number(id));
       res.status(200).json({
         status: true,
         school
-      })
+      });
     }catch(error) {
-      res.status(500).json({ msg: error })
+      res.status(500).json({ msg: error });
     }
   }
 }
