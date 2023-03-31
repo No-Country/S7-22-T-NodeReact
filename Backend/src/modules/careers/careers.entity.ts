@@ -5,5 +5,5 @@ import { Careers } from "./interfaces/careers.interfaces";
 @Entity()
 export class CareersEntity extends BaseEntityApp implements Careers {
     @Column()
-    careerName:string 
+    careerName:string;
 }

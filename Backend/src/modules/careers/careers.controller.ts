@@ -9,32 +9,32 @@ export class CareersController extends CareersServices {
 
     async getCareers(req: Request, res: Response) {
         try {
-            const careers = await this.getCareerService()
+            const careers = await this.getCareerService();
             res.status(200).json({
                 status: true,
                 careers
-            })
+            });
         } catch (error) {
             res.status(500).json({ msg: error });
         }
     }
 
     async getCareerById(req: Request, res: Response) {
-        const { id } = req.params
+        const { id } = req.params;
         try {
             const career = await this.getCareerByIdService(Number(id));
             if (!career)
                 return res.status(404).json({
                     status: false,
                     msg: "Career not found"
-                })
+                });
 
             res.status(200).json({
                 status: true,
                 career
-            })
+            });
         } catch (error) {
-            res.status(500).json({ msg: error })
+            res.status(500).json({ msg: error });
         }
     }
 
@@ -45,9 +45,9 @@ export class CareersController extends CareersServices {
             res.status(200).json({
                 status: true,
                 career
-            })
+            });
         } catch (error) {
-            res.status(500).json({ msg: error })
+            res.status(500).json({ msg: error });
         }
     }
 
@@ -55,35 +55,35 @@ export class CareersController extends CareersServices {
         const { id } = req.params;
         const body: CareersEntity = req.body;
         try {
-            const career = await this.getCareerByIdService(Number(id))
+            const career = await this.getCareerByIdService(Number(id));
             if (!career)
                 return res.status(404).json({
                     status: false,
                     msg: "School not found"
-                })
+                });
 
-            await this.putCareerService(Number(id), body)
-            const career2 = await this.getCareerByIdService(Number(id))
+            await this.putCareerService(Number(id), body);
+            const career2 = await this.getCareerByIdService(Number(id));
             res.status(200).json({
                 status: true,
                 career2,
-            })
+            });
         } catch (error) {
             res.status(500).json({ msg: error });
         }
     }
 
     async deleteCareer(req: Request, res: Response) {
-        const { id } = req.params
+        const { id } = req.params;
         try {
-            const career = await this.getCareerByIdService(Number(id))
-            await this.deleteCareerService(Number(id))
+            const career = await this.getCareerByIdService(Number(id));
+            await this.deleteCareerService(Number(id));
             res.status(200).json({
                 status: true,
                 career
-            })
+            });
         } catch (error) {
-            res.status(500).json({ msg: error })
+            res.status(500).json({ msg: error });
         }
     }
 }
