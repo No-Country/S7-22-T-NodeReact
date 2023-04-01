@@ -8,6 +8,7 @@ import { SchoolCareersEntity } from "../../modules/schoolCareers/schoolCareers.e
 import { SchoolEntity } from "../../modules/school/school.entity";
 import { SubjectsEntity } from "../../modules/subjects/subjects.entity";
 import { UserEntity } from "../../modules/user/user.entity";
+import { UserRolesEntity } from "../../modules/userRoles/userRoles.entity";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -21,6 +22,7 @@ export const AppDataSource = new DataSource({
   entities: [
     RolesEntity,
     UserEntity,
+    UserRolesEntity,
     SchoolEntity,
     CareersEntity,
     SchoolCareersEntity,
