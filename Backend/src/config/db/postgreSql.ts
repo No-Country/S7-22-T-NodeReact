@@ -1,10 +1,13 @@
-import { DataSource } from "typeorm";
-import { RolesEntity } from "../../modules/roles/roles.entity";
-import { UserEntity } from "../../modules/user/user.entity";
-import { SchoolEntity } from "../../modules/school/school.entity";
+import { AuthEntity } from "../../modules/auth/auth.entity";
 import { CareersEntity } from "../../modules/careers/careers.entity";
+import { CourseEntity } from "../../modules/course/course.entity";
+import { DataSource } from "typeorm";
+import { PeriodEntity } from "../../modules/period/period.entity";
+import { RolesEntity } from "../../modules/roles/roles.entity";
 import { SchoolCareersEntity } from "../../modules/schoolCareers/schoolCareers.entity";
+import { SchoolEntity } from "../../modules/school/school.entity";
 import { SubjectsEntity } from "../../modules/subjects/subjects.entity";
+import { UserEntity } from "../../modules/user/user.entity";
 import { UserRolesEntity } from "../../modules/userRoles/userRoles.entity";
 
 export const AppDataSource = new DataSource({
@@ -24,6 +27,9 @@ export const AppDataSource = new DataSource({
     CareersEntity,
     SchoolCareersEntity,
     SubjectsEntity,
+    PeriodEntity,
+    CourseEntity,
+    AuthEntity,
   ],
   subscribers: [],
   migrations: [],
