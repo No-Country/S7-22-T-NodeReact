@@ -12,14 +12,14 @@ export class PeriodServices extends BaseServices<PeriodEntity> {
   }
 
   async getServicesById(id: number): Promise<PeriodEntity | null> {
-    const user = await PeriodEntity.findOneBy({ id });
-    return user;
+    const period = await PeriodEntity.findOneBy({ id });
+    return period;
   }
 
   async postService(data: PeriodEntity): Promise<PeriodEntity | null> {
-    const user = PeriodEntity.create(data);
-    user.save();
-    return user;
+    const period = PeriodEntity.create(data);
+    period.save();
+    return period;
   }
 
   async putService(id: number, data: PeriodEntity): Promise<PeriodEntity | null> {
@@ -28,8 +28,8 @@ export class PeriodServices extends BaseServices<PeriodEntity> {
   }
 
   async deleteService(id: number): Promise<PeriodEntity | null> {
-    const user = await PeriodEntity.findOneBy({ id });
-    user?.remove();
-    return user;
+    const period = await PeriodEntity.findOneBy({ id });
+    period?.remove();
+    return period;
   }
 }
