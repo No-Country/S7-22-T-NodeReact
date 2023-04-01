@@ -1,10 +1,10 @@
 import { BaseRouter } from "../../shared/router/router";
-import { PeriodController } from "./period.controller";
-import { PeriodMiddlewares } from "./user.middlewares";
+import { CourseController } from "./course.controller";
+import { CourseMiddlewares } from "./course.middlewares";
 
-export class UserRoutes extends BaseRouter<PeriodController, PeriodMiddlewares> {
+export class CourseRoutes extends BaseRouter<CourseController, CourseMiddlewares> {
   constructor() {
-    super(PeriodController, PeriodMiddlewares, "period");
+    super(CourseController, CourseMiddlewares, "course");
   }
 
   routes(path: string): void {
