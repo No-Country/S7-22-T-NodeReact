@@ -1,3 +1,4 @@
+import { AuthRoutes } from "../../modules/auth/period.routes";
 import { CareerRoutes } from "../../modules/careers/careers.routes";
 import { CourseRoutes } from "../../modules/course/course.routes";
 import { PeriodRoutes } from "../../modules/period/period.routes";
@@ -22,7 +23,8 @@ export class RoutesApp {
       new SchoolCareerRoutes().router,
       new SubjectsRoutes().router,
       new CourseRoutes().router,
-      new PeriodRoutes().router
+      new PeriodRoutes().router,
+      new AuthRoutes().router
     ];
   }
 }

@@ -1,3 +1,4 @@
+import { AuthEntity } from "../../modules/auth/auth.entity";
 import { CareersEntity } from "../../modules/careers/careers.entity";
 import { CourseEntity } from "../../modules/course/course.entity";
 import { DataSource } from "typeorm";
@@ -26,6 +27,7 @@ export const AppDataSource = new DataSource({
     SubjectsEntity,
     PeriodEntity,
     CourseEntity,
+    AuthEntity,
   ],
   subscribers: [],
   migrations: [],
