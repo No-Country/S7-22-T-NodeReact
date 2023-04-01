@@ -6,19 +6,21 @@ import { SchoolRoutes } from "../../modules/school/school.routes";
 import { CareerRoutes } from "../../modules/careers/careers.routes";
 import { SchoolCareerRoutes } from "../../modules/schoolCareers/schoolCareers.routes";
 import { SubjectsRoutes } from "../../modules/subjects/subjects.routes";
+import { UserRolesRoutes } from "../../modules/userRoles/userRoles.routes";
 
 export class RoutesApp {
   public router: express.Application;
-  constructor() { }
+  constructor() {}
 
   public routes(): Router[] {
     return [
-      new RolesRouter().router, 
-      new UserRoutes().router, 
-      new SchoolRoutes().router, 
+      new RolesRouter().router,
+      new UserRoutes().router,
+      new SchoolRoutes().router,
       new CareerRoutes().router,
       new SchoolCareerRoutes().router,
-      new SubjectsRoutes().router
+      new SubjectsRoutes().router,
+      new UserRolesRoutes().router,
     ];
   }
 }

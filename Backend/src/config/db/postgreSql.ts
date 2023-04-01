@@ -5,7 +5,7 @@ import { SchoolEntity } from "../../modules/school/school.entity";
 import { CareersEntity } from "../../modules/careers/careers.entity";
 import { SchoolCareersEntity } from "../../modules/schoolCareers/schoolCareers.entity";
 import { SubjectsEntity } from "../../modules/subjects/subjects.entity";
-
+import { UserRolesEntity } from "../../modules/userRoles/userRoles.entity";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -16,7 +16,15 @@ export const AppDataSource = new DataSource({
   database: process.env.NAME_DB,
   synchronize: true,
   logging: false,
-  entities: [ RolesEntity, UserEntity, SchoolEntity, CareersEntity, SchoolCareersEntity, SubjectsEntity ],
+  entities: [
+    RolesEntity,
+    UserEntity,
+    UserRolesEntity,
+    SchoolEntity,
+    CareersEntity,
+    SchoolCareersEntity,
+    SubjectsEntity,
+  ],
   subscribers: [],
   migrations: [],
   // ssl:true

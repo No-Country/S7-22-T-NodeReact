@@ -1,4 +1,4 @@
-export interface UserRoles{
-    userID: number;
-    roleId: number;
+export interface UserRoles {
+  userID: number;
+  roleID: number;
 }
