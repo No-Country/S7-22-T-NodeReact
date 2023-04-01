@@ -19,6 +19,7 @@ export class UserRolesServices extends BaseServices<UserRolesEntity> {
 
   async postService(data: UserRolesEntity): Promise<UserRolesEntity | null> {
     const userRole = UserRolesEntity.create(data);
+    userRole.save();
     return userRole;
   }
 

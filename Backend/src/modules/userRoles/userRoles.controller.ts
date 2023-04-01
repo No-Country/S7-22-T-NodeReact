@@ -16,7 +16,9 @@ export class UserRolesController extends UserRolesServices {
         userRoles,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 
@@ -30,7 +32,9 @@ export class UserRolesController extends UserRolesServices {
         userRole,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 
@@ -43,7 +47,9 @@ export class UserRolesController extends UserRolesServices {
         userRole,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 
@@ -60,7 +66,9 @@ export class UserRolesController extends UserRolesServices {
         userRoleUpdated,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 
@@ -76,7 +84,9 @@ export class UserRolesController extends UserRolesServices {
         userRole,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 }

@@ -4,7 +4,7 @@ import { UserRolesMiddlewares } from "./userRoles.middleware";
 
 export class UserRolesRoutes extends BaseRouter<UserRolesController, UserRolesMiddlewares> {
   constructor() {
-    super(UserRolesController, UserRolesMiddlewares, "userroles");
+    super(UserRolesController, UserRolesMiddlewares, "/user-roles");
   }
 
   routes(path: string): void {
