@@ -17,12 +17,14 @@ function Alumnos() {
 
   return (
     <>
-    <div class="flex items-center mt-4">
-  <h4 class="text-black text-[24px] font-bold ml-16 mt-4">Añadir alumno</h4>
-  <button class="w-[150px] h-[43px] rounded-md bg-[#C0C0C0] text-black ml-2 ml-auto mr-6">
-    Salir
-  </button>
-</div>
+      <div class="flex items-center mt-4">
+        <h4 class="text-black text-[24px] font-bold ml-16 mt-4">
+          Añadir alumno
+        </h4>
+        <button class="w-[150px] h-[43px] rounded-md bg-[#C0C0C0] text-black ml-2 ml-auto mr-6">
+          Salir
+        </button>
+      </div>
       <div className="container w-[full] h-[52rem] m-12 p-6 bg-[#D9D9D9] rounded-lg">
         <div className="bg-[#D9D9D9] p-4 overflow-y-scroll h-[804px] w-[359px] rounded-lg float-left">
           {Array.from({ length: 20 }).map((_, i) => (
@@ -104,19 +106,18 @@ function Alumnos() {
           <div className="grid grid-cols-2 gap-4 flex w-[600px] float-right mr-56">
             {labels_information}
             <div className="ml-[22.6rem]">
-  <button className="w-[350px] h-[43px] rounded-md bg-[#022647] text-white mb-2" >
-    Ver detalles de materias
-  </button>
-  <div className="flex mt-8 w-[20rem] ml-8">
-    <button className="w-[150px] h-[43px] rounded-md bg-[#008060] text-white mr-2" >
-      Guardar
-    </button>
-    <button className="w-[150px] h-[43px] rounded-md bg-[#C0C0C0] text-black ml-2" >
-      Salir
-    </button>
-  </div>
-</div>
-    
+              <button className="w-[350px] h-[43px] rounded-md bg-[#022647] text-white mb-2">
+                Ver detalles de materias
+              </button>
+              <div className="flex mt-8 w-[20rem] ml-8">
+                <button className="w-[150px] h-[43px] rounded-md bg-[#008060] text-white mr-2">
+                  Guardar
+                </button>
+                <button className="w-[150px] h-[43px] rounded-md bg-[#C0C0C0] text-black ml-2">
+                  Salir
+                </button>
+              </div>
+            </div>
           </div>
         </div>
       </div>
