@@ -30,7 +30,6 @@ export const AppDataSource = new DataSource({
     SubjectsEntity,
     PeriodEntity,
     CourseEntity,
-    AuthEntity,
     CommissionsEntity
   ],
   subscribers: [],
