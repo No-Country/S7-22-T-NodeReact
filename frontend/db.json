@@ -22,10 +22,19 @@
   "professors": [
     {
       "id": 1,
-      "name": "Juan",
+      "firstName": "Juan",
       "surname": "Perez",
       "age": 45,
       "email": "juanp@eduweb.com",
+      "dni": "12345678",
+      "dateOfBirth": "1975-12-03"
+    },
+    {
+      "id": 2,
+      "firstName": "Pedro",
+      "surname": "Gonzalez",
+      "age": 42,
+      "email": "pedrog@eduweb.com",
       "dni": "12345678",
       "dateOfBirth": "1975-12-03"
     }
