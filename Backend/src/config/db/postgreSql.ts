@@ -10,6 +10,7 @@ import { SubjectsEntity } from "../../modules/subjects/subjects.entity";
 import { UserEntity } from "../../modules/user/user.entity";
 import { UserRolesEntity } from "../../modules/userRoles/userRoles.entity";
 import { CommissionsEntity } from "../../modules/commissions/commissions.entity";
+import { ClassesEntity } from "../../modules/classes/classes.entity";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -30,7 +31,8 @@ export const AppDataSource = new DataSource({
     SubjectsEntity,
     PeriodEntity,
     CourseEntity,
-    CommissionsEntity
+    CommissionsEntity,
+    ClassesEntity,
   ],
   subscribers: [],
   migrations: [],
