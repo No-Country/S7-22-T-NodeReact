@@ -16,6 +16,10 @@ const Button = ({ size, variant, text, type, onClick }) => {
             textColour = 'text-disabled-text';
             disabled = true;
             break;
+        case 'interactive':
+            bgColour = 'bg-interactive';
+            textColour = 'text-white';
+            break;
         case 'normal':
             bgColour = 'bg-white';
             textColour = 'text-black';

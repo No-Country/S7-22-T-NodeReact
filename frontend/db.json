@@ -1,0 +1,36 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "name": "Joaquin",
+      "surname": "Guzman",
+      "age": 23,
+      "email": "joaquing@eduweb.com",
+      "dni": "12345678",
+      "dateOfBirth": "1999-12-03"
+    },
+    {
+      "id": 2,
+      "name": "Isaac",
+      "surname": "Zuniga",
+      "age": 21,
+      "email": "isaacz@eduweb.com",
+      "dni": "87654321",
+      "dateOfBirth": "1998-03-12"
+    }
+  ],
+  "professors": [
+    {
+      "id": 1,
+      "name": "Juan",
+      "surname": "Perez",
+      "age": 45,
+      "email": "juanp@eduweb.com",
+      "dni": "12345678",
+      "dateOfBirth": "1975-12-03"
+    }
+  ],
+  "profile": {
+    "name": "typicode"
+  }
+}
