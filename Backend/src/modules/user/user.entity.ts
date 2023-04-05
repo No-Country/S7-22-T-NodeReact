@@ -15,7 +15,7 @@ export class UserEntity extends BaseEntityApp implements User {
   phone: number;
 
   @Column()
-  dni: number;
+  dni: string;
 
   @Column()
   address: string;
