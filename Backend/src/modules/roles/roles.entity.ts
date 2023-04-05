@@ -8,6 +8,7 @@ interface UserRole {
 export class RolesEntity extends BaseEntity implements UserRole {
   @PrimaryGeneratedColumn()
   id: number;
+
   @Column()
   roleName: string;
 }

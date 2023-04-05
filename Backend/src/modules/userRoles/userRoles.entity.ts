@@ -1,12 +1,16 @@
-import { Column, Entity } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToOne } from "typeorm";
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
 import { UserRoles } from "./interfaces/userRoles.interface";
+import { UserEntity } from "../user/user.entity";
+import { RolesEntity } from "../roles/roles.entity";
 
 @Entity()
 export class UserRolesEntity extends BaseEntityApp implements UserRoles {
-  @Column()
-  userID: number;
+  @OneToOne(() => UserEntity)
+  @JoinColumn({ name: "userID", referencedColumnName: "id" })
+  userID: UserEntity;
 
-  @Column()
-  roleID: number;
+  @ManyToOne(() => RolesEntity)
+  @JoinColumn({ name: "roleID", referencedColumnName: "id" })
+  roleID: RolesEntity[];
 }
