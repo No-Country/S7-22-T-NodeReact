@@ -6,7 +6,7 @@
       "surname": "Guzman",
       "age": 23,
       "email": "joaquing@eduweb.com",
-      "dni": "12345678",
+      "dni": 12345678,
       "dateOfBirth": "1999-12-03"
     },
     {
@@ -15,28 +15,110 @@
       "surname": "Zuniga",
       "age": 21,
       "email": "isaacz@eduweb.com",
-      "dni": "87654321",
+      "dni": 87654321,
       "dateOfBirth": "1998-03-12"
     }
   ],
   "professors": [
     {
       "id": 1,
-      "firstName": "Juan",
-      "surname": "Perez",
-      "age": 45,
-      "email": "juanp@eduweb.com",
-      "dni": "12345678",
-      "dateOfBirth": "1975-12-03"
+      "firstName": "Marcos",
+      "surname": "Gimenez",
+      "age": 42,
+      "email": "marcosg@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455
     },
     {
       "id": 2,
-      "firstName": "Pedro",
+      "firstName": "Juan",
+      "surname": "Perez",
+      "age": 42,
+      "email": "juanp@eduweb.com",
+      "dni": "27984567",
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455
+    },
+    {
+      "id": 3,
+      "firstName": "Nicolas",
+      "surname": "Rodriguez",
+      "age": 45,
+      "email": "nicolasr@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455
+    },
+    {
+      "id": 4,
+      "firstName": "Marcelo",
+      "surname": "Gomez",
+      "age": 42,
+      "email": "juang@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455
+    },
+    {
+      "id": 5,
+      "firstName": "Matias",
+      "surname": "Gutierrez",
+      "age": 45,
+      "email": "matiasg@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455
+    },
+    {
+      "id": 6,
+      "firstName": "Monica",
+      "surname": "Gomez",
+      "age": 42,
+      "email": "monicag@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455
+    },
+    {
+      "id": 7,
+      "firstName": "Mariana",
+      "surname": "Martinez",
+      "age": 45,
+      "email": "marianam@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455
+    },
+    {
+      "id": 8,
+      "firstName": "Andrea",
       "surname": "Gonzalez",
       "age": 42,
-      "email": "pedrog@eduweb.com",
-      "dni": "12345678",
-      "dateOfBirth": "1975-12-03"
+      "email": "andreag@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455
+    },
+    {
+      "id": 9,
+      "firstName": "Carlos",
+      "surname": "Valdez",
+      "age": 45,
+      "email": "carlosv@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455
+    },
+    {
+      "id": 10,
+      "firstName": "Carlos",
+      "surname": "Gutierrez",
+      "age": 42,
+      "email": "carlosg@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455
     }
   ],
   "profile": {
