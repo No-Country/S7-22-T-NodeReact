@@ -10,7 +10,7 @@ import { SubjectsRoutes } from "../../modules/subjects/subjects.routes";
 import { UserRolesRoutes } from "../../modules/userRoles/userRoles.routes";
 import { UserRoutes } from "../../modules/user/user.routes";
 import { CommissionsRoutes } from "../../modules/commissions/commissions.routes";
-
+import { ClassesRoutes } from "../../modules/classes/classes.routes";
 
 export class RoutesApp {
   public router: express.Application;
@@ -28,7 +28,8 @@ export class RoutesApp {
       new PeriodRoutes().router,
       new AuthRoutes().router,
       new UserRolesRoutes().router,
-      new CommissionsRoutes().router
+      new CommissionsRoutes().router,
+      new ClassesRoutes().router,
     ];
   }
 }
