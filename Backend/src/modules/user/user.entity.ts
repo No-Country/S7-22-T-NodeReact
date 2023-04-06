@@ -1,8 +1,7 @@
 import { Column, Entity, JoinColumn, OneToMany } from "typeorm";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
-import { CommissionsEntity } from "../commissions/commissions.entity";
-import { RolesEntity } from "../roles/roles.entity";
+import { UserRolesEntity } from "../userRoles/userRoles.entity";
 import { User } from "./interfaces/user.interface";
 
 @Entity()
@@ -28,13 +27,7 @@ export class UserEntity extends BaseEntityApp implements User {
   @Column()
   password: string;
 
-  @OneToMany(() => CommissionsEntity, commission => commission.user)
-  commissions: CommissionsEntity[];
-  
-  @OneToMany(() => RolesEntity, roles => roles.user)
-  roles: RolesEntity[];
-
-  @JoinColumn({ name: "user_id" })
-  userId: UserEntity;
-
+  @OneToMany(() => UserRolesEntity, (userRole) => userRole.userID)
+  @JoinColumn()
+  roleIDId: UserRolesEntity;
 }

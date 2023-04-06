@@ -16,10 +16,9 @@ export class RolesServices extends BaseServices<RolesEntity> {
   }
 
   async postService(data: RolesEntity): Promise<RolesEntity | null> {
-    const { roleName } = data;
-    this.roles.roleName = roleName;
-    this.roles.save;
-    return this.roles;
+    const newRole = RolesEntity.create(data);
+    newRole.save();
+    return newRole;
   }
 
   async putService(id: number, data: RolesEntity): Promise<RolesEntity | null> {

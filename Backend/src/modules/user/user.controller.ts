@@ -20,7 +20,9 @@ export class UserController extends UserServices {
         users,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 
@@ -34,7 +36,9 @@ export class UserController extends UserServices {
         user,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 
@@ -52,7 +56,9 @@ export class UserController extends UserServices {
         user,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 
@@ -60,30 +66,34 @@ export class UserController extends UserServices {
     const { id } = req.params;
     const body = req.body;
     try {
-      await this.putService(Number(id), body);
-      const userUpdate = await this.getServicesById(Number(id));
+      await this.putService(parseInt(id), body);
+      const userUpdate = await this.getServicesById(parseInt(id));
 
       res.status(200).json({
         status: true,
         userUpdate,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 
   async delete(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const user = await this.getServicesById(Number(id));
+      const user = await this.getServicesById(parseInt(id));
 
-      await this.deleteService(Number(id));
+      await this.deleteService(parseInt(id));
       res.status(200).json({
         status: true,
         user,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 }

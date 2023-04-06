@@ -2,18 +2,17 @@ import { BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "t
 
 import { UserEntity } from "../user/user.entity";
 
-interface UserRole {
+export interface Role {
   roleName: string;
 }
 
 @Entity()
-export class RolesEntity extends BaseEntity implements UserRole {
+export class RolesEntity extends BaseEntity implements Role {
   @PrimaryGeneratedColumn()
   id: number;
-  
   @Column()
   roleName: string;
 
-  @ManyToOne(() => UserEntity, user => user.roles)
+  @ManyToOne(() => UserEntity)
   user: UserEntity;
 }
