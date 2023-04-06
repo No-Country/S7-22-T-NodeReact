@@ -1,25 +1,10 @@
-import { NextFunction, Request, Response } from "express";
+import { BaseMiddlewares } from "../../shared/middleware/baseMiddleware";
+import { SchoolCareersEntity } from "./schoolCareers.entity";
 
-import { SchoolCareersServices } from "./schoolCareers.services";
-
-export class SchoolCareersMiddleware extends SchoolCareersServices {
+export class SchoolCareersMiddleware extends BaseMiddlewares<SchoolCareersEntity> {
   constructor() {
-    super();
+    super(SchoolCareersEntity);
   }
 
-  async checkId(req: Request, res: Response, nex: NextFunction) {
-    const { id } = req.params;
-    try {
-      const idCheck = await this.getServicesById(Number(id));
-      if (!idCheck)
-        return res.status(404).json({
-          status: false,
-          msg: "ID not found",
-        });
-
-      return nex();
-    } catch (error) {
-      res.status(500).json({ msg: error });
-    }
-  }
+  
 }

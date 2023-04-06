@@ -1,10 +1,14 @@
 import { Column, Entity } from "typeorm";
+import { User, userStates } from "./interfaces/user.interface";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
-import { User } from "./interfaces/user.interface";
 
 @Entity()
 export class UserEntity extends BaseEntityApp implements User {
+  
+  @Column({ unique: true })
+  userId: string;
+
   @Column()
   name: string;
 
@@ -14,15 +18,18 @@ export class UserEntity extends BaseEntityApp implements User {
   @Column()
   phone: number;
 
-  @Column()
-  dni: number;
+  @Column({ unique: true })
+  dni: string;
 
   @Column()
   address: string;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 
   @Column()
   password: string;
+
+  @Column()
+  state: userStates;
 }

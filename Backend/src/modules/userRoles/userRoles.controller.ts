@@ -13,7 +13,7 @@ export class UserRolesController extends UserRolesServices {
 
       res.status(200).json({
         status: true,
-        userRoles,
+        results: userRoles,
       });
     } catch (error) {
       if (error instanceof Error) {
@@ -41,10 +41,11 @@ export class UserRolesController extends UserRolesServices {
   async createUserRole(req: Request, res: Response) {
     const body = req.body;
     try {
-      const userRole = await this.postService(body);
+      const newUserRole = await this.postService(body);
+      //const userRole = newUserRole !== null ? await this.getServicesById(newUserRole) : null;
       res.status(200).json({
         status: true,
-        userRole,
+        result: newUserRole,
       });
     } catch (error) {
       if (error instanceof Error) {
