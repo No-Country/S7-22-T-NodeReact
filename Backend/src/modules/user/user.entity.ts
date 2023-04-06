@@ -1,8 +1,8 @@
 import { Column, Entity, JoinColumn, OneToMany } from "typeorm";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
-import { UserRolesEntity } from "../userRoles/userRoles.entity";
 import { User } from "./interfaces/user.interface";
+import { UserRolesEntity } from "../userRoles/userRoles.entity";
 
 @Entity()
 export class UserEntity extends BaseEntityApp implements User {
@@ -18,7 +18,7 @@ export class UserEntity extends BaseEntityApp implements User {
   @Column()
   dni: string;
 
-  @Column()
+  @Column({nullable: true})
   address: string;
 
   @Column()

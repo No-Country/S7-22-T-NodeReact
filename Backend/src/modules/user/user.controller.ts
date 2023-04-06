@@ -2,9 +2,8 @@ import { Request, Response } from "express";
 
 import { UserEntity } from "./user.entity";
 import { UserServices } from "./user.services";
-import { hashPassword } from "./utils/passworEncrypt";
+import { hashPassword } from "./utils/passwordEncrypt";
 import { mailGenerator } from "./utils/mailGenerator";
-import { randomUUID } from "crypto";
 
 export class UserController extends UserServices {
   constructor() {
@@ -43,12 +42,11 @@ export class UserController extends UserServices {
   }
 
   async post(req: Request, res: Response) {
-    const body: UserEntity = req.body;
+    const body = req.body as UserEntity;
     try {
-      //TODO Generates password standar example: dni, after change for first login
-      const pass = randomUUID();
       body.email = mailGenerator(body.name, body.lastName);
-      body.password = await hashPassword(pass);
+      body.password = await hashPassword(body.dni);
+
       const user = await this.postService(body);
 
       res.status(200).json({

@@ -5,4 +5,5 @@ export interface User {
   dni: string;
   address: string;
   password: string;
+  email: string;
 }

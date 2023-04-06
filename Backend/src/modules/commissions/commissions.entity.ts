@@ -16,7 +16,7 @@ export class CommissionsEntity extends BaseEntityApp implements Commissions{
     @Column()
     studentId: string;
     
-    @ManyToOne(() => UserEntity, user => user.commissions)
+    @ManyToOne(() => UserEntity)
     user: UserEntity;
 
     @OneToOne(() => CourseEntity, course => course.commissions)

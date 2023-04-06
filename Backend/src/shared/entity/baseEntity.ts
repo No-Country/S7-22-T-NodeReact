@@ -2,7 +2,7 @@ import { BaseEntity, CreateDateColumn, PrimaryGeneratedColumn, UpdateDateColumn 
 
 export class BaseEntityApp extends BaseEntity {
   @PrimaryGeneratedColumn()
-  id: number;
+  id?: number;
 
   @CreateDateColumn()
   createdAt?: Date;

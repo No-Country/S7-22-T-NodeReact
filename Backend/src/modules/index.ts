@@ -64,7 +64,7 @@ export * from "./user/user.middlewares";
 export * from "./user/user.routes";
 export * from "./user/user.services";
 export * from "./user/utils/mailGenerator";
-export * from "./user/utils/passworEncrypt";
+export * from "./user/utils/passwordEncrypt";
 export * from "./userRoles/interfaces/userRoles.interface";
 export * from "./userRoles/userRoles.controller";
 export * from "./userRoles/userRoles.entity";
