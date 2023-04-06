@@ -1,11 +1,11 @@
 import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
-interface UserRole {
+export interface Role {
   roleName: string;
 }
 
 @Entity()
-export class RolesEntity extends BaseEntity implements UserRole {
+export class RolesEntity extends BaseEntity implements Role {
   @PrimaryGeneratedColumn()
   id: number;
 
