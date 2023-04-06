@@ -2,9 +2,8 @@ import { BaseEntity, EntityTarget, FindOptionsWhere, Repository, UpdateResult } 
 
 import { AppDataSource } from "../../config/db/postgreSql";
 
-export abstract class BaseServices2<T extends BaseEntity> {
-  public entityArray: T[];
-  public entity: T;
+export abstract class BaseServices<T extends BaseEntity> {
+  
   public repository: Repository<T>;
 
   constructor(entity: EntityTarget<T>) {

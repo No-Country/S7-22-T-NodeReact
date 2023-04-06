@@ -1,16 +1,20 @@
+import { BaseEntity, EntityTarget, FindOptionsWhere, Repository } from "typeorm";
 import { NextFunction, Request, Response } from "express";
 
-import { BaseServices } from "../services/services";
+import { AppDataSource } from "../../config/db/postgreSql";
 
-export class BaseMiddlewares {
-  public service = new BaseServices();
+export abstract class BaseMiddlewares<T extends BaseEntity> {
 
-  constructor() {}
+  public repository: Repository<T>;
+
+  constructor(entity: EntityTarget<T>) {
+    this.repository = AppDataSource.getRepository(entity);
+  }
 
   async checkId(req: Request, res: Response, nex: NextFunction) {
     const { id } = req.params;
     try {
-      const idCheck = await this.service.getServicesById(Number(id));
+      const idCheck = await this.repository.findOneBy({ id: Number(id) } as unknown as FindOptionsWhere<T>);
       if (!idCheck)
         return res.status(404).json({
           status: false,
@@ -22,8 +26,4 @@ export class BaseMiddlewares {
       res.status(500).json({ msg: error });
     }
   }
-
-  // async checkRole
-  // async checkAdminRole
-  // async checkPass
 }

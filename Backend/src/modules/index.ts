@@ -3,7 +3,7 @@ export * from "./auth/auth.entity";
 export * from "./auth/auth.middlewares";
 export * from "./auth/auth.services";
 export * from "./auth/interfaces/auth.interface";
-export * from "./auth/period.routes";
+export * from "./auth/auth.routes";
 export * from "./careers/careers.controller";
 export * from "./careers/careers.entity";
 export * from "./careers/careers.middlewares";

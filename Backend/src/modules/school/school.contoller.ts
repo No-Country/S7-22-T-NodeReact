@@ -10,7 +10,7 @@ export class SchoolController extends SchoolServices {
 
   async getSchools(req: Request, res: Response) {
     try {
-      const schools = await this.getSchoolService();
+      const schools = await this.getServices();
       res.status(200).json({
         status: true,
         schools,
@@ -23,7 +23,7 @@ export class SchoolController extends SchoolServices {
   async getSchoolbyId(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const school = await this.getSchoolByIdService(Number(id));
+      const school = await this.getServicesById(Number(id));
 
       res.status(200).json({
         status: true,
@@ -37,7 +37,7 @@ export class SchoolController extends SchoolServices {
   async postSchool(req: Request, res: Response) {
     const body: SchoolEntity = req.body;
     try {
-      const school = await this.postSchoolServices(body);
+      const school = await this.postService(body);
 
       res.status(200).json({
         status: true,
@@ -52,8 +52,7 @@ export class SchoolController extends SchoolServices {
     const { id } = req.params;
     const body: SchoolEntity = req.body;
     try {
-      await this.putSchoolService(Number(id), body);
-      const schoolUpdate = await this.getSchoolByIdService(Number(id));
+      const schoolUpdate = await this.putService(Number(id), body);
       res.status(200).json({
         status: true,
         schoolUpdate,
@@ -66,8 +65,8 @@ export class SchoolController extends SchoolServices {
   async deleteSchool(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const school = await this.getSchoolByIdService(Number(id));
-      await this.deleteSchoolService(Number(id));
+      const school = await this.deleteService(Number(id));
+
       res.status(200).json({
         status: true,
         school,

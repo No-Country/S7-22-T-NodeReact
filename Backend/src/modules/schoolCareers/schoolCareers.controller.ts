@@ -10,7 +10,7 @@ export class SchoolCareersController extends SchoolCareersServices {
 
   async getSchoolCareers(req: Request, res: Response) {
     try {
-      const schoolCareers = await this.getSchoolCareerService();
+      const schoolCareers = await this.getServices();
       res.status(200).json({
         status: true,
         schoolCareers,
@@ -23,7 +23,7 @@ export class SchoolCareersController extends SchoolCareersServices {
   async getSchoolCareersById(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const career = await this.getSchoolCareerByIdService(Number(id));
+      const career = await this.getServicesById(Number(id));
 
       res.status(200).json({
         status: true,
@@ -37,7 +37,7 @@ export class SchoolCareersController extends SchoolCareersServices {
   async postSchoolCareers(req: Request, res: Response) {
     const body: SchoolCareersEntity = req.body;
     try {
-      const career = await this.postSchoolCareerService(body);
+      const career = await this.postService(body);
       res.status(200).json({
         status: true,
         career,
@@ -51,8 +51,7 @@ export class SchoolCareersController extends SchoolCareersServices {
     const { id } = req.params;
     const body: SchoolCareersEntity = req.body;
     try {
-      await this.putSchoolCareerService(Number(id), body);
-      const careerUpdate = await this.getSchoolCareerByIdService(Number(id));
+      const careerUpdate = await this.putService(Number(id), body);
       res.status(200).json({
         status: true,
         careerUpdate,
@@ -65,8 +64,8 @@ export class SchoolCareersController extends SchoolCareersServices {
   async deleteSchoolCareers(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const career = await this.getSchoolCareerByIdService(Number(id));
-      await this.deleteSchoolCareerService(Number(id));
+      const career = await this.deleteService(Number(id));
+
       res.status(200).json({
         status: true,
         career,

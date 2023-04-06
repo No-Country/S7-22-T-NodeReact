@@ -1,11 +1,14 @@
-import { Column, Entity, JoinColumn, OneToMany } from "typeorm";
+import { Column, Entity } from "typeorm";
+import { User, userStates } from "./interfaces/user.interface";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
-import { User } from "./interfaces/user.interface";
-import { UserRolesEntity } from "../userRoles/userRoles.entity";
 
 @Entity()
 export class UserEntity extends BaseEntityApp implements User {
+  
+  @Column({ unique: true })
+  userId: string;
+
   @Column()
   name: string;
 
@@ -15,19 +18,18 @@ export class UserEntity extends BaseEntityApp implements User {
   @Column()
   phone: number;
 
-  @Column()
+  @Column({ unique: true })
   dni: string;
 
-  @Column({nullable: true})
+  @Column()
   address: string;
 
-  @Column()
+  @Column({ unique: true })
   email: string;
 
   @Column()
   password: string;
 
-  @OneToMany(() => UserRolesEntity, (userRole) => userRole.userID)
-  @JoinColumn()
-  roleIDId: UserRolesEntity;
+  @Column()
+  state: userStates;
 }

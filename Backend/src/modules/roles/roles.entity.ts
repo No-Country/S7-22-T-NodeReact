@@ -1,6 +1,4 @@
-import { BaseEntity, Column, Entity, ManyToOne, PrimaryGeneratedColumn } from "typeorm";
-
-import { UserEntity } from "../user/user.entity";
+import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
 
 export interface Role {
   roleName: string;
@@ -13,6 +11,4 @@ export class RolesEntity extends BaseEntity implements Role {
   @Column()
   roleName: string;
 
-  @ManyToOne(() => UserEntity)
-  user: UserEntity;
 }

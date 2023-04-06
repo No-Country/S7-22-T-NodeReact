@@ -6,4 +6,7 @@ export interface User {
   address: string;
   password: string;
   email: string;
+  state: userStates;
 }
+
+export type userStates = "active" | "inActive" | "approved" | "coursing" | "disapproved"
