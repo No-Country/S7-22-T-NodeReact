@@ -33,7 +33,7 @@
     {
       "id": 2,
       "firstName": "Juan",
-      "surname": "Perez",
+      "surname": "Carlos",
       "age": 42,
       "email": "juanp@eduweb.com",
       "dni": "27984567",
@@ -104,7 +104,7 @@
       "id": 9,
       "firstName": "Carlos",
       "surname": "Valdez",
-      "age": 45,
+      "age": "56",
       "email": "carlosv@eduweb.com",
       "dni": 12345678,
       "dateOfBirth": "1975-12-03",

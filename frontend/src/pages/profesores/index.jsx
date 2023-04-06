@@ -2,6 +2,7 @@ import Layout from "@/components/Layout";
 import Button from "@/components/Button";
 import {useEffect, useState} from "react";
 import InputField from "@/components/InputField";
+import Link from "next/link";
 
 const Profesores = () => {
     const [profesores, setProfesores] = useState([]);
@@ -76,7 +77,9 @@ const Profesores = () => {
         <Layout name={'Profesores'}>
             <div className='flex justify-between items-center py-4 border-b border-secondary'>
                 <p className='text-h4'>Filtrar</p>
-                <Button text={'Agregar'} variant={'interactive'} visible={true} />
+                <Link href={'/profesores/agregar'}>
+                    <Button text={'Agregar'} variant={'interactive'} visible={true} />
+                </Link>
             </div>
 
             <div className='flex gap-5 mt-5'>
