@@ -45,7 +45,8 @@ export class UserController extends UserServices {
     const body = req.body as UserEntity;
     try {
       body.email = mailGenerator(body.name, body.lastName);
-      body.password = await hashPassword(body.dni);
+      body.password = await hashPassword(body.password);
+      console.log(body.password);
 
       const user = await this.postService(body);
 

@@ -6,5 +6,5 @@ export class AuthServices extends BaseServices<AuthEntity> {
   constructor() {
     super(AuthEntity);
   }
-
+  
 }

@@ -8,6 +8,6 @@ export class AuthRoutes extends BaseRouter < AuthController, AuthMiddlewares > {
   }
 
   routes(path: string): void {
-    this.router.post(`/${path}/post`, (req, res) => this.controller.post(req, res));
+    this.router.post(`/${path}/login/post`, (req, res) => this.controller.authLoginUser(req, res));
   }
 }
