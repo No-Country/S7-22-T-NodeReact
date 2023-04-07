@@ -2,8 +2,8 @@ import { Request, Response } from "express";
 
 import { UserEntity } from "./user.entity";
 import { UserServices } from "./user.services";
-import { hashPassword } from "./utils/passwordEncrypt";
-import { mailGenerator } from "./utils/mailGenerator";
+import { hashPassword } from "./utils/passwordEncrypt.utils";
+import { mailGenerator } from "./utils/mailGenerator.utils";
 
 export class UserController extends UserServices {
   constructor() {
