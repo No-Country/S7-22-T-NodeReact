@@ -38,7 +38,7 @@ const Layout = ({ children, name }) => {
                 </div>
             </div>
 
-            <div className='w-full lg:ml-56'>
+            <div className='w-full lg:ml-56 relative'>
                 <div className='bg-secondary h-16 flex items-center justify-between px-5'>
                     <h1 className='text-h3 font-semibold'>{ name }</h1>
 

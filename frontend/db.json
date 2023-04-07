@@ -32,9 +32,9 @@
     },
     {
       "id": 2,
-      "firstName": "Juan",
-      "surname": "Carlos",
-      "age": 42,
+      "firstName": "Javier",
+      "surname": "Martinez",
+      "age": "51",
       "email": "juanp@eduweb.com",
       "dni": "27984567",
       "dateOfBirth": "1975-12-03",
@@ -46,17 +46,17 @@
       "surname": "Rodriguez",
       "age": 45,
       "email": "nicolasr@eduweb.com",
-      "dni": 12345678,
+      "dni": "36509865",
       "dateOfBirth": "1975-12-03",
       "phone": 1122334455
     },
     {
       "id": 4,
-      "firstName": "Marcelo",
+      "firstName": "Francisco",
       "surname": "Gomez",
       "age": 42,
       "email": "juang@eduweb.com",
-      "dni": 12345678,
+      "dni": "45849365",
       "dateOfBirth": "1975-12-03",
       "phone": 1122334455
     },

@@ -1,4 +1,4 @@
-const Button = ({ size, variant, text, type, onClick, visible }) => {
+const Button = ({ size, variant, text, type, onClick, visible, name, value }) => {
     let bgColour, borderColour, textColour = '';
     let disabled = false;
 
@@ -23,7 +23,7 @@ const Button = ({ size, variant, text, type, onClick, visible }) => {
         case 'normal':
             bgColour = 'bg-white';
             textColour = 'text-black';
-            borderColour = 'border border-border';
+            // borderColour = 'border border-border';
             break;
         default:
             bgColour = 'bg-primary';
@@ -32,7 +32,13 @@ const Button = ({ size, variant, text, type, onClick, visible }) => {
     }
 
     return (
-        <button type={type} disabled={disabled} onClick={onClick} className={`${size === 'full' ? 'w-full' : '' } ${borderColour} ${bgColour} ${textColour} ${visible ? 'block' : 'hidden'} py-2.5 px-5 rounded-md font-medium text-sm`}>
+        <button
+            type={type}
+            disabled={disabled}
+            onClick={onClick}
+            className={`${size === 'full' ? 'w-full' : '' } ${borderColour} ${bgColour} ${textColour} ${visible ? 'block' : 'hidden'} py-2.5 px-5 rounded-md font-medium text-sm`}
+            name={name}
+            value={value} >
             { text }
         </button>
     )
