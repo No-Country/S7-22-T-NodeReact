@@ -1,4 +1,5 @@
-import { sign,verify } from "jsonwebtoken";
+import { sign, verify } from "jsonwebtoken";
+
 const JWT_SECRET = process.env.JWT_SECRET || "token 01010101S";
 
 const generateToken = (id:string) => {

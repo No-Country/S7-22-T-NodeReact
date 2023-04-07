@@ -1,10 +1,9 @@
-import { AuthEntity } from "./auth.entity";
 import { BaseServices } from "../../shared/services/baseServices";
+import { UserEntity } from "../user/user.entity";
 
-export class AuthServices extends BaseServices<AuthEntity> {
-  protected Auth = new AuthEntity();
+export class AuthServices extends BaseServices<UserEntity> {
   constructor() {
-    super(AuthEntity);
+    super(UserEntity);
   }
   
 }

@@ -1,9 +1,9 @@
 import { BaseEntity, EntityTarget, FindOptionsWhere, Repository } from "typeorm";
 import { NextFunction, Request, Response } from "express";
+import jwt, { GetPublicKeyOrSecret, Secret } from "jsonwebtoken";
 
 import { AppDataSource } from "../../config/db/postgreSql";
-import jwt, { GetPublicKeyOrSecret, Secret } from "jsonwebtoken";
-import { AuthEntity, UserEntity } from "../../modules";
+import { UserEntity } from "../../modules";
 
 export abstract class BaseMiddlewares<T extends BaseEntity> {
   public secretKey = process.env.JWT_SECRET as Secret | GetPublicKeyOrSecret;
@@ -36,18 +36,17 @@ export abstract class BaseMiddlewares<T extends BaseEntity> {
     }
 
     try {
-      const { userId } = jwt.verify(token, this.secretKey) as unknown  as UserEntity;
+      const { userId } = jwt.verify(token, this.secretKey) as unknown as UserEntity;
       const user = await this.repository.findOne({ where: { userId } as unknown as FindOptionsWhere<T> });
       if (!user) {
         return res.status(403).json({
           status: false,
-          result: "User not found"
+          result: "User not found",
         });
       }
-      // Llamada a next() para continuar con el siguiente middleware o ruta
+
       next();
     } catch (error) {
-      // Manejo de errores en caso de fallo en la verificación del token
       return res.status(403).json({ error: "Invalid token" });
     }
   }
