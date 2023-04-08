@@ -1,0 +1,24 @@
+paths:
+  /api/user/put/{id}:
+    put:
+      tags:
+        - Put user
+      summary: 'update user data'
+      description: update the user data in the database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the user to update.
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        '200':
+          description: update user data.
+        '422':
+          description: Failed to update user.
