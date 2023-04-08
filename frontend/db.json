@@ -10,16 +10,6 @@
   ],
   "professors": [
     {
-      "id": 1,
-      "firstName": "Javier",
-      "surname": "Martinez",
-      "age": "51",
-      "email": "juanp@eduweb.com",
-      "dni": "27984567",
-      "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
-    },
-    {
       "id": 2,
       "firstName": "Guillermo",
       "surname": "Rodriguez",
@@ -98,6 +88,16 @@
       "dni": "239847837",
       "dateOfBirth": "1987-03-31",
       "phone": "1193284098"
+    },
+    {
+      "id": 10,
+      "firstName": "Arturo",
+      "surname": "Guzman",
+      "age": "45",
+      "email": "arturog@eduweb.com",
+      "dni": "32947298",
+      "dateOfBirth": "1999-12-03",
+      "phone": "1149348347"
     }
   ],
   "profile": {

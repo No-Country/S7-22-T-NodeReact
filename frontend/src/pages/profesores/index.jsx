@@ -95,7 +95,7 @@ const Profesores = ({ professors }) => {
             </div>
 
             <div className='flex gap-5 mt-5'>
-                <div className='w-1/5 h-[80vh] flex flex-col gap-4 overflow-y-scroll'>
+                <div className='w-1/5 h-[80vh] flex flex-col gap-4 overflow-y-scroll overscroll-contain'>
                     {professors.map((professor, id) => {
                         return (
                             <div key={id} className='px-2.5 py-2.5 bg-grey rounded-lg cursor-pointer' onClick={() => getProfessor(professor.id)}>
@@ -106,14 +106,14 @@ const Profesores = ({ professors }) => {
                     })}
                 </div>
 
-                <div className='w-4/5 max-h-40'>
+                <div className='w-4/5 max-h-[80vh] overflow-y-scroll overscroll-contain'>
                     <div className='border-b border-primary flex justify-between items-center mb-5 h-11'>
                         <h2 className='text-h4 font-semibold'>Datos del profesor</h2>
                         <Button text={'Editar'} variant={'normal'} type={'button'} visible={!editStatus} onClick={editForm} />
                         <Button text={'Cancelar'} variant={'normal'} type={'button'} visible={editStatus} onClick={() => setEditStatus(false)} />
                     </div>
 
-                    <form className='flex gap-5'>
+                    <form className='flex gap-5 relative'>
                         <div className='w-full'>
                             <InputField label={'Nombre'} type={'text'} name={'firstName'} disabled={!editStatus} value={selectedProfessor.firstName} onChange={handleChange} />
                             <InputField label={'Apellido'} type={'text'} name={'surname'} disabled={!editStatus} value={selectedProfessor.surname} onChange={handleChange} />
@@ -124,11 +124,13 @@ const Profesores = ({ professors }) => {
                         <div className='w-full'>
                             <InputField label={'Edad'} type={'number'} name={'age'} disabled={!editStatus} value={selectedProfessor.age} onChange={handleChange} />
                             <InputField label={'Teléfono'} type={'number'} name={'phone'} disabled={!editStatus} value={selectedProfessor.phone} onChange={handleChange} />
-                            <div className={`w-1/6 absolute bottom-0 right-5 flex gap-2 ${editStatus ? 'block' : 'hidden'}`}>
+                            <div className={`absolute bottom-0 right-5 flex gap-2 ${editStatus ? 'block' : 'hidden'}`}>
                                 <Button text={'Guardar'} variant={'success'} size={'full'} type={'button'} visible={saveButton} onClick={() => handleUpdate(selectedProfessor.id)} />
                                 <Button text={'Eliminar'} variant={'danger'} size={'full'} type={'button'} visible={saveButton} onClick={() => handleDelete(selectedProfessor.id)} />
                             </div>
                         </div>
+                        {/*TODO*/}
+                        {/*Add section with relations of subjects and classes*/}
                     </form>
                 </div>
             </div>
