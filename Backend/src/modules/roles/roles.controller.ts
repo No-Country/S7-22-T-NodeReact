@@ -13,7 +13,7 @@ export class RolesController extends RolesServices {
       const roles = await this.getServices();
       res.status(200).json({
         status: true,
-        roles,
+        results: roles,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
@@ -27,7 +27,7 @@ export class RolesController extends RolesServices {
 
       res.status(200).json({
         status: true,
-        role,
+        result: role,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
@@ -41,7 +41,7 @@ export class RolesController extends RolesServices {
 
       res.status(200).json({
         status: true,
-        newRole,
+        result: newRole,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
@@ -57,7 +57,7 @@ export class RolesController extends RolesServices {
 
       res.status(200).json({
         status: true,
-        roleUpdate,
+        result: roleUpdate,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
@@ -67,12 +67,12 @@ export class RolesController extends RolesServices {
   async delete(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const role = await this.getServicesById(Number(id));
+      const roleDelete = await this.getServicesById(Number(id));
 
       await this.deleteService(Number(id));
       res.status(200).json({
         status: true,
-        role,
+        result: roleDelete,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
