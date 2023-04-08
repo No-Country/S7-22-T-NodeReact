@@ -2,7 +2,7 @@ import { AuthController } from "./auth.controller";
 import { AuthMiddlewares } from "./auth.middlewares";
 import { BaseRouter } from "../../shared/router/router";
 
-export class AuthRoutes extends BaseRouter < AuthController, AuthMiddlewares > {
+export class AuthRoutes extends BaseRouter<AuthController, AuthMiddlewares> {
   constructor() {
     super(AuthController, AuthMiddlewares, "auth");
   }

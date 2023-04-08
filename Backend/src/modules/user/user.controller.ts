@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 
+import crypto from "crypto";
 import { UserEntity } from "./user.entity";
 import { UserServices } from "./user.services";
 import { hashPassword } from "./utils/passwordEncrypt.utils";
@@ -10,13 +11,13 @@ export class UserController extends UserServices {
     super();
   }
 
-  async getAll(req: Request, res: Response) {
+  async getAll(_req: Request, res: Response) {
     try {
       const users = await this.getServices();
 
       res.status(200).json({
         status: true,
-        users,
+        results: users,
       });
     } catch (error) {
       if (error instanceof Error) {
@@ -32,7 +33,7 @@ export class UserController extends UserServices {
 
       res.status(200).json({
         status: true,
-        user,
+        result: user,
       });
     } catch (error) {
       if (error instanceof Error) {
@@ -41,18 +42,31 @@ export class UserController extends UserServices {
     }
   }
 
+  /**
+   * @description This "First User Registration" endpoint is intended to auto generate the email based on the user's name and password using their DNI, so the user must change their password on the first login. This is because that only admins can register users to the system.
+   * @example
+   * Request body:  {
+   *  "name": "string",
+   *  "lastName": "string",
+   *  "phone": 0,
+   *  "dni": "string",
+   *  "address": "string",
+   *  "state": "active"
+   * }
+   */
   async post(req: Request, res: Response) {
     const body = req.body as UserEntity;
     try {
       body.email = mailGenerator(body.name, body.lastName);
-      body.password = await hashPassword(body.password);
+      body.password = await hashPassword(body.dni);
+      body.userId = crypto.randomUUID();
       console.log(body.password);
 
       const user = await this.postService(body);
 
       res.status(200).json({
         status: true,
-        user,
+        result: user,
       });
     } catch (error) {
       if (error instanceof Error) {
@@ -70,7 +84,7 @@ export class UserController extends UserServices {
 
       res.status(200).json({
         status: true,
-        userUpdate,
+        result: userUpdate,
       });
     } catch (error) {
       if (error instanceof Error) {
