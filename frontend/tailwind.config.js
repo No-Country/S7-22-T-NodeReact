@@ -20,6 +20,7 @@ module.exports = {
         'primary': '#022647',
         'secondary': '#D3E4F3',
         'tertiary': '#A9BED1',
+        'interactive': '#0B5ED7',
         'placeholder': '#6D7175',
         'border': '#8C9196',
         'disabled-bg': '#F1F2F3',
