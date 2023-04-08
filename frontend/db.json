@@ -2,10 +2,44 @@
   "students": [
     {
       "id": 1,
-      "firstName": "Juan",
+      "firstName": "Juana",
       "surname": "Perez",
       "age": 25,
-      "email": "juanp@eduweb.com"
+      "email": "juanp@eduweb.com",
+      "cellphone": "juanp@eduweb.com",
+      "carrera_curso": "juanp@eduweb.com",
+      "comision": "juanp@eduweb.com",
+      "dni": "juanp@eduweb.com",
+      "dateOfBirth": "juanp@eduweb.com",
+      "estado": "juanp@eduweb.com"
+    },
+    {
+      "id": 2,
+      "firstName": "juana de arco",
+      "surname": "messi",
+      "age": "55",
+      "email": "codcod@mail.com",
+      "dni": "55",
+      "dateOfBirth": "2023-04-25",
+      "cellphone": "6666",
+      "carrera_curso": "",
+      "comision": "",
+      "nacimiento": "",
+      "estado": ""
+    },
+    {
+      "id": 3,
+      "firstName": "Emanuel",
+      "surname": "Manrique",
+      "age": "21",
+      "email": "juana@mail.com",
+      "dni": "222",
+      "dateOfBirth": "",
+      "cellphone": "999",
+      "carrera_curso": "física",
+      "comision": "2",
+      "estado": "Tucumán",
+      "Fecha de nacimiento": "2023-04-20"
     }
   ],
   "professors": [
