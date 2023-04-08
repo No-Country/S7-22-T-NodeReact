@@ -46,7 +46,12 @@ export class UserController extends UserServices {
    * @description This "First User Registration" endpoint is intended to auto generate the email based on the user's name and password using their DNI, so the user must change their password on the first login. This is because that only admins can register users to the system.
    * @example
    * Request body:  {
-   *
+   *  "name": "string",
+   *  "lastName": "string",
+   *  "phone": 0,
+   *  "dni": "string",
+   *  "address": "string",
+   *  "state": "active"
    * }
    */
   async post(req: Request, res: Response) {
