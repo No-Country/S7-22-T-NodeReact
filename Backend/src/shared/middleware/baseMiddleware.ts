@@ -1,9 +1,10 @@
 import { BaseEntity, EntityTarget, FindOptionsWhere, Repository } from "typeorm";
 import { NextFunction, Request, Response } from "express";
-import jwt, { GetPublicKeyOrSecret, Secret } from "jsonwebtoken";
+import { GetPublicKeyOrSecret, Secret, JwtPayload } from "jsonwebtoken";
 
 import { AppDataSource } from "../../config/db/postgreSql";
-import { UserEntity } from "../../modules";
+import { verifyToken } from "../../modules/auth/utils/jwtHandle.utils";
+import { AuthResponses } from "../../modules/auth/utils/auth.constants";
 
 export abstract class BaseMiddlewares<T extends BaseEntity> {
   public secretKey = process.env.JWT_SECRET as Secret | GetPublicKeyOrSecret;
@@ -31,23 +32,17 @@ export abstract class BaseMiddlewares<T extends BaseEntity> {
 
   async checkToken(req: Request, res: Response, next: NextFunction) {
     const token = req.header("set-token");
-    if (!token) {
-      return res.status(403).json({ error: "User not authenticated" });
-    }
 
     try {
-      const { userId } = jwt.verify(token, this.secretKey) as unknown as UserEntity;
-      const user = await this.repository.findOne({ where: { userId } as unknown as FindOptionsWhere<T> });
-      if (!user) {
-        return res.status(403).json({
-          status: false,
-          result: "User not found",
-        });
-      }
+      if (!token) return res.status(403).json(AuthResponses.errors.noToken);
+
+      const jwtPayload = verifyToken(token);
+      console.log("--------------------\n");
+      console.log(jwtPayload);
 
       next();
     } catch (error) {
-      return res.status(403).json({ error: "Invalid token" });
+      return res.status(403).json(AuthResponses.errors.invalidToken);
     }
   }
 }
