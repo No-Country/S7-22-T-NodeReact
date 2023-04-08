@@ -2,36 +2,15 @@
   "students": [
     {
       "id": 1,
-      "name": "Joaquin",
-      "surname": "Guzman",
-      "age": 23,
-      "email": "joaquing@eduweb.com",
-      "dni": 12345678,
-      "dateOfBirth": "1999-12-03"
-    },
-    {
-      "id": 2,
-      "name": "Isaac",
-      "surname": "Zuniga",
-      "age": 21,
-      "email": "isaacz@eduweb.com",
-      "dni": 87654321,
-      "dateOfBirth": "1998-03-12"
+      "firstName": "Juan",
+      "surname": "Perez",
+      "age": 25,
+      "email": "juanp@eduweb.com"
     }
   ],
   "professors": [
     {
       "id": 1,
-      "firstName": "Marcos",
-      "surname": "Gimenez",
-      "age": 42,
-      "email": "marcosg@eduweb.com",
-      "dni": 12345678,
-      "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
-    },
-    {
-      "id": 2,
       "firstName": "Javier",
       "surname": "Martinez",
       "age": "51",
@@ -41,8 +20,8 @@
       "phone": 1122334455
     },
     {
-      "id": 3,
-      "firstName": "Nicolas",
+      "id": 2,
+      "firstName": "Guillermo",
       "surname": "Rodriguez",
       "age": 45,
       "email": "nicolasr@eduweb.com",
@@ -51,7 +30,7 @@
       "phone": 1122334455
     },
     {
-      "id": 4,
+      "id": 3,
       "firstName": "Francisco",
       "surname": "Gomez",
       "age": 42,
@@ -61,7 +40,7 @@
       "phone": 1122334455
     },
     {
-      "id": 5,
+      "id": 4,
       "firstName": "Matias",
       "surname": "Gutierrez",
       "age": 45,
@@ -71,7 +50,7 @@
       "phone": 1122334455
     },
     {
-      "id": 6,
+      "id": 5,
       "firstName": "Monica",
       "surname": "Gomez",
       "age": 42,
@@ -81,7 +60,7 @@
       "phone": 1122334455
     },
     {
-      "id": 7,
+      "id": 6,
       "firstName": "Mariana",
       "surname": "Martinez",
       "age": 45,
@@ -91,7 +70,7 @@
       "phone": 1122334455
     },
     {
-      "id": 8,
+      "id": 7,
       "firstName": "Andrea",
       "surname": "Gonzalez",
       "age": 42,
@@ -101,24 +80,24 @@
       "phone": 1122334455
     },
     {
-      "id": 9,
-      "firstName": "Carlos",
-      "surname": "Valdez",
-      "age": "56",
-      "email": "carlosv@eduweb.com",
-      "dni": 12345678,
-      "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
+      "id": 8,
+      "firstName": "Joaquin",
+      "surname": "Guzman",
+      "age": "23",
+      "email": "joaquing@eduweb.com",
+      "dni": "42247946",
+      "dateOfBirth": "1999-12-03",
+      "phone": "1134875498"
     },
     {
-      "id": 10,
-      "firstName": "Carlos",
-      "surname": "Gutierrez",
-      "age": 42,
-      "email": "carlosg@eduweb.com",
-      "dni": 12345678,
-      "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
+      "id": 9,
+      "firstName": "Roberto",
+      "surname": "Gomez",
+      "age": "54",
+      "email": "robertog@eduweb.com",
+      "dni": "239847837",
+      "dateOfBirth": "1987-03-31",
+      "phone": "1193284098"
     }
   ],
   "profile": {

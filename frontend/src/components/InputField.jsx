@@ -1,7 +1,4 @@
 const InputField = ({ label, name, type, placeholder, disabled, error, value, onChange }) => {
-    // const handleChange = (e) => {
-    //     onChange(e.target.value);
-    // }
     return (
         <div className="flex flex-col mb-4">
             <label htmlFor={name} className="font-medium text-black mb-1">{label}</label>

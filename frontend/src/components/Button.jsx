@@ -1,4 +1,4 @@
-const Button = ({ size, variant, text, type, onClick, visible, name, value }) => {
+const Button = ({ size, variant, text, type, onClick, visible }) => {
     let bgColour, borderColour, textColour = '';
     let disabled = false;
 
@@ -36,9 +36,7 @@ const Button = ({ size, variant, text, type, onClick, visible, name, value }) =>
             type={type}
             disabled={disabled}
             onClick={onClick}
-            className={`${size === 'full' ? 'w-full' : '' } ${borderColour} ${bgColour} ${textColour} ${visible ? 'block' : 'hidden'} py-2.5 px-5 rounded-md font-medium text-sm`}
-            name={name}
-            value={value} >
+            className={`${size === 'full' ? 'w-full' : '' } ${borderColour} ${bgColour} ${textColour} ${visible ? 'block' : 'hidden'} py-2.5 px-5 rounded-md font-medium text-sm`} >
             { text }
         </button>
     )
