@@ -21,16 +21,15 @@ export class AuthController extends AuthServices {
       const isCorrectPass = await checkPassword(password, userPassword);
 
       if (!isCorrectPass) return res.status(400).json(AuthResponses.errors.badPassword);
-      const token = generateToken(email);
 
       // sprite, excluding id from response
       const { id, ...user } = userFound;
+      const token = generateToken(user);
 
       return res.status(200).json({
         status: true,
         result: {
           token,
-          user,
         },
       });
     } catch (error) {
