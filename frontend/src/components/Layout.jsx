@@ -11,7 +11,7 @@ const menuItems = [
     { label: 'Inicio', url: '/', icon: <HomeIcon /> },
     { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
     { label: 'Alumnos', url: '/agregaralumno', icon: <StarIcon /> },
-    { label: 'Carreras', url: '/cursos', icon: <CalendarIcon /> },
+    { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
     { label: 'Perfil', url: '/perfil', icon: <MessageIcon /> },
 ];
 

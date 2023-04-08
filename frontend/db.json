@@ -100,7 +100,26 @@
       "phone": "1149348347"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "grads": [
+    {
+      "id": 1,
+      "name": "Ingenieria informatica",
+      "slug": "ingenieria-informatica"
+    },
+    {
+      "id": 2,
+      "name": "Ingenieria mecanica",
+      "slug": "ingenieria-mecanica"
+    },
+    {
+      "id": 3,
+      "name": "Ingenieria civil",
+        "slug": "ingenieria-civil"
+    },
+    {
+      "id": 4,
+      "name": "Medicina",
+      "slug": "medicina"
+    }
+  ]
 }
