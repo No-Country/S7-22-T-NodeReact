@@ -20,24 +20,14 @@
       "phone": 1122334455
     },
     {
-      "id": 3,
-      "firstName": "Francisco",
-      "surname": "Gomez",
-      "age": 42,
-      "email": "juang@eduweb.com",
-      "dni": "45849365",
-      "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
-    },
-    {
       "id": 4,
       "firstName": "Matias",
-      "surname": "Gutierrez",
+      "surname": "Pedroche",
       "age": 45,
       "email": "matiasg@eduweb.com",
-      "dni": 12345678,
+      "dni": "28798465",
       "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
+      "phone": "1122334458"
     },
     {
       "id": 5,
@@ -98,6 +88,16 @@
       "dni": "32947298",
       "dateOfBirth": "1999-12-03",
       "phone": "1149348347"
+    },
+    {
+      "id": 11,
+      "firstName": "Raul",
+      "surname": "Hernandez",
+      "age": "45",
+      "email": "raulh@eduweb.com",
+      "dni": "35126584",
+      "dateOfBirth": "1978-12-03",
+      "phone": "1154875632"
     }
   ],
   "grads": [
@@ -114,7 +114,7 @@
     {
       "id": 3,
       "name": "Ingenieria civil",
-        "slug": "ingenieria-civil"
+      "slug": "ingenieria-civil"
     },
     {
       "id": 4,

@@ -53,7 +53,7 @@ const Layout = ({ children, name }) => {
                     </Menu>
 
                 </div>
-                <main className='px-5'>
+                <main className='px-5 pb-5 md:pb-0'>
                     { children }
                 </main>
             </div>
