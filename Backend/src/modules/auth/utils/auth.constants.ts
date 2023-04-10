@@ -2,6 +2,7 @@ const responseMessage = (status: boolean, msg: string) => {
   return { status, msg };
 };
 
+//! Cambiar nombre por camelCase
 export const AuthResponses = {
   errors: {
     noToken: responseMessage(false, "User not authenticated"),
