@@ -11,20 +11,10 @@
   "professors": [
     {
       "id": 5,
-      "firstName": "Monica",
+      "firstName": "Laura",
       "surname": "Gomez",
       "age": 42,
       "email": "monicag@eduweb.com",
-      "dni": 12345678,
-      "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
-    },
-    {
-      "id": 6,
-      "firstName": "Mariana",
-      "surname": "Martinez",
-      "age": 45,
-      "email": "marianam@eduweb.com",
       "dni": 12345678,
       "dateOfBirth": "1975-12-03",
       "phone": 1122334455
@@ -88,6 +78,16 @@
       "dni": "42247964",
       "dateOfBirth": "1999-12-03",
       "phone": "16515654"
+    },
+    {
+      "id": 13,
+      "firstName": "Marcos",
+      "surname": "Britos",
+      "age": "54",
+      "email": "mail@mail.com",
+      "dni": "15456598",
+      "dateOfBirth": "1987-12-02",
+      "phone": "54659878"
     }
   ],
   "grads": [
