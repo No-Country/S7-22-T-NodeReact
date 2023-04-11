@@ -10,7 +10,7 @@ import LogoIcon from "../../public/eduweb.png";
 const menuItems = [
     { label: 'Inicio', url: '/', icon: <HomeIcon /> },
     { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
-    { label: 'Alumnos', url: '/agregaralumno', icon: <StarIcon /> },
+    { label: 'Estudiantes', url: '/estudiantes', icon: <StarIcon /> },
     { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
     { label: 'Perfil', url: '/perfil', icon: <MessageIcon /> },
 ];
@@ -53,7 +53,7 @@ const Layout = ({ children, name }) => {
                     </Menu>
 
                 </div>
-                <main className='px-5 pb-5 md:pb-0'>
+                <main className='px-5'>
                     { children }
                 </main>
             </div>
