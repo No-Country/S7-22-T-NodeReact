@@ -4,7 +4,7 @@ import { subjectoptions as options } from './subjects-options'
 function Subjects() {
   return (
     <div className='bg-[#022647]'>
-    <div class="grid grid-cols-3 gap-4 p-24">
+    <div className="grid grid-cols-3 gap-4 p-24">
   {options.map((option) => (
     <div key={option.id} className="flex flex-col items-center justify-center bg-white rounded-md">
       <div className="w-16 h-16 mr-6 align-middle mt-10">{option.icon}</div>
