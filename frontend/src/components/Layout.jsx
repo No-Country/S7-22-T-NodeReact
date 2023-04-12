@@ -12,7 +12,6 @@ const menuItems = [
     { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
     { label: 'Estudiantes', url: '/estudiantes', icon: <StarIcon /> },
     { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
-    { label: 'Perfil', url: '/perfil', icon: <MessageIcon /> },
 ];
 
 const Layout = ({ children, name }) => {
@@ -53,7 +52,7 @@ const Layout = ({ children, name }) => {
                     </Menu>
 
                 </div>
-                <main className='px-5'>
+                <main className='px-5 pb-5'>
                     { children }
                 </main>
             </div>

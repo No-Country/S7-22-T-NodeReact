@@ -30,51 +30,11 @@
   ],
   "professors": [
     {
-      "id": 2,
-      "firstName": "Guillermo",
-      "surname": "Rodriguez",
-      "age": 45,
-      "email": "nicolasr@eduweb.com",
-      "dni": "36509865",
-      "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
-    },
-    {
-      "id": 3,
-      "firstName": "Francisco",
-      "surname": "Gomez",
-      "age": 42,
-      "email": "juang@eduweb.com",
-      "dni": "45849365",
-      "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
-    },
-    {
-      "id": 4,
-      "firstName": "Matias",
-      "surname": "Gutierrez",
-      "age": 45,
-      "email": "matiasg@eduweb.com",
-      "dni": 12345678,
-      "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
-    },
-    {
       "id": 5,
-      "firstName": "Monica",
+      "firstName": "Laura",
       "surname": "Gomez",
       "age": 42,
       "email": "monicag@eduweb.com",
-      "dni": 12345678,
-      "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
-    },
-    {
-      "id": 6,
-      "firstName": "Mariana",
-      "surname": "Martinez",
-      "age": 45,
-      "email": "marianam@eduweb.com",
       "dni": 12345678,
       "dateOfBirth": "1975-12-03",
       "phone": 1122334455
@@ -118,9 +78,84 @@
       "dni": "32947298",
       "dateOfBirth": "1999-12-03",
       "phone": "1149348347"
+    },
+    {
+      "id": 11,
+      "firstName": "Raul",
+      "surname": "Hernandez",
+      "age": "45",
+      "email": "raulh@eduweb.com",
+      "dni": "35126584",
+      "dateOfBirth": "1978-12-03",
+      "phone": "1154875632"
+    },
+    {
+      "id": 12,
+      "firstName": "Joaquin",
+      "surname": "Guzman",
+      "age": "38",
+      "email": "mail@mail.com",
+      "dni": "42247964",
+      "dateOfBirth": "1999-12-03",
+      "phone": "16515654"
+    },
+    {
+      "id": 13,
+      "firstName": "Marcos",
+      "surname": "Britos",
+      "age": "54",
+      "email": "mail@mail.com",
+      "dni": "15456598",
+      "dateOfBirth": "1987-12-02",
+      "phone": "54659878"
     }
   ],
-  "profile": {
-    "name": "typicode"
-  }
+  "subjects": [
+    {
+      "id": 1,
+      "name": "Matematica",
+      "gradId": 1
+    },
+    {
+      "id": 2,
+      "name": "Fisica",
+      "gradId": 1
+    },
+    {
+      "id": 3,
+      "name": "Quimica",
+      "gradId": 2
+    },
+    {
+      "id": 4,
+      "name": "Biologia",
+      "gradId": 3
+    }
+  ],
+  "grads": [
+    {
+      "id": 1,
+      "name": "Ingenieria informatica",
+      "slug": "ingenieria-informatica",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
+    },
+    {
+      "id": 2,
+      "name": "Ingenieria mecanica",
+      "slug": "ingenieria-mecanica",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
+    },
+    {
+      "id": 3,
+      "name": "Ingenieria civil",
+      "slug": "ingenieria-civil",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
+    },
+    {
+      "id": 4,
+      "name": "Medicina",
+      "slug": "medicina",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
+    }
+  ]
 }

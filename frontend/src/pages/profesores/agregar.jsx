@@ -72,8 +72,8 @@ const Agregar = () => {
                 <Button text={'Guardar'} variant={'success'} visible={true} type={'button'} onClick={handleSubmit} />
             </div>
 
-            <div className='w-4/5'>
-                <form className='flex gap-5'>
+            <div className='md:w-4/5'>
+                <form className='flex flex-col md:flex-row md:gap-5 mt-5 md:mt-0'>
                     <div className='w-full'>
                         <InputField label={'Nombre'} type={'text'} name={'firstName'} onChange={handleChange} error={errors.firstName ? errors.firstName : null} />
                         <InputField label={'Apellido'} type={'text'} name={'surname'} onChange={handleChange} error={errors.surname} />
