@@ -9,7 +9,7 @@ const Carreras = ({ grads }) => {
             <div className='flex justify-between items-center py-4 border-b border-secondary'>
                 <p className='text-h4'>Filtrar</p>
                 <Link href={'/carreras/agregar'}>
-                    <Button text={'Agregar carrera'} variant={'interactive'} visible={true} />
+                    <Button text={'Agregar carrera'} variant={'disabled'} visible={true} />
                 </Link>
             </div>
 
