@@ -110,26 +110,52 @@
       "phone": "54659878"
     }
   ],
+  "subjects": [
+    {
+      "id": 1,
+      "name": "Matematica",
+      "gradId": 1
+    },
+    {
+      "id": 2,
+      "name": "Fisica",
+      "gradId": 1
+    },
+    {
+      "id": 3,
+      "name": "Quimica",
+      "gradId": 2
+    },
+    {
+      "id": 4,
+      "name": "Biologia",
+      "gradId": 3
+    }
+  ],
   "grads": [
     {
       "id": 1,
       "name": "Ingenieria informatica",
-      "slug": "ingenieria-informatica"
+      "slug": "ingenieria-informatica",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
     },
     {
       "id": 2,
       "name": "Ingenieria mecanica",
-      "slug": "ingenieria-mecanica"
+      "slug": "ingenieria-mecanica",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
     },
     {
       "id": 3,
       "name": "Ingenieria civil",
-      "slug": "ingenieria-civil"
+      "slug": "ingenieria-civil",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
     },
     {
       "id": 4,
       "name": "Medicina",
-      "slug": "medicina"
+      "slug": "medicina",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
     }
   ]
 }
