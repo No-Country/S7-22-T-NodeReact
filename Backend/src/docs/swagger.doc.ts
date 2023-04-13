@@ -36,6 +36,39 @@ const swaggerDefinition = {
           },
         },
       },
+      subject: {
+        type: "object",
+        properties: {
+          careerId: {
+            type: "number"
+          },
+          className: {
+            type: "string"
+          }
+        }
+      },
+      commission: {
+        type: "object",
+        properties: {
+          commissionId: {
+            type: "number"
+          },
+          studentId: {
+            type: "string"
+          },
+          teacherId: {
+            type: "string"
+          },
+        }
+      },
+      roles: {
+        type: "object",
+        properties: {
+          roleName: {
+            type: "string"
+          }
+        }
+      },
     },
   },
 };

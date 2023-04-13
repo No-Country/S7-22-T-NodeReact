@@ -1,0 +1,23 @@
+paths:
+  /api/roles/delete/{id}:
+    delete:
+      tags:
+        - Delete role
+      summary: 'Delete role'
+      description: remove role from database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the role to delete.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: remove role from database.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/role'
+        '422':
+          description: could not delete role.
