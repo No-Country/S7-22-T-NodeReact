@@ -42,6 +42,20 @@ export class UserController extends UserServices {
     }
   }
 
+  async getByUserId(req: Request, res: Response) {
+    const { userIdReq } = req.params;
+    try {
+      const user = await this.getServicesByUserId(userIdReq);
+
+      res.status(200).json({
+        status: true,
+        result: user,
+      });
+    } catch (error) {
+      res.status(500).json({ msg: error });
+    }
+  }
+
   /**
    * @description This "First User Registration" endpoint is intended to auto generate the email based on the user's name and password using their DNI, so the user must change their password on the first login. This is because that only admins can register users to the system.
    * @example
