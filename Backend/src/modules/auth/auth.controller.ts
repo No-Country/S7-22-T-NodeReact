@@ -18,7 +18,7 @@ export class AuthController extends AuthServices {
       const { email }: AuthEntity = req.body;
       const userFound = await this.repository.findOne({ where: { email } });
 
-      const { id, ...user } = userFound as UserEntity;
+      const { id, password, ...user } = userFound as UserEntity;
 
       const token = generateToken(user);
 

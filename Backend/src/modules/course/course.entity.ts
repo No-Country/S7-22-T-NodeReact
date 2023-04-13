@@ -1,23 +1,28 @@
-import { Column, Entity, OneToMany } from "typeorm";
+import { Column, Entity, ManyToOne, JoinColumn } from "typeorm";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
-import { CommissionsEntity } from "../commissions/commissions.entity";
 import { Course } from "./interfaces/course.interface";
+import { SubjectsEntity } from "../subjects/subjects.entity";
+import { UserEntity } from "../user/user.entity";
+import { PeriodEntity } from "../period/period.entity";
 
 @Entity()
 export class CourseEntity extends BaseEntityApp implements Course {
-  @Column()
+  @Column({ unique: true })
+  commissionId: number;
+
+  @ManyToOne(() => SubjectsEntity)
+  @JoinColumn({ name: "subjectId", referencedColumnName: "id" })
   subjectId: number;
 
-  @Column()
-  teacherId: number;
+  @ManyToOne(() => UserEntity)
+  @JoinColumn({ name: "teacherId", referencedColumnName: "userId" })
+  teacherId: string;
 
-  @Column()
+  @ManyToOne(() => PeriodEntity)
+  @JoinColumn({ name: "periodId", referencedColumnName: "id" })
   periodId: number;
 
   @Column()
   coupon: number;
-
-  @OneToMany(() => CommissionsEntity, commission => commission.course)
-  commissions: CommissionsEntity[];
 }

@@ -4,6 +4,6 @@ import { Classes } from "./interfaces/classes.interfaces";
 
 @Entity()
 export class ClassesEntity extends BaseEntityApp implements Classes {
-  @Column()
+  @Column({ unique: true, length: 50 })
   className: string;
 }

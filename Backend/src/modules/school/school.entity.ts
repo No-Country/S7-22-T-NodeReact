@@ -6,13 +6,9 @@ import { SchoolCareersEntity } from "../schoolCareers/schoolCareers.entity";
 
 @Entity()
 export class SchoolEntity extends BaseEntityApp implements School {
-
-  @Column()
+  @Column({ unique: true, length: 100 })
   schoolName: string;
 
-  @Column()
+  @Column({ unique: true, length: 15 })
   emailDomain: string;
-
-  @OneToMany(() => SchoolCareersEntity, careers => careers.schoolId)
-  careers: SchoolCareersEntity[];
 }
