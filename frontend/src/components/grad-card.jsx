@@ -1,4 +1,4 @@
-import { HomeIcon } from "@/assets/icons";
+import { HomeIcon } from "@/assets/icons-sidebar";
 import { useRouter } from "next/router";
 
 const GradCard = ({ name, path }) => {

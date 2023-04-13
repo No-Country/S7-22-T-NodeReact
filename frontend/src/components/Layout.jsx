@@ -3,7 +3,7 @@ import { useState } from "react";
 import Menu from "@/components/Menu";
 import MenuItem from "@/components/MenuItem";
 import SidebarItem from "@/components/SidebarItem";
-import { HomeIcon, SubjectsIcon, StarIcon, CalendarIcon, MessageIcon } from "@/assets/icons";
+import { HomeIcon, SubjectsIcon, StarIcon, CalendarIcon, MessageIcon } from "@/assets/icons-sidebar";
 import Image from "next/image";
 import LogoIcon from "../../public/eduweb.png";
 
