@@ -1,0 +1,17 @@
+paths:
+  /api/subjects/post:
+    post:
+      tags:
+        - Add subject
+      summary: 'Add new subject'
+      description: Add new subject in database.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/subject'
+      responses:
+        '200':
+          description: New subject add.
+        '422':
+          description: This subject is already registered.

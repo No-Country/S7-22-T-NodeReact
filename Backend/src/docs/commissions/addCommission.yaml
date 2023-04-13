@@ -1,0 +1,17 @@
+paths:
+  /api/commissions/post:
+    post:
+      tags:
+        - Add commission
+      summary: 'Add new commission'
+      description: Add new commission in database.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/commission'
+      responses:
+        '200':
+          description: New commission add.
+        '422':
+          description: This commission is already registered.
