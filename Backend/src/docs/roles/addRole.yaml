@@ -1,0 +1,17 @@
+paths:
+  /api/roles/post:
+    post:
+      tags:
+        - Add role
+      summary: 'Add new role'
+      description: Add new role in database.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/role'
+      responses:
+        '200':
+          description: New role add.
+        '422':
+          description: This role is already registered.

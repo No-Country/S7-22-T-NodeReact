@@ -1,0 +1,23 @@
+paths:
+  /api/subjects/delete/{id}:
+    delete:
+      tags:
+        - Delete subject
+      summary: 'Delete subject'
+      description: remove subject from database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the subject to delete.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: remove subject from database.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/subject'
+        '422':
+          description: could not delete subject.

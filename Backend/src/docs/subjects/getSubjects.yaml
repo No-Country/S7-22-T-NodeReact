@@ -1,0 +1,16 @@
+paths:
+  /api/subjects:
+    get:
+      tags:
+        - Get subjects
+      summary: 'Get subjects'
+      description: Get subjects the database.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/subject'
+      responses:
+        '200':
+          description: Get subjects the database.
+        '422':
+          description: Could not fetch data from database.
