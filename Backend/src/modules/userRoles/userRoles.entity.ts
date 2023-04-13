@@ -7,12 +7,11 @@ import { UserRoles } from "./interfaces/userRoles.interface";
 
 @Entity()
 export class UserRolesEntity extends BaseEntityApp implements UserRoles {
-  
-  @ManyToOne(() => UserEntity, user => user.userId)
-  @JoinColumn({name: "userId",referencedColumnName: "userId"})
-  userId: UserEntity;
+  @ManyToOne(() => UserEntity)
+  @JoinColumn({ name: "userId", referencedColumnName: "userId" })
+  userId: string;
 
   @ManyToOne(() => RolesEntity)
   @JoinColumn({ name: "roleID", referencedColumnName: "id" })
-  roleID: RolesEntity[];
+  roleId: number;
 }

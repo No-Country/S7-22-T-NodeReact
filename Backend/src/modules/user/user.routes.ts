@@ -11,10 +11,15 @@ export class UserRoutes extends BaseRouter<UserController, UserMiddlewares> {
     // GET - ENPOINTS
     this.router.get(`/${path}`, (req, res) => this.controller.getAll(req, res));
     this.router.get(
+      `/${path}/:userIdReq`,
+      (req, res, nex) => this.middleware.checkToken(req, res, nex),
+      (req, res) => this.controller.getByUserId(req, res)
+    );
+    /*this.router.get(
       `/${path}/:id`,
       (req, res, nex) => this.middleware.checkId(req, res, nex),
       (req, res) => this.controller.getById(req, res)
-    );
+    );//*/
 
     // POST - ENPOINTS
     this.router.post(`/${path}/adminpost`, (req, res) => this.controller.post(req, res));

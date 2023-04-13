@@ -42,10 +42,14 @@ export class UserRolesController extends UserRolesServices {
     const body = req.body;
     try {
       const newUserRole = await this.postService(body);
+      if (newUserRole === null) throw new Error("No se pudo guardar");
+      const user = await this.getInfo(body.userId);
+      if (user === null) throw new Error("No se pudo guardar");
+      console.log(user);
       //const userRole = newUserRole !== null ? await this.getServicesById(newUserRole) : null;
       res.status(200).json({
         status: true,
-        result: newUserRole,
+        result: user,
       });
     } catch (error) {
       if (error instanceof Error) {
