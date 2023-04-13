@@ -7,5 +7,5 @@ export class BaseEntityApp extends BaseEntity {
   @CreateDateColumn()
   createdAt?: Date;
   @UpdateDateColumn()
-  updatedAd?: Date;
+  updatedAt?: Date;
 }
