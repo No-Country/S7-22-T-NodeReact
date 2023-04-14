@@ -6,14 +6,15 @@ import { useRouter } from "next/router";
 
 const Agregar = () => {
   const [newStudent, setNewStudent] = useState({
-    id: "",
-    firstName: "",
-    surname: "",
-    age: "",
-    email: "",
-    dni: "",
-    dateOfBirth: "",
-    cellphone: "",
+    id: '',
+    firstName: '',
+    surname: '',
+    email: '',
+    address: '',
+    degree: '',
+    dni: '',
+    dateOfBirth: '',
+    phone: '',
   });
 
   const [errors, setErrors] = useState({});
@@ -25,11 +26,12 @@ const Agregar = () => {
 
     if (!newStudent.firstName) errors.firstName = "El nombre es obligatorio";
     if (!newStudent.surname) errors.surname = "El apellido es obligatorio";
-    if (!newStudent.age) errors.age = "La edad es obligatoria";
     if (!newStudent.email) errors.email = "El email es obligatorio";
+    if (!newStudent.address) errors.address = "La dirección es obligatoria";
+    if (!newStudent.degree) errors.degree = "La carrera es obligatoria";
     if (!newStudent.dni) errors.dni = "El DNI es obligatorio";
     if (!newStudent.dateOfBirth) errors.dateOfBirth = 'La fecha de nacimiento es obligatoria';
-    if (!newStudent.cellphone) errors.cellphone = "El teléfono es obligatorio";
+    if (!newStudent.phone) errors.phone = "El teléfono es obligatorio";
 
     return errors;
   };
@@ -76,19 +78,19 @@ const Agregar = () => {
           <Button text={"Guardar"} variant={"success"} visible={true} type={"button"} onClick={handleSubmit}/>
         </div>
 
-        <div className="w-4/5">
-          <form className="flex gap-5">
+        <div className="md:w-4/5">
+          <form className="flex flex-col md:flex-row md:gap-5 mt-5 md:mt-0">
             <div className="w-full">
               <InputField label={"Nombre"} type={"text"} name={"firstName"} onChange={handleChange} error={errors.firstName ? errors.firstName : null}/>
               <InputField label={"Apellido"} type={"text"} name={"surname"} onChange={handleChange} error={errors.surname}/>
               <InputField label={"DNI"} type={"number"} name={"dni"} onChange={handleChange} error={errors.dni}/>
-              <InputField label={"Fecha de dateOfBirth"} type={"date"} name={"Fecha de nacimiento"} onChange={handleChange}/>
+              <InputField label={"Fecha de nacimiento"} type={"date"} name={"dateOfBirth"} onChange={handleChange} error={errors.dateOfBirth}/>
               <InputField label={"Email"} type={"email"} name={"email"} onChange={handleChange} error={errors.email}/>
             </div>
             <div className="w-full">
-              <InputField label={"Edad"} type={"number"} name={"age"} onChange={handleChange} error={errors.age}/>
-              <InputField label={"Teléfono"} type={"number"} name={"cellphone"} onChange={handleChange} error={errors.cellphone}/>
-              <InputField label={"Carrera"} type={"text"} name={"carrera_curso"} onChange={handleChange} error={errors.carrera_curso}/>
+              <InputField label={"Teléfono"} type={"number"} name={"phone"} onChange={handleChange} error={errors.phone}/>
+              <InputField label={"Carrera"} type={"text"} name={"degree"} onChange={handleChange} error={errors.degree}/>
+              <InputField label={"Dirección"} type={"text"} name={"address"} onChange={handleChange} error={errors.address}/>
             </div>
           </form>
         </div>

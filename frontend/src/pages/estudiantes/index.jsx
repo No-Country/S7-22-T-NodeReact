@@ -161,7 +161,7 @@ function Alumnos({ students }) {
                 </div>
 
                 <div className="w-full">
-                  <InputField label={"Teléfono"} type={"number"} name={"cellphone"} disabled={!editStatus} value={selectedStudent.phone} onChange={handleChange}/>
+                  <InputField label={"Teléfono"} type={"number"} name={"phone"} disabled={!editStatus} value={selectedStudent.phone} onChange={handleChange}/>
                   <InputField label={"Carrera"} type={"text"} name={"degree"} disabled={!editStatus} value={selectedStudent.degree} onChange={handleChange}/>
                   <div className={`md:absolute md:bottom-0 md:right-5 mt-6 md:mt-0 flex gap-2 ${editStatus ? 'block' : 'hidden'}`}>
                     <Button text={"Guardar"} variant={"success"} size={"full"} type={"button"} visible={saveButton} onClick={() => handleUpdate(selectedStudent.id)}/>
