@@ -2,8 +2,8 @@ paths:
   /api/commissions/{id}:
     get:
       tags:
-        - Get commission by id
-      summary: 'Get commission by id'
+        - Commissions
+      summary: "Get commission by id"
       description: Get commission by id from database.
       parameters:
         - name: id
@@ -13,11 +13,11 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: Get commission by id from database.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/commission'
-        '422':
+                $ref: "#/components/schemas/commissions"
+        "422":
           description: Could not fetch commission by id.

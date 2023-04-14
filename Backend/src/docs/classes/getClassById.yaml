@@ -2,8 +2,8 @@ paths:
   /api/classes/{id}:
     get:
       tags:
-        - Get class by id
-      summary: 'Get class by id'
+        - Classes
+      summary: "Get class by id"
       description: Get class by id from database.
       parameters:
         - name: id
@@ -13,11 +13,11 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: Get class by id from database.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/classes'
-        '422':
+                $ref: "#/components/schemas/classes"
+        "422":
           description: Could not fetch class by id.

@@ -2,8 +2,8 @@ paths:
   /api/classes/delete/{id}:
     delete:
       tags:
-        - Delete class
-      summary: 'Delete class'
+        - Classes
+      summary: "Delete class"
       description: remove class from database.
       parameters:
         - name: id
@@ -13,11 +13,11 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: remove class from database.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/classes'
-        '422':
+                $ref: "#/components/schemas/classes"
+        "422":
           description: could not delete classes.

@@ -1,9 +1,6 @@
 import swaggerJSDoc from "swagger-jsdoc";
-import { school } from "./school";
-import { userRoles } from "./userRoles";
-import { user } from "./user";
-import { subjects } from "./subjects";
-import { roles } from "./roles";
+
+import { careers, classes, commissions, roles, school, subjects, user, userRoles } from ".";
 
 const swaggerDefinition = {
   openapi: "3.0.0",
@@ -23,37 +20,10 @@ const swaggerDefinition = {
     schemas: {
       user,
       subjects,
-      commission: {
-        type: "object",
-        properties: {
-          commissionId: {
-            type: "number",
-          },
-          studentId: {
-            type: "string",
-          },
-          teacherId: {
-            type: "string",
-          },
-        },
-      },
+      commissions,
       roles,
-      careers: {
-        type: "object",
-        properties: {
-          careerName: {
-            type: "string",
-          },
-        },
-      },
-      classes: {
-        type: "object",
-        properties: {
-          className: {
-            type: "string",
-          },
-        },
-      },
+      careers,
+      classes,
       school,
       userRoles,
     },

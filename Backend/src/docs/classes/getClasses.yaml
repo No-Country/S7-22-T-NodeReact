@@ -2,15 +2,15 @@ paths:
   /api/classes:
     get:
       tags:
-        - Get classes
-      summary: 'Get classes'
+        - Classes
+      summary: "Get classes"
       description: Get classes the database.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/classes'
+            $ref: "#/components/schemas/classes"
       responses:
-        '200':
+        "200":
           description: Get classes the database.
-        '422':
+        "422":
           description: Could not fetch data from database.

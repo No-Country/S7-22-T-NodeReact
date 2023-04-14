@@ -8,8 +8,17 @@ tags:
   - name: User Roles
     description: CRUD of UserRoles data
 
+  - name: School
+    description: CRUD of school data
+
+  - name: Careers
+    description: CRUD of Careers data
+
+  - name: Classes
+    description: CRUD of Classes data
+
   - name: Subjects
     description: CRUD of Subjects data
 
-  - name: School
-    description: CRUD of school data
+  - name: Commissions
+    description: CRUD of Commissions data

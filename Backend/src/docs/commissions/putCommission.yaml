@@ -2,8 +2,8 @@ paths:
   /api/commissions/put/{id}:
     put:
       tags:
-        - Put commission
-      summary: 'update commission data'
+        - Commissions
+      summary: "update commission data"
       description: update the commission data in the database.
       parameters:
         - name: id
@@ -16,9 +16,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/commission'
+              $ref: "#/components/schemas/commissions"
       responses:
-        '200':
+        "200":
           description: update commission data.
-        '422':
+        "422":
           description: Failed to update commission.

@@ -12,6 +12,6 @@ export class UserRolesEntity extends BaseEntityApp implements UserRoles {
   userId: string;
 
   @ManyToOne(() => RolesEntity)
-  @JoinColumn({ name: "roleID", referencedColumnName: "id" })
+  @JoinColumn({ name: "roleId", referencedColumnName: "id" })
   roleId: number;
 }
