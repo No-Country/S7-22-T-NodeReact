@@ -1,7 +1,9 @@
-import { Column, Entity } from "typeorm";
+import { Column, Entity, OneToOne } from "typeorm";
 import { User, userStates } from "./interfaces/user.interface";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
+import { RolesEntity } from "../roles/roles.entity";
+import { UserRolesEntity } from "../userRoles/userRoles.entity";
 
 @Entity()
 export class UserEntity extends BaseEntityApp implements User {
@@ -34,4 +36,7 @@ export class UserEntity extends BaseEntityApp implements User {
 
   @Column()
   state: userStates;
+
+  @OneToOne(() => RolesEntity, roles => roles.user)
+  role: RolesEntity;
 }

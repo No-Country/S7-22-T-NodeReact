@@ -33,4 +33,8 @@ export abstract class BaseServices<T extends BaseEntity> {
     await this.repository.remove(entityToDelete);
     return entityToDelete;
   }
+
+  async getRepository(entity: EntityTarget<T>) {
+    return AppDataSource.getRepository(entity);
+  }
 }

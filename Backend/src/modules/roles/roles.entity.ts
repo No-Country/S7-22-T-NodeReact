@@ -1,4 +1,6 @@
-import { BaseEntity, Column, Entity, PrimaryGeneratedColumn } from "typeorm";
+import { BaseEntity, Column, Entity, JoinColumn, OneToOne, PrimaryGeneratedColumn } from "typeorm";
+
+import { UserEntity } from "../user/user.entity";
 
 export interface Role {
   roleName: string;
@@ -10,5 +12,9 @@ export class RolesEntity extends BaseEntity implements Role {
   id: number;
   @Column()
   roleName: string;
+
+  @OneToOne(() => UserEntity, user => user.role)
+  @JoinColumn({name: "userId"})
+  user: UserEntity;
 
 }

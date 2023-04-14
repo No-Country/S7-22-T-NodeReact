@@ -1,8 +1,8 @@
 import { Request, Response } from "express";
 
-import crypto from "crypto";
 import { UserEntity } from "./user.entity";
 import { UserServices } from "./user.services";
+import crypto from "crypto";
 import { hashPassword } from "./utils/passwordEncrypt.utils";
 import { mailGenerator } from "./utils/mailGenerator.utils";
 
@@ -78,9 +78,15 @@ export class UserController extends UserServices {
 
       const user = await this.postService(body);
 
+      if (!user) throw new Error("Carlos puto");
+      const role = await this.getUserRelationWithRoleById(parseInt(req.body.role));
+      console.log(role);
+
+
       res.status(200).json({
         status: true,
         result: user,
+        role
       });
     } catch (error) {
       if (error instanceof Error) {

@@ -13,7 +13,7 @@ export class RolesRouter extends BaseRouter<RolesController, RolesMiddlewares> {
 
     this.router.post(
       `/${path}/post`,
-      (req, res, next) => this.middleware.checkToken(req, res, next),
+      // (req, res, next) => this.middleware.checkToken(req, res, next),
       (req, res) => this.controller.post(req, res)
     );
 
