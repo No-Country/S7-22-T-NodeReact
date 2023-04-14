@@ -69,6 +69,22 @@ const swaggerDefinition = {
           }
         }
       },
+      careers: {
+        type: "object",
+        properties: {
+          careerName: { 
+            type: "string" 
+          }
+        }
+      },
+      classes:{
+        type: "object",
+        properties: {
+          className: {
+            type: "string"
+          }
+        }
+      }
     },
   },
 };
