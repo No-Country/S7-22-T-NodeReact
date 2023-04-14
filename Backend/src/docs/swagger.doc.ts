@@ -1,4 +1,5 @@
 import swaggerJSDoc from "swagger-jsdoc";
+import { school } from "./school";
 
 const swaggerDefinition = {
   openapi: "3.0.0",
@@ -84,7 +85,8 @@ const swaggerDefinition = {
             type: "string"
           }
         }
-      }
+      },
+      school
     },
   },
 };

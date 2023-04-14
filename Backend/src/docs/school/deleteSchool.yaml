@@ -1,0 +1,23 @@
+paths:
+  /api/school/delete/{id}:
+    delete:
+      tags:
+        - SCHOOL
+      summary: 'Delete school'
+      description: remove a school from database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the school to delete.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: removed school from database.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/school'
+        '422':
+          description: could not delete school.

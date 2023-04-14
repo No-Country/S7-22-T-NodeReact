@@ -1,0 +1,23 @@
+paths:
+  /api/school/{id}:
+    get:
+      tags:
+        - SCHOOL
+      summary: 'Get a school by id'
+      description: Get school by id from database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the school to retrieve.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Found a school by ID from database.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/school'
+        '422':
+          description: Could not fetch school by id.
