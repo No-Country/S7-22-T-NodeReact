@@ -1,7 +1,7 @@
 import Layout from "@/components/Layout";
 import Button from "@/components/Button";
 import InputField from "@/components/InputField";
-import {useEffect, useState} from "react";
+import {useState} from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router';
 
@@ -122,7 +122,6 @@ const Profesores = ({ professors }) => {
                             <InputField label={'Email'} type={'email'} name={'email'} disabled={!editStatus} value={selectedProfessor.email} onChange={handleChange} />
                         </div>
                         <div className='w-full'>
-                            <InputField label={'Edad'} type={'number'} name={'age'} disabled={!editStatus} value={selectedProfessor.age} onChange={handleChange} />
                             <InputField label={'Teléfono'} type={'number'} name={'phone'} disabled={!editStatus} value={selectedProfessor.phone} onChange={handleChange} />
                             <div className={`md:absolute md:bottom-0 md:right-5 mt-6 md:mt-0 flex gap-2 ${editStatus ? 'block' : 'hidden'}`}>
                                 <Button text={'Guardar'} variant={'success'} size={'full'} type={'button'} visible={saveButton} onClick={() => handleUpdate(selectedProfessor.id)} />

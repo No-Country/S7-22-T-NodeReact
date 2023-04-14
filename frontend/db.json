@@ -4,28 +4,34 @@
       "id": 1,
       "firstName": "Carlos",
       "surname": "Perez",
-      "age": 25,
       "email": "juanp@eduweb.com",
-      "cellphone": "juanp@eduweb.com",
-      "carrera_curso": "juanp@eduweb.com",
-      "comision": "juanp@eduweb.com",
-      "dni": "juanp@eduweb.com",
-      "dateOfBirth": "juanp@eduweb.com",
-      "estado": "juanp@eduweb.com"
+      "address": "123 Main St",
+      "degree": "Ingenieria informatica",
+      "dni": "54587965",
+      "dateOfBirth": "1977-12-03",
+      "phone": "1122334455"
+    },
+    {
+      "id": 2,
+      "firstName": "Nahuel",
+      "surname": "Lopez",
+      "email": "nahuell@eduweb.com",
+      "address": "142 Main St",
+      "degree": "Ingenieria electronica",
+      "dni": "54587965",
+      "dateOfBirth": "1977-09-15",
+      "phone": "1122334455"
     },
     {
       "id": 3,
-      "firstName": "Emanuel",
-      "surname": "Manrique",
-      "age": "21",
-      "email": "juana@mail.com",
-      "dni": "222",
-      "dateOfBirth": "",
-      "cellphone": "999",
-      "carrera_curso": "física",
-      "comision": "2",
-      "estado": "Tucumán",
-      "Fecha de nacimiento": "2023-04-20"
+      "firstName": "Pedro",
+      "surname": "Pascal",
+      "email": "pedrop@eduweb.com",
+      "address": "235 Main St",
+      "degree": "Derecho",
+      "dni": "54587965",
+      "dateOfBirth": "1977-09-15",
+      "phone": "1122334455"
     }
   ],
   "professors": [
@@ -33,81 +39,81 @@
       "id": 5,
       "firstName": "Laura",
       "surname": "Gomez",
-      "age": 42,
       "email": "monicag@eduweb.com",
       "dni": 12345678,
       "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
+      "phone": 1122334455,
+      "subjects":"Fisica"
     },
     {
       "id": 7,
       "firstName": "Andrea",
       "surname": "Gonzalez",
-      "age": 42,
       "email": "andreag@eduweb.com",
       "dni": 12345678,
       "dateOfBirth": "1975-12-03",
-      "phone": 1122334455
+      "phone": 1122334455,
+      "subjects":"Fisica"
     },
     {
       "id": 8,
       "firstName": "Joaquin",
       "surname": "Guzman",
-      "age": "23",
       "email": "joaquing@eduweb.com",
       "dni": "42247946",
       "dateOfBirth": "1999-12-03",
-      "phone": "1134875498"
+      "phone": "1134875498",
+      "subjects": "Fisica"
     },
     {
       "id": 9,
       "firstName": "Roberto",
       "surname": "Gomez",
-      "age": "54",
       "email": "robertog@eduweb.com",
       "dni": "239847837",
       "dateOfBirth": "1987-03-31",
-      "phone": "1193284098"
+      "phone": "1193284098",
+      "subjects": "Fisica"
     },
     {
       "id": 10,
       "firstName": "Arturo",
       "surname": "Guzman",
-      "age": "45",
       "email": "arturog@eduweb.com",
       "dni": "32947298",
       "dateOfBirth": "1999-12-03",
-      "phone": "1149348347"
+      "phone": "1149348347",
+      "subjects": "Fisica"
     },
     {
       "id": 11,
       "firstName": "Raul",
       "surname": "Hernandez",
-      "age": "45",
       "email": "raulh@eduweb.com",
       "dni": "35126584",
       "dateOfBirth": "1978-12-03",
-      "phone": "1154875632"
+      "phone": "1154875632",
+      "subjects": "Fisica"
     },
     {
       "id": 12,
       "firstName": "Joaquin",
       "surname": "Guzman",
-      "age": "38",
       "email": "mail@mail.com",
       "dni": "42247964",
       "dateOfBirth": "1999-12-03",
-      "phone": "16515654"
+      "phone": "16515654",
+      "subjects": "Fisica"
     },
     {
       "id": 13,
       "firstName": "Marcos",
       "surname": "Britos",
-      "age": "54",
       "email": "mail@mail.com",
       "dni": "15456598",
       "dateOfBirth": "1987-12-02",
-      "phone": "54659878"
+      "phone": "54659878",
+      "subjects": "Fisica"
     }
   ],
   "subjects": [
