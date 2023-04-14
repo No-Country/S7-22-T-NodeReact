@@ -18,6 +18,10 @@ const Profesores = ({ professors }) => {
     });
     const [editStatus, setEditStatus] = useState(false);
     const [saveButton, setSaveButton] = useState(false);
+    const [assignSubjects, setAssignSubjects] = useState(false);
+    const [subjectsList, setSubjectsList] = useState([
+        { subject: '', com: '' }
+    ]);
 
     const router = useRouter();
 
@@ -85,6 +89,19 @@ const Profesores = ({ professors }) => {
         }
     }
 
+    const handleSubjectAdd = () => {
+        setSubjectsList([...subjectsList, { subject: '', com: '' }]);
+    }
+
+    const handleSubjectChange = (e, index) => {
+        const {name, value} = e.target;
+        const list = [...subjectsList];
+        list[index][name] = value;
+        setSubjectsList(list);
+    }
+
+    console.log(subjectsList);
+
     return (
         <Layout name={'Profesores'}>
             <div className='flex justify-between items-center py-4 border-b border-secondary'>
@@ -113,7 +130,7 @@ const Profesores = ({ professors }) => {
                         <Button text={'Cancelar'} variant={'normal'} type={'button'} visible={editStatus} onClick={() => setEditStatus(false)} />
                     </div>
 
-                    <form className='flex flex-col md:flex-row md:gap-5 relative'>
+                    <form className='flex flex-col md:grid md:grid-cols-2 md:gap-5 relative'>
                         <div className='w-full'>
                             <InputField label={'Nombre'} type={'text'} name={'firstName'} disabled={!editStatus} value={selectedProfessor.firstName} onChange={handleChange} />
                             <InputField label={'Apellido'} type={'text'} name={'surname'} disabled={!editStatus} value={selectedProfessor.surname} onChange={handleChange} />
@@ -123,13 +140,40 @@ const Profesores = ({ professors }) => {
                         </div>
                         <div className='w-full'>
                             <InputField label={'Teléfono'} type={'number'} name={'phone'} disabled={!editStatus} value={selectedProfessor.phone} onChange={handleChange} />
+                            <Button text={'Asignar materias'} variant={'primary'} type={'button'} size={'full'} visible={editStatus} onClick={() => setAssignSubjects(!assignSubjects)} />
                             <div className={`md:absolute md:bottom-0 md:right-5 mt-6 md:mt-0 flex gap-2 ${editStatus ? 'block' : 'hidden'}`}>
                                 <Button text={'Guardar'} variant={'success'} size={'full'} type={'button'} visible={saveButton} onClick={() => handleUpdate(selectedProfessor.id)} />
                                 <Button text={'Eliminar'} variant={'danger'} size={'full'} type={'button'} visible={saveButton} onClick={() => handleDelete(selectedProfessor.id)} />
                             </div>
                         </div>
-                        {/*TODO*/}
-                        {/*Add section with relations of subjects and classes*/}
+                        <div className={`md:col-span-2 md:last:mb-10 ${assignSubjects ? 'block' : 'hidden'}`}>
+                            {subjectsList.map((singleSubject, id) => {
+                                return (
+                                    <div key={id} className='md:flex md:gap-5'>
+                                        <div className='md:w-6/12'>
+                                            <InputField label={'Materia'} type={'text'} name={'subject'} disabled={!editStatus}
+                                                        value={singleSubject.subject} onChange={(e) => handleSubjectChange(e, id)} />
+                                            {subjectsList.length - 1 === id
+                                                && subjectsList.length < 5
+                                                && <Button onClick={handleSubjectAdd} text={'Añadir otra materia'} variant={'primary'} type={'button'} visible={editStatus} />
+                                            }
+                                        </div>
+                                        <div className='md:w-6/12'>
+                                            <InputField label={'Comision'} type={'number'} name={'com'} disabled={!editStatus}
+                                                        value={singleSubject.com} onChange={(e) => handleSubjectChange(e, id)} />
+                                        </div>
+                                    </div>
+                                )
+                            })}
+                            {/*<div className='md:flex md:gap-5'>*/}
+                            {/*    <div className='md:w-6/12'>*/}
+                            {/*        <InputField label={'Materia'} type={'text'} name={'subject'} disabled={!editStatus} value={''} onChange={handleChange} />*/}
+                            {/*    </div>*/}
+                            {/*    <div className='md:w-6/12'>*/}
+                            {/*        <InputField label={'Comision'} type={'number'} name={'comission'} disabled={!editStatus} value={''} onChange={handleChange} />*/}
+                            {/*    </div>*/}
+                            {/*</div>*/}
+                        </div>
                     </form>
                 </div>
             </div>
