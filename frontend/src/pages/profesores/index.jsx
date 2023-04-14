@@ -19,9 +19,6 @@ const Profesores = ({ professors }) => {
     const [editStatus, setEditStatus] = useState(false);
     const [saveButton, setSaveButton] = useState(false);
     const [assignSubjects, setAssignSubjects] = useState(false);
-    const [subjectsList, setSubjectsList] = useState([
-        { subject: '', com: '' }
-    ]);
 
     const router = useRouter();
 
@@ -89,19 +86,6 @@ const Profesores = ({ professors }) => {
         }
     }
 
-    const handleSubjectAdd = () => {
-        setSubjectsList([...subjectsList, { subject: '', com: '' }]);
-    }
-
-    const handleSubjectChange = (e, index) => {
-        const {name, value} = e.target;
-        const list = [...subjectsList];
-        list[index][name] = value;
-        setSubjectsList(list);
-    }
-
-    console.log(subjectsList);
-
     return (
         <Layout name={'Profesores'}>
             <div className='flex justify-between items-center py-4 border-b border-secondary'>
@@ -146,33 +130,13 @@ const Profesores = ({ professors }) => {
                                 <Button text={'Eliminar'} variant={'danger'} size={'full'} type={'button'} visible={saveButton} onClick={() => handleDelete(selectedProfessor.id)} />
                             </div>
                         </div>
-                        <div className={`md:col-span-2 md:last:mb-10 ${assignSubjects ? 'block' : 'hidden'}`}>
-                            {subjectsList.map((singleSubject, id) => {
-                                return (
-                                    <div key={id} className='md:flex md:gap-5'>
-                                        <div className='md:w-6/12'>
-                                            <InputField label={'Materia'} type={'text'} name={'subject'} disabled={!editStatus}
-                                                        value={singleSubject.subject} onChange={(e) => handleSubjectChange(e, id)} />
-                                            {subjectsList.length - 1 === id
-                                                && subjectsList.length < 5
-                                                && <Button onClick={handleSubjectAdd} text={'Añadir otra materia'} variant={'primary'} type={'button'} visible={editStatus} />
-                                            }
-                                        </div>
-                                        <div className='md:w-6/12'>
-                                            <InputField label={'Comision'} type={'number'} name={'com'} disabled={!editStatus}
-                                                        value={singleSubject.com} onChange={(e) => handleSubjectChange(e, id)} />
-                                        </div>
-                                    </div>
-                                )
-                            })}
-                            {/*<div className='md:flex md:gap-5'>*/}
-                            {/*    <div className='md:w-6/12'>*/}
-                            {/*        <InputField label={'Materia'} type={'text'} name={'subject'} disabled={!editStatus} value={''} onChange={handleChange} />*/}
-                            {/*    </div>*/}
-                            {/*    <div className='md:w-6/12'>*/}
-                            {/*        <InputField label={'Comision'} type={'number'} name={'comission'} disabled={!editStatus} value={''} onChange={handleChange} />*/}
-                            {/*    </div>*/}
-                            {/*</div>*/}
+                        <div className={`md:col-span-2 md:last:mb-14 ${assignSubjects ? 'block' : 'hidden'}`}>
+                            <div className='flex flex-col gap-1.5'>
+                                <label className="text-body font-semibold">Materias</label>
+                                <select disabled={!editStatus} className={`border w-full rounded-md px-3 py-2 text-body focus:outline-none`}>
+                                    <option value="1">Materia 1</option>
+                                </select>
+                            </div>
                         </div>
                     </form>
                 </div>
