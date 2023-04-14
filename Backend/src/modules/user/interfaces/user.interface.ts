@@ -1,12 +1,14 @@
 export interface User {
+  userId: string;
+  dni: string;
+  email: string;
+  password: string;
   name: string;
   lastName: string;
-  phone: number;
-  dni: string;
-  address: string;
-  password: string;
-  email: string;
+  birthDate?: Date;
+  phone?: string;
+  address?: string;
   state: userStates;
 }
 
-export type userStates = "active" | "inActive" | "approved" | "coursing" | "disapproved"
+export type userStates = "active" | "inactive";

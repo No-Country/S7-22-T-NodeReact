@@ -1,4 +1,5 @@
 export interface Subjects {
-    careerId: number
-    className:string
+  schoolId: number;
+  careerId: number;
+  classId: number;
 }

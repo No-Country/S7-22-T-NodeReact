@@ -1,0 +1,16 @@
+paths:
+  /api/school:
+    get:
+      tags:
+        - School
+      summary: 'Get a list of schools'
+      description: Get schools from the database.
+      content:
+        application/json:
+          schema:
+            $ref: '#/components/schemas/school'
+      responses:
+        '200':
+          description: Got school list from database.
+        '422':
+          description: Could not fetch data from database.

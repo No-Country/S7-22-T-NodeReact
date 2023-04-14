@@ -2,7 +2,7 @@ paths:
   /api/user/post:
     post:
       tags:
-        - Add user
+        - User
       summary: 'Add new user'
       description: Add new user in database.
       requestBody:

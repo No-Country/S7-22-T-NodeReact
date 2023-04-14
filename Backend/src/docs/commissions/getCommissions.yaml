@@ -2,15 +2,15 @@ paths:
   /api/commissions:
     get:
       tags:
-        - Get commissions
-      summary: 'Get commissions'
+        - Commissions
+      summary: "Get commissions"
       description: Get commissions the database.
       content:
         application/json:
           schema:
-            $ref: '#/components/schemas/commission'
+            $ref: "#/components/schemas/commissions"
       responses:
-        '200':
+        "200":
           description: Get commissions the database.
-        '422':
+        "422":
           description: Could not fetch data from database.

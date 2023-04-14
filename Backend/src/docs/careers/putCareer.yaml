@@ -2,8 +2,8 @@ paths:
   /api/career/put/{id}:
     put:
       tags:
-        - Put career
-      summary: 'update career data'
+        - Careers
+      summary: "update career data"
       description: update the career data in the database.
       parameters:
         - name: id
@@ -16,9 +16,9 @@ paths:
         content:
           application/json:
             schema:
-              $ref: '#/components/schemas/careers'
+              $ref: "#/components/schemas/careers"
       responses:
-        '200':
+        "200":
           description: update careers data.
-        '422':
+        "422":
           description: Failed to update careers.

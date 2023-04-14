@@ -2,8 +2,8 @@ paths:
   /api/career/delete/{id}:
     delete:
       tags:
-        - Delete career
-      summary: 'Delete career'
+        - Careers
+      summary: "Delete career"
       description: remove career from database.
       parameters:
         - name: id
@@ -13,11 +13,11 @@ paths:
           schema:
             type: integer
       responses:
-        '200':
+        "200":
           description: remove career from database.
           content:
             application/json:
               schema:
-                $ref: '#/components/schemas/careers'
-        '422':
+                $ref: "#/components/schemas/careers"
+        "422":
           description: could not delete careers.

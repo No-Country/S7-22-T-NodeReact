@@ -1,3 +1,7 @@
+import { QueryBuilder } from "typeorm";
+import { UserEntity } from "../../modules";
+import { AppDataSource } from "../../config/db/postgreSql";
+
 /**
  * @description DATA TO BE RECIEVED FOR USER REGISTRATIONS
  * @example body: {
@@ -13,4 +17,9 @@
  */
 class UserRegisterService {
   constructor() {}
+
+  method() {
+    // QueryBuilder()
+    //AppDataSource.getRepository(UserRolesEntity).createQueryBuilder("user").where("userId", {userId}).getOne()
+  }
 }

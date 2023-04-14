@@ -1,6 +1,7 @@
 export interface Course {
+  commissionId: number;
   subjectId: number;
-  teacherId: number;
+  teacherId: string;
   periodId: number;
   coupon: number;
 }

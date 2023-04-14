@@ -2,7 +2,7 @@ paths:
   /api/roles:
     get:
       tags:
-        - Get roles
+        - Roles
       summary: 'Get roles'
       description: Get roles the database.
       content:

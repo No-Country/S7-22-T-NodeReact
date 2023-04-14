@@ -1,0 +1,17 @@
+paths:
+  /api/school/post:
+    post:
+      tags:
+        - School
+      summary: 'Add a new school'
+      description: Add a new school in database.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/role'
+      responses:
+        '200':
+          description: New role added.
+        '422':
+          description: This role is already registered.

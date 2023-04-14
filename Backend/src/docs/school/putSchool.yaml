@@ -1,0 +1,24 @@
+paths:
+  /api/school/put/{id}:
+    put:
+      tags:
+        - School
+      summary: 'update school data'
+      description: update the school data in the database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the school to update.
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/school'
+      responses:
+        '200':
+          description: updated school data.
+        '422':
+          description: Failed to update school.

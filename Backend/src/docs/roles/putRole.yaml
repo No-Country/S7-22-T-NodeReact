@@ -2,7 +2,7 @@ paths:
   /api/roles/put/{id}:
     put:
       tags:
-        - Put role
+        - Roles
       summary: 'update role data'
       description: update the role data in the database.
       parameters:

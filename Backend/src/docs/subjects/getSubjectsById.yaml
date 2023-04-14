@@ -2,7 +2,7 @@ paths:
   /api/subjects/{id}:
     get:
       tags:
-        - Get subject by id
+        - Subjects
       summary: 'Get subject by id'
       description: Get subject by id from database.
       parameters:

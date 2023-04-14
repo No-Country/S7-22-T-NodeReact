@@ -2,7 +2,7 @@ paths:
   /api/roles/post:
     post:
       tags:
-        - Add role
+        - Roles
       summary: 'Add new role'
       description: Add new role in database.
       requestBody:

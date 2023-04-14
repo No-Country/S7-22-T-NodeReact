@@ -42,6 +42,20 @@ export class UserController extends UserServices {
     }
   }
 
+  async getByUserId(req: Request, res: Response) {
+    const { userIdReq } = req.params;
+    try {
+      const user = await this.getServicesByUserId(userIdReq);
+
+      res.status(200).json({
+        status: true,
+        result: user,
+      });
+    } catch (error) {
+      res.status(500).json({ msg: error });
+    }
+  }
+
   /**
    * @description This "First User Registration" endpoint is intended to auto generate the email based on the user's name and password using their DNI, so the user must change their password on the first login. This is because that only admins can register users to the system.
    * @example
@@ -93,6 +107,23 @@ export class UserController extends UserServices {
     }
   }
 
+  async putFromUserId(req: Request, res: Response) {
+    const { userIdReq } = req.params;
+    const { id, userId, password, createdAt, updatedAt, ...body } = req.body;
+    try {
+      const val = await this.putServiceFromUserId(userIdReq, body);
+      console.log(val);
+      const userUpdate = await this.getServicesByUserId(userIdReq);
+
+      res.status(200).json({
+        status: true,
+        result: userUpdate,
+      });
+    } catch (error) {
+      res.status(500).json({ msg: error });
+    }
+  }
+
   async delete(req: Request, res: Response) {
     const { id } = req.params;
     try {
@@ -107,6 +138,21 @@ export class UserController extends UserServices {
       if (error instanceof Error) {
         res.status(500).json({ msg: error.message });
       }
+    }
+  }
+
+  async deleteFromUserId(req: Request, res: Response) {
+    const { userIdReq } = req.params;
+    try {
+      const user = await this.getServicesByUserId(userIdReq);
+
+      await this.deleteServiceByUserId(userIdReq);
+      res.status(200).json({
+        status: true,
+        result: user,
+      });
+    } catch (error) {
+      res.status(500).json({ msg: error });
     }
   }
 }
