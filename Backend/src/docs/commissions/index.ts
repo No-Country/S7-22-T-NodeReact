@@ -12,9 +12,11 @@ export const commissions: SwaggerSchema = {
     },
     teacherId: {
       type: "string",
+      format: "uuid",
     },
     studentId: {
       type: "string",
+      format: "uuid",
     },
     state: {
       type: "string",
