@@ -1,0 +1,23 @@
+paths:
+  /api/career/{id}:
+    get:
+      tags:
+        - Get career by id
+      summary: 'Get career by id'
+      description: Get career by id from database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the career to retrieve.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Get career by id from database.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/careers'
+        '422':
+          description: Could not fetch commission by id.
