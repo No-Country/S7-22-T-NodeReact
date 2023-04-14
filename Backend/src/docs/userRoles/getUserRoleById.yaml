@@ -1,0 +1,23 @@
+paths:
+  /api/user-roles/{id}:
+    get:
+      tags:
+        - User Roles
+      summary: 'Get a user role by id'
+      description: Get user role by id from database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the user role to retrieve.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Found a user role by ID from database.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/userRoles'
+        '422':
+          description: Could not fetch user role by id.

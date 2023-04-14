@@ -1,0 +1,23 @@
+paths:
+  /api/user-roles/delete/{id}:
+    delete:
+      tags:
+        - User Roles
+      summary: 'Delete user roles'
+      description: remove a user roles from database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the user roles to delete.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: removed user roles from database.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/userRoles'
+        '422':
+          description: could not delete user roles.

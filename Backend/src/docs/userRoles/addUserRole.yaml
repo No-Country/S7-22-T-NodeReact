@@ -1,0 +1,17 @@
+paths:
+  /api/user-roles/post:
+    post:
+      tags:
+        - User Roles
+      summary: 'Add a new user role'
+      description: Add a new user role in database.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/userRoles'
+      responses:
+        '200':
+          description: New user role added.
+        '422':
+          description: This user role is already registered.
