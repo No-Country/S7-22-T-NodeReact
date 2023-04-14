@@ -2,7 +2,7 @@ paths:
   /api/subjects/post:
     post:
       tags:
-        - Add subject
+        - Subjects
       summary: 'Add new subject'
       description: Add new subject in database.
       requestBody:

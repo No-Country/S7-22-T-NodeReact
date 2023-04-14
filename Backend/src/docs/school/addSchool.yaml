@@ -2,7 +2,7 @@ paths:
   /api/school/post:
     post:
       tags:
-        - SCHOOL
+        - School
       summary: 'Add a new school'
       description: Add a new school in database.
       requestBody:

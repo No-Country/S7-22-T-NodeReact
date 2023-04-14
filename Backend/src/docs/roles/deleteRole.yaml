@@ -2,7 +2,7 @@ paths:
   /api/roles/delete/{id}:
     delete:
       tags:
-        - Delete role
+        - Roles
       summary: 'Delete role'
       description: remove role from database.
       parameters:

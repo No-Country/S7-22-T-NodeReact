@@ -2,7 +2,7 @@ paths:
   /api/user/delete/{id}:
     delete:
       tags:
-        - Delete user
+        - User
       summary: 'Delete user'
       description: remove user from database.
       parameters:

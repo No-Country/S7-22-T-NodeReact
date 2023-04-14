@@ -2,7 +2,7 @@ paths:
   /api/user/put/{id}:
     put:
       tags:
-        - Put user
+        - User
       summary: 'update user data'
       description: update the user data in the database.
       parameters:

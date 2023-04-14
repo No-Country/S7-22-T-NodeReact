@@ -2,7 +2,7 @@ paths:
   /api/school/put/{id}:
     put:
       tags:
-        - SCHOOL
+        - School
       summary: 'update school data'
       description: update the school data in the database.
       parameters:

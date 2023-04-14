@@ -2,7 +2,7 @@ paths:
   /api/subjects/put/{id}:
     put:
       tags:
-        - Put subject
+        - Subjects
       summary: 'update subject data'
       description: update the subject data in the database.
       parameters:

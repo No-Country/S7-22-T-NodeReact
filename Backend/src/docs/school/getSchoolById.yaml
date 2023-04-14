@@ -2,7 +2,7 @@ paths:
   /api/school/{id}:
     get:
       tags:
-        - SCHOOL
+        - School
       summary: 'Get a school by id'
       description: Get school by id from database.
       parameters:

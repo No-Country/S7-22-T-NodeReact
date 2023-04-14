@@ -2,7 +2,7 @@ paths:
   /api/subjects/delete/{id}:
     delete:
       tags:
-        - Delete subject
+        - Subjects
       summary: 'Delete subject'
       description: remove subject from database.
       parameters:

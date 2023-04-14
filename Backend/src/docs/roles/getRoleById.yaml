@@ -2,7 +2,7 @@ paths:
   /api/roles/{id}:
     get:
       tags:
-        - Get role by id
+        - Roles
       summary: 'Get role by id'
       description: Get role by id from database.
       parameters:

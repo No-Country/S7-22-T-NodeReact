@@ -2,7 +2,7 @@ paths:
   /api/user/{id}:
     get:
       tags:
-        - Get user by id
+        - User
       summary: 'Get user by id'
       description: Get user by id from database.
       parameters:

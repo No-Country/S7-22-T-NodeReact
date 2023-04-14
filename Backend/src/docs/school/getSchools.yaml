@@ -2,7 +2,7 @@ paths:
   /api/school:
     get:
       tags:
-        - SCHOOL
+        - School
       summary: 'Get a list of schools'
       description: Get schools from the database.
       content:

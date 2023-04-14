@@ -1,0 +1,15 @@
+tags:
+  - name: User
+    description: CRUD of Users data
+
+  - name: Roles
+    description: CRUD of Roles data
+
+  - name: User Roles
+    description: CRUD of UserRoles data
+
+  - name: Subjects
+    description: CRUD of Subjects data
+
+  - name: School
+    description: CRUD of school data

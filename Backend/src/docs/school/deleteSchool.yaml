@@ -2,7 +2,7 @@ paths:
   /api/school/delete/{id}:
     delete:
       tags:
-        - SCHOOL
+        - School
       summary: 'Delete school'
       description: remove a school from database.
       parameters:

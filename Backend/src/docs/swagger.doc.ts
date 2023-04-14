@@ -1,6 +1,9 @@
 import swaggerJSDoc from "swagger-jsdoc";
 import { school } from "./school";
 import { userRoles } from "./userRoles";
+import { user } from "./user";
+import { subjects } from "./subjects";
+import { roles } from "./roles";
 
 const swaggerDefinition = {
   openapi: "3.0.0",
@@ -18,77 +21,41 @@ const swaggerDefinition = {
   ],
   components: {
     schemas: {
-      user: {
-        type: "object",
-        properties: {
-          name: {
-            type: "string",
-          },
-          lastName: {
-            type: "string",
-          },
-          phone: {
-            type: "number",
-          },
-          dni: {
-            type: "number",
-          },
-          address: {
-            type: "string",
-          },
-        },
-      },
-      subject: {
-        type: "object",
-        properties: {
-          careerId: {
-            type: "number"
-          },
-          className: {
-            type: "string"
-          }
-        }
-      },
+      user,
+      subjects,
       commission: {
         type: "object",
         properties: {
           commissionId: {
-            type: "number"
+            type: "number",
           },
           studentId: {
-            type: "string"
+            type: "string",
           },
           teacherId: {
-            type: "string"
+            type: "string",
           },
-        }
+        },
       },
-      roles: {
-        type: "object",
-        properties: {
-          roleName: {
-            type: "string"
-          }
-        }
-      },
+      roles,
       careers: {
         type: "object",
         properties: {
-          careerName: { 
-            type: "string" 
-          }
-        }
+          careerName: {
+            type: "string",
+          },
+        },
       },
-      classes:{
+      classes: {
         type: "object",
         properties: {
           className: {
-            type: "string"
-          }
-        }
+            type: "string",
+          },
+        },
       },
       school,
-      userRoles
+      userRoles,
     },
   },
 };
