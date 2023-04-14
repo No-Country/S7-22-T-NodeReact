@@ -1,0 +1,24 @@
+paths:
+  /api/classes/put/{id}:
+    put:
+      tags:
+        - Put class
+      summary: 'update class data'
+      description: update the class data in the database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the class to update.
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/classes'
+      responses:
+        '200':
+          description: update class data.
+        '422':
+          description: Failed to update class.
