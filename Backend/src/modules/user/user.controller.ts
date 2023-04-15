@@ -11,9 +11,25 @@ export class UserController extends UserServices {
     super();
   }
 
+  // -- GET ENDPOINT METHODS -------------------------------------------
   async getAll(_req: Request, res: Response) {
     try {
       const users = await this.getServices();
+
+      res.status(200).json({
+        status: true,
+        results: users,
+      });
+    } catch (error) {
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
+    }
+  }
+
+  async getAllRelations(_req: Request, res: Response) {
+    try {
+      const users = await this.getService_RelationAll();
 
       res.status(200).json({
         status: true,
@@ -45,7 +61,7 @@ export class UserController extends UserServices {
   async getByUserId(req: Request, res: Response) {
     const { userIdReq } = req.params;
     try {
-      const user = await this.getServicesByUserId(userIdReq);
+      const user = await this.getService_RelationByUserId(userIdReq);
 
       res.status(200).json({
         status: true,
@@ -56,17 +72,9 @@ export class UserController extends UserServices {
     }
   }
 
+  // -- POST ENDPOINT METHODS -------------------------------------------
   /**
    * @description This "First User Registration" endpoint is intended to auto generate the email based on the user's name and password using their DNI, so the user must change their password on the first login. This is because that only admins can register users to the system.
-   * @example
-   * Request body:  {
-   *  "name": "string",
-   *  "lastName": "string",
-   *  "phone": 0,
-   *  "dni": "string",
-   *  "address": "string",
-   *  "state": "active"
-   * }
    */
   async post(req: Request, res: Response) {
     const body = req.body as UserEntity;
@@ -74,19 +82,15 @@ export class UserController extends UserServices {
       body.email = mailGenerator(body.name, body.lastName);
       body.password = await hashPassword(body.dni);
       body.userId = crypto.randomUUID();
-      console.log(body.password);
+      console.log(body);
 
       const user = await this.postService(body);
 
-      if (!user) throw new Error("Carlos puto");
-      const role = await this.getUserRelationWithRoleById(parseInt(req.body.role));
-      console.log(role);
-
+      if (!user) throw new Error("Couldn't create the new User!");
 
       res.status(200).json({
         status: true,
         result: user,
-        role
       });
     } catch (error) {
       if (error instanceof Error) {
@@ -95,6 +99,7 @@ export class UserController extends UserServices {
     }
   }
 
+  // -- PUT ENDPOINT METHODS -------------------------------------------
   async put(req: Request, res: Response) {
     const { id } = req.params;
     const body = req.body;
@@ -129,6 +134,8 @@ export class UserController extends UserServices {
       res.status(500).json({ msg: error });
     }
   }
+
+  // -- DELETE ENDPOINT METHODS -------------------------------------------
 
   async delete(req: Request, res: Response) {
     const { id } = req.params;

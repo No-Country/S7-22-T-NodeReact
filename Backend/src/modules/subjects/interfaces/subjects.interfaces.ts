@@ -1,5 +1,7 @@
+import { SchoolEntity, CareersEntity, ClassesEntity } from "../../";
+
 export interface Subjects {
-  schoolId: number;
-  careerId: number;
-  classId: number;
+  school: SchoolEntity[];
+  career: CareersEntity[];
+  class: ClassesEntity[];
 }

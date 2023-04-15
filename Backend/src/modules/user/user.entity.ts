@@ -1,9 +1,7 @@
-import { Column, Entity, OneToOne } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
 import { User, userStates } from "./interfaces/user.interface";
-
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
 import { RolesEntity } from "../roles/roles.entity";
-import { UserRolesEntity } from "../userRoles/userRoles.entity";
 
 @Entity()
 export class UserEntity extends BaseEntityApp implements User {
@@ -16,7 +14,7 @@ export class UserEntity extends BaseEntityApp implements User {
   @Column({ unique: true })
   email: string;
 
-  @Column()
+  @Column({ select: false })
   password: string;
 
   @Column({ length: 50 })
@@ -37,6 +35,7 @@ export class UserEntity extends BaseEntityApp implements User {
   @Column()
   state: userStates;
 
-  @OneToOne(() => RolesEntity, roles => roles.user)
+  @ManyToOne(() => RolesEntity, (roles) => roles.user, { nullable: false })
+  @JoinColumn()
   role: RolesEntity;
 }
