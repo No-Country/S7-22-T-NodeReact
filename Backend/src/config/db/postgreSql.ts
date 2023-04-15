@@ -11,6 +11,9 @@ import { UserEntity } from "../../modules/user/user.entity";
 import { UserRolesEntity } from "../../modules/userRoles/userRoles.entity";
 import { CommissionsEntity } from "../../modules/commissions/commissions.entity";
 import { ClassesEntity } from "../../modules/classes/classes.entity";
+import { ActivityTypeEntity } from "../../modules/activityType/activityType.entity";
+import { CommissionsActivitiesEntity } from "../../modules/commissionActivities/commissionActivities.entity";
+import { StudentActivitiesEntity } from "../../modules/studentActivities/studentActivities.entity";
 
 export const AppDataSource = new DataSource({
   type: "postgres",
@@ -33,6 +36,9 @@ export const AppDataSource = new DataSource({
     CourseEntity,
     CommissionsEntity,
     ClassesEntity,
+    ActivityTypeEntity,
+    CommissionsActivitiesEntity,
+    StudentActivitiesEntity
   ],
   subscribers: [],
   migrations: [],
