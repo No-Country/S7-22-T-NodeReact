@@ -12,6 +12,9 @@ import { SchoolRoutes } from "../../modules/school/school.routes";
 import { SubjectsRoutes } from "../../modules/subjects/subjects.routes";
 import { UserRolesRoutes } from "../../modules/userRoles/userRoles.routes";
 import { UserRoutes } from "../../modules/user/user.routes";
+import { ActivityTypeRoutes } from "../../modules/activityType/activityType.routes";
+import { CommissionActivitiesRoutes } from "../../modules/commissionActivities/commissionActivities.routes";
+import { StudentActivitiesRoutes } from "../../modules/studentActivities/studentActivities.routes";
 
 export class RoutesApp {
   public router: express.Application;
@@ -31,6 +34,9 @@ export class RoutesApp {
       new UserRolesRoutes().router,
       new CommissionsRoutes().router,
       new ClassesRoutes().router,
+      new ActivityTypeRoutes().router,
+      new CommissionActivitiesRoutes().router,
+      new StudentActivitiesRoutes().router
     ];
   }
 }
