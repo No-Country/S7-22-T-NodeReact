@@ -9,7 +9,7 @@ export class ClassesController extends ClassServices {
 
   async getAll(_req: Request, res: Response) {
     try {
-      const classes = await this.getServices();
+      const classes = await this.getServices_RelationsAll();
 
       res.status(200).json({
         status: true,

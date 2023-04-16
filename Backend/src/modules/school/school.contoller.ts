@@ -2,28 +2,29 @@ import { Request, Response } from "express";
 
 import { SchoolEntity } from "./school.entity";
 import { SchoolServices } from "./school.services";
+import { QueryFailedError } from "typeorm";
 
 export class SchoolController extends SchoolServices {
   constructor() {
     super();
   }
 
-  async getSchools(req: Request, res: Response) {
+  async getSchools(_req: Request, res: Response) {
     try {
-      const schools = await this.getServices();
+      const schools = await this.getServices_RelationsAll();
       res.status(200).json({
         status: true,
-        schools,
+        result: schools,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      return res.status(500).json({ error });
     }
   }
 
   async getSchoolbyId(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const school = await this.getServicesById(Number(id));
+      const school = await this.getServices_RelationsById(parseInt(id));
 
       res.status(200).json({
         status: true,
