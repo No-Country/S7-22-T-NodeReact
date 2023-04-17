@@ -10,7 +10,7 @@ export class SubjectsController extends SubjectService {
 
   async getSubjects(req: Request, res: Response) {
     try {
-      const subject = await this.getServices();
+      const subject = await this.getServices_RelationAll();
       res.status(200).json({
         status: true,
         subject,
@@ -23,8 +23,8 @@ export class SubjectsController extends SubjectService {
   async getSubjectsById(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const career = await this.getServicesById(Number(id));
-      if (!career)
+      const subject = await this.getServices_RelationBySchoolId(parseInt(id));
+      if (!subject)
         return res.status(404).json({
           status: false,
           msg: "Subject not found",
@@ -32,10 +32,10 @@ export class SubjectsController extends SubjectService {
 
       res.status(200).json({
         status: true,
-        career,
+        result: subject,
       });
     } catch (error) {
-      res.status(500).json({ msg: error });
+      if (error instanceof Error) return res.status(500).json({ msg: error.message });
     }
   }
 

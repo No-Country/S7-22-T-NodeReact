@@ -1,3 +1,5 @@
+import { RolesEntity } from "../../roles/roles.entity";
+
 export interface User {
   userId: string;
   dni: string;
@@ -9,6 +11,7 @@ export interface User {
   phone?: string;
   address?: string;
   state: userStates;
+  role: RolesEntity;
 }
 
 export type userStates = "active" | "inactive";

@@ -1,9 +1,19 @@
-import { Entity, Column } from "typeorm";
+import { CareersEntity, CommissionsEntity, SubjectsEntity } from "..";
+import { Column, Entity, ManyToMany, OneToMany } from "typeorm";
+
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
-import { Classes } from "./interfaces/classes.interfaces";
 
 @Entity()
-export class ClassesEntity extends BaseEntityApp implements Classes {
-  @Column({ unique: true, length: 50 })
+export class ClassesEntity extends BaseEntityApp {
+  @Column({ length: 50 })
   className: string;
+
+  @ManyToMany(() => CareersEntity, (career) => career.classes)
+  career: CareersEntity[];
+
+  @OneToMany(() => SubjectsEntity, subject => subject.class)
+  subjects: SubjectsEntity[];
+
+  @OneToMany(() => CommissionsEntity, commission => commission.classes)
+  commissions: CommissionsEntity[];
 }

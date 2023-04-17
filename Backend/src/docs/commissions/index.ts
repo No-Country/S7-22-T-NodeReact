@@ -1,6 +1,7 @@
+import { Commissions } from "../../modules";
 import { SwaggerSchema } from "../../shared/interfaces/SwaggerDocs";
 
-export const commissions: SwaggerSchema = {
+export const commissions: SwaggerSchema<Commissions> = {
   type: "object",
   properties: {
     commissionId: {

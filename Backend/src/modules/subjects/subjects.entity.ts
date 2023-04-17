@@ -1,21 +1,24 @@
-import { Entity, ManyToOne, JoinColumn } from "typeorm";
+import { CareersEntity, ClassesEntity, CommissionsEntity, SchoolEntity } from "../";
+import { Entity, JoinColumn, ManyToOne, OneToMany } from "typeorm";
+
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
 import { Subjects } from "./interfaces/subjects.interfaces";
-import { CareersEntity } from "../careers/careers.entity";
-import { ClassesEntity } from "../classes/classes.entity";
-import { SchoolEntity } from "../school/school.entity";
 
 @Entity()
 export class SubjectsEntity extends BaseEntityApp implements Subjects {
-  @ManyToOne(() => SchoolEntity)
-  @JoinColumn({ name: "schoolId", referencedColumnName: "id" })
-  schoolId: number;
+  @ManyToOne(() => SchoolEntity, (school) => school.id)
+  @JoinColumn()
+  school: SchoolEntity[];
 
-  @ManyToOne(() => CareersEntity)
-  @JoinColumn({ name: "careerId", referencedColumnName: "id" })
-  careerId: number;
+  @ManyToOne(() => CareersEntity, (career) => career.subjects)
+  @JoinColumn({ name:  "career_id"})
+  career: CareersEntity[];
 
-  @ManyToOne(() => ClassesEntity)
-  @JoinColumn({ name: "classId", referencedColumnName: "id" })
-  classId: number;
+  @ManyToOne(() => ClassesEntity, (classes) => classes.subjects)
+  @JoinColumn({name: "class_id"})
+  class: ClassesEntity[];
+
+  @OneToMany(() => CommissionsEntity, commission => commission.subject)
+  @JoinColumn({name: "commission_id"})
+  commissions: CommissionsEntity[];
 }

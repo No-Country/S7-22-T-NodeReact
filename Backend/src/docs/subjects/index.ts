@@ -1,17 +1,18 @@
+import { Subjects } from "../../modules";
 import { SwaggerSchema } from "../../shared/interfaces/SwaggerDocs";
 
-export const subjects: SwaggerSchema = {
+export const subjects: SwaggerSchema<Subjects> = {
   type: "object",
   properties: {
-    schoolId: {
+    school: {
       type: "number",
     },
-    careerId: {
+    career: {
       type: "number",
     },
-    classId: {
+    class: {
       type: "number",
-    
     },
   },
+  required: ["school", "career", "class"],
 };

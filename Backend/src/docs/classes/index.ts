@@ -1,6 +1,7 @@
+import { Classes } from "../../modules";
 import { SwaggerSchema } from "../../shared/interfaces/SwaggerDocs";
 
-export const classes: SwaggerSchema = {
+export const classes: SwaggerSchema<Classes> = {
   type: "object",
   properties: {
     className: {

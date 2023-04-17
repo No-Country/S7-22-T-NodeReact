@@ -1,7 +1,10 @@
-import { Column, Entity } from "typeorm";
+import { Column, Entity, ManyToMany, ManyToOne, OneToMany } from "typeorm";
 import { User, userStates } from "./interfaces/user.interface";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
+import { CareersEntity } from "..";
+import { CommissionsEntity } from "../commissions/commissions.entity";
+import { RolesEntity } from "../roles/roles.entity";
 
 @Entity()
 export class UserEntity extends BaseEntityApp implements User {
@@ -14,7 +17,7 @@ export class UserEntity extends BaseEntityApp implements User {
   @Column({ unique: true })
   email: string;
 
-  @Column()
+  @Column({ select: false })
   password: string;
 
   @Column({ length: 50 })
@@ -34,4 +37,13 @@ export class UserEntity extends BaseEntityApp implements User {
 
   @Column()
   state: userStates;
+
+  @ManyToOne(() => RolesEntity, (roles) => roles.user, { nullable: false })
+  role: RolesEntity;
+
+  @ManyToMany(() => CommissionsEntity, commissions => commissions.users)
+  commissions: CommissionsEntity[] | null | undefined;
+
+  @ManyToOne(() => CareersEntity, career => career.users)
+  career: CareersEntity;
 }

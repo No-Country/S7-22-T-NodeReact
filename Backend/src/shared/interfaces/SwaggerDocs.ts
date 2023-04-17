@@ -1,4 +1,5 @@
 import { Schema } from "swagger-jsdoc";
+import { FindOptionsSelectByString } from "typeorm";
 
 interface SchemaProps extends Schema {
   enum?: ReadonlyArray<string> | undefined;
@@ -6,9 +7,9 @@ interface SchemaProps extends Schema {
   example?: unknown;
 }
 
-export interface SwaggerSchema extends Schema {
-  required?: string[]
+export interface SwaggerSchema<Entity> extends Schema {
+  required?: (keyof Entity)[];
   properties: {
-    [keys: string]: SchemaProps;
+    [keys in keyof Entity]?: SchemaProps;
   };
 }
