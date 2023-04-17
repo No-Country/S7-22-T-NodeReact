@@ -120,7 +120,8 @@
     {
       "id": 1,
       "name": "Matematica",
-      "gradId": 1
+      "gradId": 1,
+      "commissionId": 1
     },
     {
       "id": 2,
@@ -143,7 +144,8 @@
       "id": 1,
       "name": "Ingenieria informatica",
       "slug": "ingenieria-informatica",
-      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos",
+      "commissionId": 1
     },
     {
       "id": 2,
@@ -162,6 +164,62 @@
       "name": "Medicina",
       "slug": "medicina",
       "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
+    }
+  ],
+  "commissions": [
+    {
+      "id": 1,
+      "name": "Comision 1",
+      "gradId": 1,
+      "subjectId": 1,
+      "schedule": "Lunes 10:00 a 12:00",
+      "students": [
+        {
+          "id": 1,
+          "firstName": "Juan",
+          "surname": "Perez",
+          "dni": "12345678"
+        },
+        {
+          "id": 2,
+          "firstName": "Maria",
+          "surname": "Gomez",
+          "dni": "12345678"
+        },
+        {
+          "id": 3,
+          "firstName": "Pedro",
+          "surname": "Pascal",
+          "dni": "12345678"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Comision 2",
+      "gradId": 2,
+      "subjectId": 2,
+      "schedule": "Martes 10:00 a 12:00",
+      "students": [
+        {
+          "id": 1,
+          "firstName": "Juan",
+          "surname": "Perez",
+          "dni": "12345678"
+        },
+        {
+          "id": 2,
+          "firstName": "Maria",
+          "surname": "Gomez",
+          "dni": "12345678"
+        },
+        {
+          "id": 3,
+          "firstName": "Pedro",
+          "surname": "Pascal",
+          "dni": "12345678"
+        }
+      ]
     }
   ]
 }

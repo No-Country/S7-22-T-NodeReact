@@ -1,7 +1,14 @@
 import Layout from "@/components/Layout";
 import { useRouter } from 'next/router';
-import Link from "next/link";
 import Button from "@/components/Button";
+import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sidebar";
+
+const menuItems = [
+    { label: 'Inicio', url: '/', icon: <HomeIcon /> },
+    { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
+    { label: 'Estudiantes', url: '/estudiantes', icon: <StarIcon /> },
+    { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
+];
 
 const Carrera = ({ foundGrad }) => {
     const router = useRouter();
@@ -14,7 +21,7 @@ const Carrera = ({ foundGrad }) => {
     }
 
     return (
-        <Layout name={'Carreras'}>
+        <Layout name={'Carreras'} menuItems={menuItems}>
             <div className='flex justify-between items-center py-4 border-b border-secondary'>
                 <p className='text-h4'>{pageTitle}</p>
                 <Button variant='normal' text={'Volver'} visible={true} onClick={handleBack} />

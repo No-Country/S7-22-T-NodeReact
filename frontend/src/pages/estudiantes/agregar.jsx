@@ -3,6 +3,14 @@ import Button from "@/components/Button";
 import InputField from "@/components/InputField";
 import { useState } from "react";
 import { useRouter } from "next/router";
+import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sidebar";
+
+const menuItems = [
+  { label: 'Inicio', url: '/', icon: <HomeIcon /> },
+  { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
+  { label: 'Estudiantes', url: '/estudiantes', icon: <StarIcon /> },
+  { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
+];
 
 const Agregar = () => {
   const [newStudent, setNewStudent] = useState({
@@ -72,7 +80,7 @@ const Agregar = () => {
   };
 
   return (
-      <Layout name={"Agregar alumno"}>
+      <Layout name={"Agregar alumno"} menuItems={menuItems}>
         <div className="flex justify-between items-center py-4 border-b border-secondary">
           <p className="text-h4">Filtrar</p>
           <Button text={"Guardar"} variant={"success"} visible={true} type={"button"} onClick={handleSubmit}/>

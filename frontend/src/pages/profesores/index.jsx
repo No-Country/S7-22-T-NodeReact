@@ -4,6 +4,14 @@ import InputField from "@/components/InputField";
 import {useState} from "react";
 import Link from "next/link";
 import { useRouter } from 'next/router';
+import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sidebar";
+
+const menuItems = [
+    { label: 'Inicio', url: '/', icon: <HomeIcon /> },
+    { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
+    { label: 'Estudiantes', url: '/estudiantes', icon: <StarIcon /> },
+    { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
+];
 
 const Profesores = ({ professors }) => {
     const [selectedProfessor, setSelectedProfessor] = useState({
@@ -87,7 +95,7 @@ const Profesores = ({ professors }) => {
     }
 
     return (
-        <Layout name={'Profesores'}>
+        <Layout name={'Profesores'} menuItems={menuItems}>
             <div className='flex justify-between items-center py-4 border-b border-secondary'>
                 <p className='text-h4'>Filtrar</p>
                 <Link href={'/profesores/agregar'}>

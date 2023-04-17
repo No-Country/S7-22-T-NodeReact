@@ -7,14 +7,14 @@ import { HomeIcon, SubjectsIcon, StarIcon, CalendarIcon, MessageIcon } from "@/a
 import Image from "next/image";
 import LogoIcon from "../../public/eduweb.png";
 
-const menuItems = [
-    { label: 'Inicio', url: '/', icon: <HomeIcon /> },
-    { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
-    { label: 'Estudiantes', url: '/estudiantes', icon: <StarIcon /> },
-    { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
-];
+// const menuItems = [
+//     { label: 'Inicio', url: '/', icon: <HomeIcon /> },
+//     { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
+//     { label: 'Estudiantes', url: '/estudiantes', icon: <StarIcon /> },
+//     { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
+// ];
 
-const Layout = ({ children, name }) => {
+const Layout = ({ children, name, menuItems }) => {
     const [isOpen, setIsOpen] = useState(false);
 
     const handleMenu = () => {
@@ -29,7 +29,7 @@ const Layout = ({ children, name }) => {
                 </div>
 
                 <div className='lg:w-full lg:flex lg:flex-col lg:gap-3'>
-                    {menuItems.map((option, id) => {
+                    {menuItems && menuItems.map((option, id) => {
                         return (
                             <SidebarItem name={option.label} icon={option.icon} href={option.url} key={id} />
                         )}
@@ -44,7 +44,7 @@ const Layout = ({ children, name }) => {
                     <HamMenu handleMenu={handleMenu} />
 
                     <Menu isOpen={isOpen}>
-                        {menuItems.map((item, id) => {
+                        {menuItems && menuItems.map((item, id) => {
                             return (
                                 <MenuItem title={item.label} href={item.url} key={id} />
                             )
