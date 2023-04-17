@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 
+import { CommissionsEntity } from "../commissions/commissions.entity";
 import { UserEntity } from "./user.entity";
 import { UserServices } from "./user.services";
 import crypto from "crypto";
@@ -12,7 +13,7 @@ export class UserController extends UserServices {
   }
 
   // -- GET ENDPOINT METHODS -------------------------------------------
-  async getAll(_req: Request, res: Response) {
+  async getAll(req: Request, res: Response) {
     try {
       const users = await this.getServices();
 
@@ -27,7 +28,7 @@ export class UserController extends UserServices {
     }
   }
 
-  async getAllRelations(_req: Request, res: Response) {
+  async getAllRelations(req: Request, res: Response) {
     try {
       const users = await this.getService_RelationAll();
 
@@ -59,13 +60,15 @@ export class UserController extends UserServices {
   }
 
   async getByUserId(req: Request, res: Response) {
-    const { userIdReq } = req.params;
+    const { id } = req.params;
     try {
-      const user = await this.getService_RelationByUserId(userIdReq);
+      const user = await this.getServicesById(Number(id));
 
       res.status(200).json({
         status: true,
         result: user,
+        // commission
+        // career
       });
     } catch (error) {
       res.status(500).json({ msg: error });
@@ -77,12 +80,16 @@ export class UserController extends UserServices {
    * @description This "First User Registration" endpoint is intended to auto generate the email based on the user's name and password using their DNI, so the user must change their password on the first login. This is because that only admins can register users to the system.
    */
   async post(req: Request, res: Response) {
-    const body = req.body as UserEntity;
+    const body = req.body;
     try {
       body.email = mailGenerator(body.name, body.lastName);
       body.password = await hashPassword(body.dni);
       body.userId = crypto.randomUUID();
-      console.log(body);
+      const role = await this.getRole(Number(body.role));
+      const career = await this.getCareer(Number(body.career));
+      body.role = role;
+
+      if (body.role === 3) body.career = career;
 
       const user = await this.postService(body);
 

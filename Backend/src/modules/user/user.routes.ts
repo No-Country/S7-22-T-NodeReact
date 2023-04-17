@@ -9,9 +9,9 @@ export class UserRoutes extends BaseRouter<UserController, UserMiddlewares> {
 
   routes(path: string): void {
     // GET - ENPOINTS
-    this.router.get(`/${path}/`, (req, res) => this.controller.getAllRelations(req, res));
+    this.router.get(`/${path}/`, (req, res) => this.controller.getAll(req, res));
     this.router.get(
-      `/${path}/:userIdReq`,
+      `/${path}/:id`,
       (req, res, nex) => this.middleware.checkToken(req, res, nex),
       (req, res) => this.controller.getByUserId(req, res)
     );

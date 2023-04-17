@@ -34,7 +34,7 @@ export abstract class BaseServices<T extends BaseEntity> {
     return entityToDelete;
   }
 
-  async getRepository(entity: EntityTarget<T>) {
+  async getRepository<U extends BaseEntity>(entity: EntityTarget<U>) {
     return AppDataSource.getRepository(entity);
   }
 }

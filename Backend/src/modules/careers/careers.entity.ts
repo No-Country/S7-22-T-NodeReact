@@ -1,4 +1,4 @@
-import { Careers, ClassesEntity, SchoolEntity, SubjectsEntity } from "../";
+import { Careers, ClassesEntity, SchoolEntity, SubjectsEntity, UserEntity } from "../";
 import { Column, Entity, ManyToOne, OneToMany } from "typeorm";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
@@ -9,11 +9,14 @@ export class CareersEntity extends BaseEntityApp implements Careers {
   careerName: string;
 
   @ManyToOne(() => SchoolEntity, (school) => school.id)
-  school: SchoolEntity | number;
+  school: SchoolEntity;
 
-  @OneToMany(() => ClassesEntity, (classes) => classes.id)
-  classes: ClassesEntity[] | number;
+  @ManyToOne(() => ClassesEntity, (classes) => classes.career)
+  classes: ClassesEntity[];
 
   @ManyToOne(() => SubjectsEntity, subjects => subjects.career)
   subjects: SubjectsEntity;
+
+  @OneToMany(() => UserEntity, users => users.career)
+  users: UserEntity[];
 }

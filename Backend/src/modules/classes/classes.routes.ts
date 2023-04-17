@@ -18,6 +18,11 @@ export class ClassesRoutes extends BaseRouter<ClassesController, ClassesMiddlewa
       (req, res, next) => this.middleware.checkToken(req, res, next),
       (req, res) => this.controller.createClass(req, res)
     );
+    this.router.post(
+      `${path}/post/addCommission`,
+      (req, res, next) => this.middleware.checkToken(req, res, next),
+      (req, res) => this.controller.addCommissionsToClasses(req, res)
+    );
 
     // PUT - ENPOINTS
     this.router.put(

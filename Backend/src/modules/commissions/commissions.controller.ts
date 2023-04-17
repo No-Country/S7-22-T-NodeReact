@@ -46,6 +46,8 @@ export class CommissionsController extends CommissionsServices {
             res.status(500).json({ msg: error });
         }
     }
+    
+   
 
     async putCommissions(req: Request, res: Response) {
         const { id } = req.params;
@@ -75,4 +77,6 @@ export class CommissionsController extends CommissionsServices {
             res.status(500).json({ msg: error });
         }
     }
+
+
 }

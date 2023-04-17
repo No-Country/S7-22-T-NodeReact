@@ -7,9 +7,9 @@ export class ClassesController extends ClassServices {
     super();
   }
 
-  async getAll(_req: Request, res: Response) {
+  async getAll(req: Request, res: Response) {
     try {
-      const classes = await this.getServices_RelationsAll();
+      const classes = await this.getServices();
 
       res.status(200).json({
         status: true,
@@ -26,10 +26,13 @@ export class ClassesController extends ClassServices {
     const { id } = req.params;
     try {
       const singleClass = await this.getServicesById(parseInt(id));
+      const commissions = await this.getCommissionsInClase(Number(id));
+     
 
       res.status(200).json({
         status: true,
         singleClass,
+        commissions
       });
     } catch (error) {
       if (error instanceof Error) {
@@ -89,4 +92,26 @@ export class ClassesController extends ClassServices {
       }
     }
   }
+
+  async addCommissionsToClasses(req: Request, res: Response) {
+    const { commissionId, claseId} = req.body;
+    try {
+      console.log(req.body);
+      const commission = await this.getCommission(commissionId);
+      const clase = await this.addCommissionToClase(commission!, claseId);
+
+      res.status(200).json({
+        status: true,
+        clase,
+      });
+    } catch (error) {
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
+    }
+  }
+
+  
+
+  
 }
