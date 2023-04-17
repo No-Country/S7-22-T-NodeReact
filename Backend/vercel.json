@@ -10,11 +10,14 @@
       }
     ],
     "env": {
-      "NAME_DB":"@name_db_3",
-      "USERNAME_DB":"@username_db_3",
-      "PASS_DB":"@pass_db_3",
-      "HOST_DB":"@host_db_3",
-      "CONNECTION_URI":"@connection_uri_3",
-      "JWT_SECRET":"@jwt_secret_3_add"
+      "PORT":"@port_3",
+      "PORT_DB":"@port_db_3", 
+      "NAME_DB":"@name_db_4",
+      "USERNAME_DB": "@username_db_4",
+      "PASS_DB":"@pass_db_4",
+      "HOST_DB":"@host_db_4", 
+      "SSL_SUPPORT":"@ssl_support_4",
+      "CONNECTION_URI":"@connection_uri_4",
+      "JWT_SECRET":"@jwt_secret_4"
     }
 }
