@@ -1,5 +1,6 @@
-import { Column, Entity, JoinColumn, ManyToOne } from "typeorm";
+import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
 import { User, userStates } from "./interfaces/user.interface";
+
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
 import { RolesEntity } from "../roles/roles.entity";
 
@@ -36,6 +37,5 @@ export class UserEntity extends BaseEntityApp implements User {
   state: userStates;
 
   @ManyToOne(() => RolesEntity, (roles) => roles.user, { nullable: false })
-  @JoinColumn()
   role: RolesEntity;
 }
