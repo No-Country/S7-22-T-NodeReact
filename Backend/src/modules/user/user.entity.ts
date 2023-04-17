@@ -1,7 +1,8 @@
-import { Column, Entity, JoinColumn, ManyToOne, OneToMany, OneToOne } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany } from "typeorm";
 import { User, userStates } from "./interfaces/user.interface";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
+import { CommissionsEntity } from "../commissions/commissions.entity";
 import { RolesEntity } from "../roles/roles.entity";
 
 @Entity()
@@ -38,4 +39,7 @@ export class UserEntity extends BaseEntityApp implements User {
 
   @ManyToOne(() => RolesEntity, (roles) => roles.user, { nullable: false })
   role: RolesEntity;
+
+  @ManyToOne(() => CommissionsEntity, commissions => commissions.users)
+  commissions: CommissionsEntity[];
 }

@@ -1,24 +1,21 @@
-import { Column, Entity, JoinColumn, ManyToOne, OneToOne } from "typeorm";
+import { Column, Entity, ManyToOne, OneToMany } from "typeorm";
+import { CommissionState, Commissions } from "./interfaces/commissions.interfaces";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
-import { CommissionState, Commissions } from "./interfaces/commissions.interfaces";
-import { CourseEntity } from "../course/course.entity";
-import { UserEntity } from "../user/user.entity";
 import { SubjectsEntity } from "../subjects/subjects.entity";
+import { UserEntity } from "../user/user.entity";
 
 @Entity()
-export class CommissionsEntity extends BaseEntityApp implements Commissions {
+export class CommissionsEntity extends BaseEntityApp {
+
+  @Column({unique: true})
   commissionId: number;
 
-  @ManyToOne(() => SubjectsEntity)
-  subjectId: number;
+  @ManyToOne(() => SubjectsEntity, subject => subject.commissions)
+  subject: SubjectsEntity;
 
-  @ManyToOne(() => UserEntity)
-  teacherId: string;
-
-  @ManyToOne(() => UserEntity)
-  @JoinColumn({ name: "studentId", referencedColumnName: "userId" })
-  studentId: string;
+  @OneToMany(() => UserEntity, user => user.commissions)
+  users: UserEntity[];
 
   @Column()
   state: CommissionState = "coursing";

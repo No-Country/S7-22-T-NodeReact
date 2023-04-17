@@ -1,6 +1,7 @@
+import { Careers, ClassesEntity, SchoolEntity, SubjectsEntity } from "../";
 import { Column, Entity, ManyToOne, OneToMany } from "typeorm";
+
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
-import { Careers, ClassesEntity, SchoolEntity } from "../";
 
 @Entity()
 export class CareersEntity extends BaseEntityApp implements Careers {
@@ -12,4 +13,7 @@ export class CareersEntity extends BaseEntityApp implements Careers {
 
   @OneToMany(() => ClassesEntity, (classes) => classes.id)
   classes: ClassesEntity[] | number;
+
+  @ManyToOne(() => SubjectsEntity, subjects => subjects.career)
+  subjects: SubjectsEntity;
 }

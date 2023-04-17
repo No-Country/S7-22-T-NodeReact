@@ -1,7 +1,8 @@
-import { Entity, ManyToOne, JoinColumn } from "typeorm";
+import { CareersEntity, ClassesEntity, CommissionsEntity, SchoolEntity } from "../";
+import { Entity, JoinColumn, ManyToOne, OneToMany } from "typeorm";
+
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
 import { Subjects } from "./interfaces/subjects.interfaces";
-import { SchoolEntity, CareersEntity, ClassesEntity } from "../";
 
 @Entity()
 export class SubjectsEntity extends BaseEntityApp implements Subjects {
@@ -9,11 +10,15 @@ export class SubjectsEntity extends BaseEntityApp implements Subjects {
   @JoinColumn()
   school: SchoolEntity[];
 
-  @ManyToOne(() => CareersEntity, (career) => career.id)
-  @JoinColumn()
+  @ManyToOne(() => CareersEntity, (career) => career.subjects)
+  @JoinColumn({ name:  "career_id"})
   career: CareersEntity[];
 
-  @ManyToOne(() => ClassesEntity, (classes) => classes.id)
-  @JoinColumn()
+  @ManyToOne(() => ClassesEntity, (classes) => classes.subjects)
+  @JoinColumn({name: "class_id"})
   class: ClassesEntity[];
+
+  @OneToMany(() => CommissionsEntity, commission => commission.subject)
+  @JoinColumn({name: "commission_id"})
+  commissions: CommissionsEntity[];
 }
