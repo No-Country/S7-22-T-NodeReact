@@ -16,7 +16,7 @@
       "USERNAME_DB": "@username_db_4",
       "PASS_DB":"@pass_db_4",
       "HOST_DB":"@host_db_4", 
-      "SSL_SUPPORT":"@ssl_support_4",
+      "SSL_SUPPORT":"@ssl_support_5",
       "CONNECTION_URI":"@connection_uri_4",
       "JWT_SECRET":"@jwt_secret_4"
     }
