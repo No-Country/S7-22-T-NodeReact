@@ -16,6 +16,11 @@ export class CareerRoutes extends BaseRouter<CareersController, CareersMiddlewar
       (req, res, next) => this.middleware.checkToken(req, res, next),
       (req, res) => this.controller.postCareer(req, res)
     );
+    this.router.post(
+      `/${path}/post/addClase`,
+      (req, res, next) => this.middleware.checkToken(req, res, next),
+      (req, res) => this.controller.addClassesToCareer(req, res)
+    );
     this.router.put(
       `/${path}/put/:id`,
       (req, res, next) => this.middleware.checkToken(req, res, next),

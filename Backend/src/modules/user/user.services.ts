@@ -74,7 +74,7 @@ export class UserServices extends BaseServices<UserEntity> {
   async getRole(id: number) {
     return (await this.getRepository(RolesEntity)).findOneBy({ id });
   }
-  
+
   async getCareer(id: number) {
     return (await this.getRepository(CareersEntity)).findOneBy({ id });
   }
@@ -98,5 +98,4 @@ export class UserServices extends BaseServices<UserEntity> {
 
     return commission;
   }
-
 }

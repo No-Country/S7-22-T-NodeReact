@@ -10,7 +10,7 @@ export class ClassesEntity extends BaseEntityApp {
   className: string;
 
   @ManyToMany(() => CareersEntity, (career) => career.classes)
-  career: CareersEntity[];
+  career: CareersEntity[] | null | undefined;
 
   @OneToMany(() => SubjectsEntity, subject => subject.class)
   subjects: SubjectsEntity[];

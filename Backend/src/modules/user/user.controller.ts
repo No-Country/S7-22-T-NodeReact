@@ -1,7 +1,5 @@
 import { Request, Response } from "express";
 
-import { CommissionsEntity } from "../commissions/commissions.entity";
-import { UserEntity } from "./user.entity";
 import { UserServices } from "./user.services";
 import crypto from "crypto";
 import { hashPassword } from "./utils/passwordEncrypt.utils";

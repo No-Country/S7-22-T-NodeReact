@@ -26,12 +26,13 @@ export class CareersController extends CareersServices {
   async getCareerById(req: Request, res: Response) {
     const { id } = req.params;
     try {
-      const career = await this.getServicesById(Number(id));
+      const career = await this.getClassesInCareer(Number(id));
       if (!career)
         return res.status(404).json({
           status: false,
           msg: "Career not found",
         });
+      
 
       res.status(200).json({
         status: true,
@@ -45,23 +46,6 @@ export class CareersController extends CareersServices {
   async postCareer(req: Request, res: Response) {
     const body: CareersEntity = req.body;
     try {
-      // console.log("######################################");
-      // const schoolId = body.school as number;
-
-      // if (!schoolId) throw new Error("No se obtuvo un valor valido en schoolId!");
-
-      // console.log(schoolId);
-      // const schService = new SchoolServices();
-      // const school = await schService.getServices_RelationsById(schoolId);
-
-      // console.log(school);
-
-      // if (!school) throw new Error("No se obtuvo un ninguna school!");
-      // const career = await this.postService_Relation(body, school);
-
-      // console.log(career);
-      // if (!career) throw new Error("Otro error random!");
-
       const career = await this.postService(body);
       res.status(200).json({
         status: true,
@@ -94,6 +78,20 @@ export class CareersController extends CareersServices {
       res.status(200).json({
         status: true,
         career,
+      });
+    } catch (error) {
+      res.status(500).json({ msg: error });
+    }
+  }
+
+  async addClassesToCareer(req: Request, res: Response) {
+    const { claseId, careerId } = req.body;
+    try {
+      const career = await this.addClaseToCareer(claseId, careerId);
+
+      res.status(200).json({
+        status: true,
+        result: career,
       });
     } catch (error) {
       res.status(500).json({ msg: error });
