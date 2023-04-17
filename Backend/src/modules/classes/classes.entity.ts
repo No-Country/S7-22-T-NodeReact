@@ -2,6 +2,7 @@ import { CareersEntity, CommissionsEntity, SubjectsEntity } from "..";
 import { Column, Entity, ManyToMany, OneToMany } from "typeorm";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
+import { ClaseStudentStatusEntity } from "../../entity/claseStudent.status.entity";
 
 @Entity()
 export class ClassesEntity extends BaseEntityApp {
@@ -16,4 +17,7 @@ export class ClassesEntity extends BaseEntityApp {
 
   @OneToMany(() => CommissionsEntity, commission => commission.classes)
   commissions: CommissionsEntity[];
+
+  @OneToMany(() => ClaseStudentStatusEntity, status => status.clase)
+  userStatus: ClaseStudentStatusEntity[];
 }

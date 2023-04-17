@@ -31,8 +31,10 @@ export class ClassesController extends ClassServices {
 
       res.status(200).json({
         status: true,
-        singleClass,
-        commissions
+        result: {
+          singleClass,
+          commissions
+        }
       });
     } catch (error) {
       if (error instanceof Error) {
