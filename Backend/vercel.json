@@ -10,10 +10,11 @@
       }
     ],
     "env": {
-      "NAME_DB":"@name_db_2",
-      "USERNAME_DB":"@username_db_2",
-      "PASS_DB":"@pass_db_2",
-      "HOST_DB":"@host_db_2",
-      "JWT_SECRET":"@jwt_secret_edu_web"
+      "NAME_DB":"@name_db_3",
+      "USERNAME_DB":"@username_db_3",
+      "PASS_DB":"@pass_db_3",
+      "HOST_DB":"@HOST_DB_3",
+      "CONNECTION_URI":"@connection_uri_3",
+      "JWT_SECRET":"@jwt_secret_3_add"
     }
 }
