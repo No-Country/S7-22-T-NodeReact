@@ -1,6 +1,6 @@
 import Layout from "@/components/Layout";
 import Button from "@/components/Button";
-import GradCard from "@/components/grad-card";
+import GradCard from "@/components/GradCard";
 import Link from "next/link";
 import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sidebar";
 
@@ -24,7 +24,7 @@ const Carreras = ({ grads }) => {
             <div className='grid gap-4 md:grid-cols-4 pt-5'>
                 {grads && grads.map((grad, id) => {
                     return (
-                        <GradCard key={id} name={grad.name} path={grad.slug} />
+                        <GradCard key={id} name={grad.name} path={`/carreras/${grad.slug}`} />
                     )
                 })}
             </div>
