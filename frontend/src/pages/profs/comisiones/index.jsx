@@ -5,7 +5,7 @@ const menuItems = [
     { label: 'Inicio', url: '/profs', icon: <HomeIcon /> },
     { label: 'Comisiones', url: '/profs/comisiones', icon: <SubjectsIcon /> },
     { label: 'Calificaciones', url: '/profs/calificaciones', icon: <StarIcon /> },
-    { label: 'Crear tarea', url: '/profs/crear-tarea', icon: <CalendarIcon /> },
+    { label: 'Anuncios', url: '/profs/anuncios', icon: <CalendarIcon /> },
 ];
 
 const Index = () => {
