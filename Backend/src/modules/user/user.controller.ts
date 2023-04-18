@@ -1,5 +1,6 @@
 import { Request, Response } from "express";
 
+import { UserEntity } from "./user.entity";
 import { UserServices } from "./user.services";
 import crypto from "crypto";
 import { hashPassword } from "./utils/passwordEncrypt.utils";
@@ -14,7 +15,6 @@ export class UserController extends UserServices {
   async getAll(req: Request, res: Response) {
     try {
       const users = await this.getServices();
-
       res.status(200).json({
         status: true,
         results: users,
@@ -87,11 +87,14 @@ export class UserController extends UserServices {
       const career = await this.getCareer(Number(body.career));
       body.role = role;
 
-      if (body.role === 3) body.career = career;
-
       const user = await this.postService(body);
 
       if (!user) throw new Error("Couldn't create the new User!");
+
+      if (body.role === 3) {
+        body.career = career;
+        const userCareer = await this.addUserToCommission(user, body.career);
+      }
 
       res.status(200).json({
         status: true,
@@ -171,6 +174,44 @@ export class UserController extends UserServices {
       });
     } catch (error) {
       res.status(500).json({ msg: error });
+    }
+  }
+
+  async postAddUser(req: Request, res: Response) {
+    const body = req.body;
+    
+    try {
+      body.email = mailGenerator(body.name, body.lastName);
+      body.password = await hashPassword(body.dni);
+      body.userId = crypto.randomUUID();
+      const role = await this.getRole(Number(body.role));
+      const career = await this.getCareer(Number(body.career));
+      
+      
+      body.role = role;
+      body.career = career;
+
+      const user = await this.postService(body);
+     
+      if (!user) throw new Error("Couldn't create the new User!");
+
+      console.log(body.role, body.career);
+      if (body.role.id === 3) {
+        body.career = career;
+        if (career?.id) await this.addUsersToClassesCommissions(user, career.id);
+        // const userCareer = await this.addUserToCommission(user, body.career);
+      }
+
+
+      res.status(200).json({
+        status: true,
+        result: user,
+      });
+    } catch (error) {
+      console.log(error);
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
     }
   }
 }

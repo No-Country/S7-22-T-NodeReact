@@ -1,13 +1,17 @@
 import { BaseEntity, UpdateResult } from "typeorm";
+import { CareersEntity, CareersServices, ClassServices, ClassesEntity } from "..";
 
 import { BaseServices } from "../../shared/services/baseServices";
-import { CareersEntity } from "..";
 import { CommissionsEntity } from "../commissions/commissions.entity";
 import { RolesEntity } from "../roles/roles.entity";
 import { UserEntity } from "./user.entity";
 
 export class UserServices extends BaseServices<UserEntity> {
   protected readonly userSelectedColumns: string[];
+
+  public careerServices = new CareersServices();
+  public classesServices = new ClassServices();
+
   constructor() {
     super(UserEntity);
 
@@ -81,6 +85,25 @@ export class UserServices extends BaseServices<UserEntity> {
 
   async saveDataUser(data: UserEntity) {
     return await this.repository.save(data);
+  }
+
+  async addUsersToClassesCommissions(user: UserEntity, careerId: number) {
+    const careers = await this.careerServices.getClassesInCareer(careerId);
+
+    if (careers) {
+      careers.classes.forEach(async (clase) => {
+        if (clase.id) {
+          const claseInfo = await (
+            await this.getRepository(ClassesEntity)
+          ).findOne({ where: { id: clase.id }, relations: ["commissions"] });
+          //TODO Refactoring function, add check commission === 0 generated new commission an add user
+          if (claseInfo)
+            if (claseInfo.commissions.length > 0)
+              await this.addUserToCommission(user, claseInfo.commissions[0].id!);
+        }
+      });
+    }
+    return careers;
   }
 
   async addUserToCommission(user: UserEntity, id: number) {

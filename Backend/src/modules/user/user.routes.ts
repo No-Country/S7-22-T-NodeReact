@@ -24,6 +24,11 @@ export class UserRoutes extends BaseRouter<UserController, UserMiddlewares> {
       (req, res, nex) => this.middleware.checkToken(req, res, nex),
       (req, res) => this.controller.post(req, res)
     );
+    this.router.post(
+      `/${path}/post/addUser`,
+      (req, res, nex) => this.middleware.checkToken(req, res, nex),
+      (req, res) => this.controller.postAddUser(req, res)
+    );
 
     // PUT - ENPOINTS
     this.router.put(

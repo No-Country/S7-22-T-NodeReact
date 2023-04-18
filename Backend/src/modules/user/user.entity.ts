@@ -45,7 +45,7 @@ export class UserEntity extends BaseEntityApp implements User {
   @ManyToMany(() => CommissionsEntity, commissions => commissions.users)
   commissions: CommissionsEntity[] | null | undefined;
 
-  @OneToMany(() => CareersEntity, career => career.users)
+  @ManyToOne(() => CareersEntity, career => career.users)
   career: CareersEntity;
 
   @OneToMany(() => ClaseStudentStatusEntity, status => status.user)
