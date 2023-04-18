@@ -33,7 +33,7 @@ const swaggerDefinition = {
 const swaggerOptions = {
   swaggerDefinition,
   schemes: ["https", "http"],
-  apis: ["./src/docs/**/*.yaml"],
+  apis: ["**/*.yaml"],
 };
 
 export default swaggerJSDoc(swaggerOptions);
