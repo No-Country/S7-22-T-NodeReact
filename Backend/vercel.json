@@ -9,9 +9,7 @@
         "dest": "dist/app.js"
       }
     ],
-    "env": {
-      "PORT":"@port_3",
-      "PORT_DB":"@port_db_3", 
+    "env": { 
       "NAME_DB":"@name_db_4",
       "USERNAME_DB": "@username_db_4",
       "PASS_DB":"@pass_db_4",
