@@ -13,7 +13,7 @@ const menuItems = [
     { label: 'Carreras', url: '/admin/carreras', icon: <CalendarIcon /> },
 ];
 
-const Profesores = ({ professors }) => {
+const Profesores = ({ users }) => {
     const [selectedProfessor, setSelectedProfessor] = useState({
         id: '',
         firstName: '',
@@ -44,7 +44,7 @@ const Profesores = ({ professors }) => {
     }
 
     const getProfessor = (id) => {
-        const [ findProfessor ] = professors.filter(professor => professor.id === id);
+        const [ findProfessor ] = users.filter(professor => professor.id === id);
         setSelectedProfessor(findProfessor);
     }
 
@@ -72,8 +72,12 @@ const Profesores = ({ professors }) => {
 
     const deleteProfessor = async (id) => {
         try {
-            await fetch(`http://localhost:3001/professors/${id}`, {
+            await fetch(`https://s7-22-t-nodereact-production.up.railway.app/api/user/delete/${id}`, {
                 method: 'DELETE',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'set-token': '' // token
+                }
             })
         } catch (error) {
             console.log(error);
@@ -82,10 +86,11 @@ const Profesores = ({ professors }) => {
 
     const updateProfessor = async (id) => {
         try {
-            await fetch(`http://localhost:3001/professors/${id}`, {
+            await fetch(`https://s7-22-t-nodereact-production.up.railway.app/api/user/put/${id}`, {
                 method: 'PUT',
                 headers: {
-                    'Content-Type': 'application/json'
+                    'Content-Type': 'application/json',
+                    'set-token': '' // token
                 },
                 body: JSON.stringify(selectedProfessor)
             })
@@ -105,14 +110,22 @@ const Profesores = ({ professors }) => {
 
             <div className='flex flex-col md:flex-row gap-5 mt-5'>
                 <div className='w-full md:w-1/5 md:h-[80vh] flex md:flex-col gap-4 overflow-x-scroll md:overflow-x-hidden md:overflow-y-scroll overscroll-contain'>
-                    {professors.map((professor, id) => {
+                    {users && users.filter(user => user.id === 3).map((professor, id) => {
                         return (
                             <div key={id} className='px-2.5 py-2.5 bg-grey rounded-lg cursor-pointer' onClick={() => getProfessor(professor.id)}>
-                                <p className='text-body font-semibold mb-1'>{`${professor.firstName} ${professor.surname}`}</p>
+                                <p className='text-body font-semibold mb-1'>{`${professor.firstName} ${professor.lastName}`}</p>
                                 <p className='text-body-sm'>DNI: {professor.dni}</p>
                             </div>
                         )
                     })}
+                    {/*{professors.map((professor, id) => {*/}
+                    {/*    return (*/}
+                    {/*        <div key={id} className='px-2.5 py-2.5 bg-grey rounded-lg cursor-pointer' onClick={() => getProfessor(professor.id)}>*/}
+                    {/*            <p className='text-body font-semibold mb-1'>{`${professor.firstName} ${professor.surname}`}</p>*/}
+                    {/*            <p className='text-body-sm'>DNI: {professor.dni}</p>*/}
+                    {/*        </div>*/}
+                    {/*    )*/}
+                    {/*})}*/}
                 </div>
 
                 <div className='w-full md:w-4/5 md:max-h-[80vh] md:overflow-y-scroll overscroll-contain'>
@@ -158,12 +171,15 @@ const Profesores = ({ professors }) => {
 export default Profesores;
 
 export const getServerSideProps = async (ctx) => {
-    const res = await fetch('http://localhost:3001/professors');
-    const professors = await res.json();
+    // const res = await fetch('http://localhost:3001/professors');
+    const response = await fetch('https://s7-22-t-nodereact-production.up.railway.app/api/user');
+    const users = await response.json();
+    // const professors = await res.json();
+    console.log(users.results);
 
     return {
         props: {
-            professors,
+            users,
         }
     }
 }
