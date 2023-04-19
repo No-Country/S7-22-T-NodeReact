@@ -300,11 +300,11 @@ A web application for the administration of colleges, which provides easy-to-con
 
   <!-------------------------------->
 
-   <a href="https://www.linkedin.com/mwlite/in/emanuel-manrique-dev">
+   <a href="https://www.linkedin.com/in/guzman-joaquin/">
   
   <kbd>
 
-  <img src="" height = "100">
+  <img src="https://media.licdn.com/dms/image/D4E03AQE9g-9LuueBBA/profile-displayphoto-shrink_800_800/0/1644876043005?e=1687392000&v=beta&t=ZFrBKRYdys-QA0IfWta7eTxQIhNZRG8w8eYc_yBNqjc" height = "100">
 
   <span style="font-size:16px">Joaquin Guzmán </span>
 
