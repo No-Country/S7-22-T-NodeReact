@@ -2,6 +2,256 @@
 
 A web application for the administration of colleges, which provides easy-to-configure operations and a simple-to-use interface. Providing professors the ability to create task to students, who can check their current tasks and qualifications. For college staff, the ability to create users with professors and students roles, and assign commissions.
 
+## Technologies / Tools Used
+
+#### UX/UI <img src="https://www.svgrepo.com/show/48922/light-bulb.svg" height="14px">
+
+- Design App &#8658; [Figma](https://www.figma.com/)
+
+#### FRONTEND <img src="https://www.svgrepo.com/show/430176/laptop-device-pc.svg" height="14px">
+
+- Language &#8658; [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
+- Framework &#8658; [Next.js](https://nextjs.org/)
+- Packages:
+
+  <table>
+
+  <tr>
+  <td width="40px" style="text-align:center;">
+
+  <a href="https://www.npmjs.com/package/axios" style="font-size:18px">
+
+  <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+  <span>axios</span>
+  
+  </a>
+
+  </td>
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+  <a href="https://www.npmjs.com/package/eslint" style="font-size:18px">
+
+  <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+  <span>eslint</span> 
+  
+  </a>
+
+  </td>
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+  <a href="https://www.npmjs.com/package/tailwindcss" style="font-size:18px">
+
+  <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+  <span>tailwindcss</span>
+  
+  </a>
+
+  </td>
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+  <a href="https://www.npmjs.com/package/postcss" style="font-size:18px">
+
+  <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+  <span>postcss</span> 
+  
+  </a>
+
+  </td>
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+  <a href="https://www.npmjs.com/package/autoprefixer" style="font-size:18px">
+
+  <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+  <span>autoprefixer</span> 
+  
+  </a>
+
+  </td>
+
+   </tr>
+
+  </table>
+
+#### BACKEND <img src="https://www.svgrepo.com/show/282006/server.svg" height="14px">
+
+- Language &#8658; [Typescript](https://www.typescriptlang.org/)
+- Framework &#8658; [Express.js](https://expressjs.com/)
+- Database &#8658; [PostgreSQL](https://www.postgresql.org/)
+- Object Relational Mapper &#8658; [TypeORM](https://typeorm.io/)
+- Packages:
+
+  <table>
+
+  <tr>
+
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/bcrypt" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>bycrpt</span>
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/cors" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>cors</span> 
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/dotenv" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>dotenv</span>
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/jsonwebtoken" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>jsonwebtoken</span> 
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/morgan" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>morgan</span> 
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/pg" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>pg</span> 
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/reflect-metadata" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>reflect-metadata</span> 
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/copyfiles" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>copyfiles</span> 
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/eslint" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>eslint</span> 
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/prettier" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>prettier</span> 
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/swagger-jsdoc" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>swagger-jsdoc</span> 
+    
+    </a>
+
+  </td>
+
+  <!------------------------------------------>
+  <td width="40px" style="text-align:center;">
+
+    <a href="https://www.npmjs.com/package/swagger-ui-express" style="font-size:18px">
+
+    <img src="https://raw.githubusercontent.com/npm/logos/master/npm%20logo/npm-logo-red.svg" width="40px">
+
+    <span>swagger-ui-express</span> 
+    
+    </a>
+
+  </td>
+
+  </tr>
+
+  </table>
+
 ## Authors
 
 <table>
@@ -10,7 +260,7 @@ A web application for the administration of colleges, which provides easy-to-con
 
 <td>
 
-### UX/UI <img src="https://www.svgrepo.com/show/48922/light-bulb.svg" height="18px">
+### <img src="https://www.svgrepo.com/show/48922/light-bulb.svg" height="24px"> UX/UI
 
   <kbd>
 
@@ -32,7 +282,7 @@ A web application for the administration of colleges, which provides easy-to-con
 
 <td>
 
-### FRONTEND <img src="https://www.svgrepo.com/show/430176/laptop-device-pc.svg" height="18px">
+### <img src="https://www.svgrepo.com/show/430176/laptop-device-pc.svg" height="24px"> FRONTEND 
 
 <kbd>
 
@@ -68,7 +318,7 @@ A web application for the administration of colleges, which provides easy-to-con
 
 <td>
 
-### BACKEND <img src="https://www.svgrepo.com/show/282006/server.svg" height="18px">
+### <img src="https://www.svgrepo.com/show/282006/server.svg" height="24px"> BACKEND
 
 <kbd>
 
