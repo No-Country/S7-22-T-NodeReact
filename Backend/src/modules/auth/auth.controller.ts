@@ -26,6 +26,7 @@ export class AuthController extends AuthServices {
         status: true,
         result: {
           token,
+          user
         },
       });
     } catch (error) {
