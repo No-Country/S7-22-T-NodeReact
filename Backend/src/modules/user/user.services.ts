@@ -1,13 +1,18 @@
 import { BaseEntity, UpdateResult } from "typeorm";
+import { CareersEntity, CareersServices, ClassServices, ClassesEntity } from "..";
 
 import { BaseServices } from "../../shared/services/baseServices";
-import { CareersEntity } from "..";
+import { ClaseStudentStatusEntity } from "../../entity/claseStudentStatus.entity";
 import { CommissionsEntity } from "../commissions/commissions.entity";
 import { RolesEntity } from "../roles/roles.entity";
 import { UserEntity } from "./user.entity";
 
 export class UserServices extends BaseServices<UserEntity> {
   protected readonly userSelectedColumns: string[];
+
+  public careerServices = new CareersServices();
+  public classesServices = new ClassServices();
+
   constructor() {
     super(UserEntity);
 
@@ -74,7 +79,7 @@ export class UserServices extends BaseServices<UserEntity> {
   async getRole(id: number) {
     return (await this.getRepository(RolesEntity)).findOneBy({ id });
   }
-  
+
   async getCareer(id: number) {
     return (await this.getRepository(CareersEntity)).findOneBy({ id });
   }
@@ -83,11 +88,33 @@ export class UserServices extends BaseServices<UserEntity> {
     return await this.repository.save(data);
   }
 
-  async addUserToCommission(user: UserEntity, id: number) {
+  async addUsersToClassesCommissions(user: UserEntity, careerId: number) {
+    const careers = await this.careerServices.getClassesInCareer(careerId);
+
+    if (careers) {
+      careers.classes.forEach(async (clase) => {
+        if (clase.id) {
+          const claseInfo = await (
+            await this.getRepository(ClassesEntity)
+          ).findOne({ where: { id: clase.id }, relations: ["commissions"] });
+
+          if (claseInfo && claseInfo.commissions.length > 0) {
+            // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
+            await this.addUserToCommission(user, claseInfo.commissions[0].id!);
+            // add status clase
+            await this.addStatusToClaseStudent(user, clase, "Cursando");
+          }
+        }
+      });
+    }
+    return careers;
+  }
+
+  async addUserToCommission(user: UserEntity, commissionId: number) {
     const commission = await (
       await this.getRepository(CommissionsEntity)
     ).findOne({
-      where: { id },
+      where: { id: commissionId },
       relations: ["users"],
     });
 
@@ -99,4 +126,53 @@ export class UserServices extends BaseServices<UserEntity> {
     return commission;
   }
 
+  async getUsersWithRoles() {
+    return await this.repository.find({ relations: ["role", "commissions", "career"] });
+  }
+
+  async assignStatusToClaseStudent(userId: string, claseId: number, status: string) {
+    const student = await (
+      await this.getRepository(ClaseStudentStatusEntity)
+    ).findOne({
+      where: { user: { userId }, clase: { id: claseId } },
+      relations: ["clase", "user"],
+    });
+
+    if (student) {
+      student.status = status;
+    }
+    await student?.save();
+
+    return student;
+  }
+  async addStatusToClaseStudent(user: UserEntity, clase: ClassesEntity, status: string) {
+    const student = await (
+      await this.getRepository(ClaseStudentStatusEntity)
+    ).save({ clase, user, status });
+
+    return student;
+  }
+
+  async statusToClaseStudent(userId: string) {
+    const students = await (
+      await this.getRepository(ClaseStudentStatusEntity)
+    ).find({ where: { user: { userId } }, relations: ["clase"] });
+
+    if (students) {
+      students.forEach((student) => {
+        if (!student.status) {
+          student.status = "Cursando";
+        }
+      });
+    }
+
+    return students;
+  }
+
+  async getUserDetailByEmail(email: string) {
+    return await this.repository.findOne({
+      where: { email },
+      relations: ["role", "commissions", "career"],
+    });
+  }
 }

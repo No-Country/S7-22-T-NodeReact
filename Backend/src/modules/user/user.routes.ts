@@ -3,6 +3,8 @@ import { UserController } from "./user.controller";
 import { UserMiddlewares } from "./user.middlewares";
 
 export class UserRoutes extends BaseRouter<UserController, UserMiddlewares> {
+
+  
   constructor() {
     super(UserController, UserMiddlewares, "user");
   }
@@ -10,6 +12,7 @@ export class UserRoutes extends BaseRouter<UserController, UserMiddlewares> {
   routes(path: string): void {
     // GET - ENPOINTS
     this.router.get(`/${path}/`, (req, res) => this.controller.getAll(req, res));
+    this.router.get(`/${path}/studentStatus`, (req, res) => this.controller.getStudentStatusClase(req, res));
     this.router.get(
       `/${path}/:id`,
       (req, res, nex) => this.middleware.checkToken(req, res, nex),
@@ -23,6 +26,16 @@ export class UserRoutes extends BaseRouter<UserController, UserMiddlewares> {
       `/${path}/post`,
       (req, res, nex) => this.middleware.checkToken(req, res, nex),
       (req, res) => this.controller.post(req, res)
+    );
+    this.router.post(
+      `/${path}/post/addUser`,
+      (req, res, nex) => this.middleware.checkToken(req, res, nex),
+      (req, res) => this.controller.postAddUser(req, res)
+    );
+    this.router.post(
+      `/${path}/post/addStudentStatusClase`,
+      (req, res, nex) => this.middleware.checkToken(req, res, nex),
+      (req, res) => this.controller.addStudentStatusClase(req, res)
     );
 
     // PUT - ENPOINTS

@@ -10,6 +10,7 @@ export class ClassesRoutes extends BaseRouter<ClassesController, ClassesMiddlewa
   routes(path: string): void {
     // GET - ENPOINTS
     this.router.get(`${path}`, (req, res) => this.controller.getAll(req, res));
+    this.router.get(`${path}/admin`, (req, res) => this.controller.getAllAdmin(req, res));
     this.router.get(`${path}/:id`, (req, res) => this.controller.getById(req, res));
 
     // POST - ENPOINTS

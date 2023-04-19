@@ -1,19 +1,20 @@
+import { ActivityTypeEntity } from "../../modules/activityType/activityType.entity";
 import { AuthEntity } from "../../modules/auth/auth.entity";
 import { CareersEntity } from "../../modules/careers/careers.entity";
+import { ClaseStudentStatusEntity } from "../../entity/claseStudentStatus.entity";
+import { ClassesEntity } from "../../modules/classes/classes.entity";
+import { CommissionsActivitiesEntity } from "../../modules/commissionActivities/commissionActivities.entity";
+import { CommissionsEntity } from "../../modules/commissions/commissions.entity";
 import { CourseEntity } from "../../modules/course/course.entity";
 import { DataSource } from "typeorm";
 import { PeriodEntity } from "../../modules/period/period.entity";
 import { RolesEntity } from "../../modules/roles/roles.entity";
 import { SchoolCareersEntity } from "../../modules/schoolCareers/schoolCareers.entity";
 import { SchoolEntity } from "../../modules/school/school.entity";
+import { StudentActivitiesEntity } from "../../modules/studentActivities/studentActivities.entity";
 import { SubjectsEntity } from "../../modules/subjects/subjects.entity";
 import { UserEntity } from "../../modules/user/user.entity";
 import { UserRolesEntity } from "../../modules/userRoles/userRoles.entity";
-import { CommissionsEntity } from "../../modules/commissions/commissions.entity";
-import { ClassesEntity } from "../../modules/classes/classes.entity";
-import { ActivityTypeEntity } from "../../modules/activityType/activityType.entity";
-import { CommissionsActivitiesEntity } from "../../modules/commissionActivities/commissionActivities.entity";
-import { StudentActivitiesEntity } from "../../modules/studentActivities/studentActivities.entity";
 
 const DBPort = !process.env.PORT_DB ? 5432 : parseInt(process.env.PORT_DB);
 
@@ -47,6 +48,7 @@ export const AppDataSource = new DataSource({
     ActivityTypeEntity,
     CommissionsActivitiesEntity,
     StudentActivitiesEntity,
+    ClaseStudentStatusEntity
   ],
   subscribers: [],
   migrations: [],

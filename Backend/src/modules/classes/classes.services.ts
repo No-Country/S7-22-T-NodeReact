@@ -1,6 +1,7 @@
 import { BaseServices } from "../../shared/services/baseServices";
 import { ClassesEntity } from "./classes.entity";
 import { CommissionsEntity } from "../commissions/commissions.entity";
+import { user } from "../../docs/user/index";
 
 export class ClassServices extends BaseServices<ClassesEntity> {
   constructor() {
@@ -16,16 +17,17 @@ export class ClassServices extends BaseServices<ClassesEntity> {
   }
 
   async addCommissionToClase(commission: CommissionsEntity, idClase: number) {
-    
-    const clase = await this.repository.findOne({ where: { id: idClase }, relations: ["commissions"] });
-    
+    const clase = await this.repository.findOne({
+      where: { id: idClase },
+      relations: ["commissions"],
+    });
+
     if (clase) {
       clase.commissions.push(commission);
       clase.save();
     }
 
     return clase;
-
   }
 
   async getCommission(id: number) {
@@ -33,13 +35,22 @@ export class ClassServices extends BaseServices<ClassesEntity> {
   }
 
   async getCommissionsInClase(idClase: number) {
-  
-    // const commissions = (await this.getRepository(CommissionsEntity)).createQueryBuilder("commission").leftJoinAndSelect("commission.classes", "classes").where("classes.id = :id", { id: idClase }).getMany();
-
-    const clase = await this.repository.findOne({where: {id: idClase}, relations: ["commissions"]});
+    const clase = await this.repository.findOne({
+      where: { id: idClase },
+      relations: ["commissions"],
+    });
 
     return clase?.commissions;
   }
+
+  async getAllClassesWithCommissions() {
+    return await this.repository.find({ relations: ["commissions"] });
+  }
+
+  async getAllClassesStudents(userId: string) {
+    return await this.repository.find({
+      where: { commissions: { users: { userId } } },
+      relations: ["users"],
+    });
+  }
 }
-
-
