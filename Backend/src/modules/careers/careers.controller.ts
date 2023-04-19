@@ -11,9 +11,21 @@ export class CareersController extends CareersServices {
     super();
   }
 
-  async getCareers(_req: Request, res: Response) {
+  async getCareers(req: Request, res: Response) {
     try {
       const careers = await this.getServices();
+      res.status(200).json({
+        status: true,
+        careers,
+      });
+    } catch (error) {
+      res.status(500).json({ msg: error });
+    }
+  }
+  
+  async getCareersWithClasses(req: Request, res: Response) {
+    try {
+      const careers = await this.getCareersWithClassesService();
       res.status(200).json({
         status: true,
         careers,

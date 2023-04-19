@@ -9,6 +9,7 @@ export class CareerRoutes extends BaseRouter<CareersController, CareersMiddlewar
 
   routes(path: string): void {
     this.router.get(`/${path}`, (req, res) => this.controller.getCareers(req, res));
+    this.router.get(`/${path}/admin`, (req, res) => this.controller.getCareersWithClasses(req, res));
     this.router.get(`/${path}/:id`, (req, res) => this.controller.getCareerById(req, res));
 
     this.router.post(

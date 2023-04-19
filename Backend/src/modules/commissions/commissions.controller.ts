@@ -19,6 +19,18 @@ export class CommissionsController extends CommissionsServices {
             res.status(500).json({ msg: error });
         }
     }
+    
+    async getCommissionsAdmin(req: Request, res: Response) {
+        try {
+            const commissions = await this.getCommissionsFromAdmin();
+            res.status(200).json({
+                status: true,
+                commissions,
+            });
+        } catch (error) {
+            res.status(500).json({ msg: error });
+        }
+    }
 
     async getCommissionsById(req: Request, res: Response) {
         const { id } = req.params;
@@ -78,5 +90,17 @@ export class CommissionsController extends CommissionsServices {
         }
     }
 
+    async addUserCommission(req: Request, res: Response) {
+        const {userId, commissionId} = req.body;
+        try {
+            const commissions = await this.addUserToCommission(userId, Number(commissionId));
+            res.status(200).json({
+                status: true,
+                commissions,
+            });
+        } catch (error) {
+            res.status(500).json({ msg: error });
+        }
+    }
 
 }

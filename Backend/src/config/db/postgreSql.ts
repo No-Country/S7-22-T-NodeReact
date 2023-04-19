@@ -1,7 +1,7 @@
 import { ActivityTypeEntity } from "../../modules/activityType/activityType.entity";
 import { AuthEntity } from "../../modules/auth/auth.entity";
 import { CareersEntity } from "../../modules/careers/careers.entity";
-import { ClaseStudentStatusEntity } from "../../entity/claseStudent.status.entity";
+import { ClaseStudentStatusEntity } from "../../entity/claseStudentStatus.entity";
 import { ClassesEntity } from "../../modules/classes/classes.entity";
 import { CommissionsActivitiesEntity } from "../../modules/commissionActivities/commissionActivities.entity";
 import { CommissionsEntity } from "../../modules/commissions/commissions.entity";

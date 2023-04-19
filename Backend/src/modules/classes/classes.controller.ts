@@ -22,6 +22,21 @@ export class ClassesController extends ClassServices {
     }
   }
 
+  async getAllAdmin(req: Request, res: Response) {
+    try {
+      const classes = await this.getAllClassesWithCommissions();
+
+      res.status(200).json({
+        status: true,
+        classes,
+      });
+    } catch (error) {
+      if (error instanceof Error) {
+        res.status(500).json({ msg: error.message });
+      }
+    }
+  }
+
   async getById(req: Request, res: Response) {
     const { id } = req.params;
     try {
@@ -100,6 +115,7 @@ export class ClassesController extends ClassServices {
     try {
       console.log(req.body);
       const commission = await this.getCommission(commissionId);
+      // eslint-disable-next-line @typescript-eslint/no-non-null-assertion
       const clase = await this.addCommissionToClase(commission!, claseId);
 
       res.status(200).json({
@@ -111,6 +127,8 @@ export class ClassesController extends ClassServices {
         res.status(500).json({ msg: error.message });
       }
     }
+
+    
   }
 
   

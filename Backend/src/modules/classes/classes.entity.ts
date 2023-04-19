@@ -2,7 +2,7 @@ import { CareersEntity, CommissionsEntity, SubjectsEntity } from "..";
 import { Column, Entity, ManyToMany, OneToMany } from "typeorm";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
-import { ClaseStudentStatusEntity } from "../../entity/claseStudent.status.entity";
+import { ClaseStudentStatusEntity } from "../../entity/claseStudentStatus.entity";
 
 @Entity()
 export class ClassesEntity extends BaseEntityApp {

@@ -26,7 +26,10 @@ export class CareersServices extends BaseServices<CareersEntity> {
       await this.getRepository(ClassesEntity)
     ).findOne({ where: { id: claseId } })) as ClassesEntity;
 
-    const career = await this.repository.findOne({ where: { id: careerId }, relations: ["classes"] });
+    const career = await this.repository.findOne({
+      where: { id: careerId },
+      relations: ["classes"],
+    });
 
     console.log(career);
     if (career) {
@@ -38,8 +41,14 @@ export class CareersServices extends BaseServices<CareersEntity> {
   }
 
   async getClassesInCareer(careerId: number) {
-    const career = await this.repository.findOne({ where: { id: careerId }, relations: ["classes"] });
+    const career = await this.repository.findOne({
+      where: { id: careerId },
+      relations: ["classes"],
+    });
 
     return career;
+  }
+  async getCareersWithClassesService() {
+    return await this.repository.find({ relations: ["classes"] });
   }
 }

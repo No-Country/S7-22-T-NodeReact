@@ -3,7 +3,7 @@ import { User, userStates } from "./interfaces/user.interface";
 
 import { BaseEntityApp } from "../../shared/entity/baseEntity";
 import { CareersEntity } from "..";
-import { ClaseStudentStatusEntity } from "../../entity/claseStudent.status.entity";
+import { ClaseStudentStatusEntity } from "../../entity/claseStudentStatus.entity";
 import { CommissionsEntity } from "../commissions/commissions.entity";
 import { RolesEntity } from "../roles/roles.entity";
 
