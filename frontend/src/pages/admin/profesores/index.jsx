@@ -8,9 +8,9 @@ import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sid
 
 const menuItems = [
     { label: 'Inicio', url: '/', icon: <HomeIcon /> },
-    { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
-    { label: 'Estudiantes', url: '/estudiantes', icon: <StarIcon /> },
-    { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
+    { label: 'Profesores', url: '/admin/profesores', icon: <SubjectsIcon /> },
+    { label: 'Estudiantes', url: '/admin/estudiantes', icon: <StarIcon /> },
+    { label: 'Carreras', url: '/admin/carreras', icon: <CalendarIcon /> },
 ];
 
 const Profesores = ({ professors }) => {
@@ -50,7 +50,7 @@ const Profesores = ({ professors }) => {
 
     const handleDelete = async (id) => {
         await deleteProfessor(id);
-        await router.push('/profesores');
+        await router.push('/admin/profesores');
         setSelectedProfessor({
             id: '',
             firstName: '',
@@ -66,7 +66,7 @@ const Profesores = ({ professors }) => {
 
     const handleUpdate = async (id) => {
         await updateProfessor(id);
-        await router.push('/profesores');
+        await router.push('/admin/profesores');
         setEditStatus(false);
     }
 
@@ -98,7 +98,7 @@ const Profesores = ({ professors }) => {
         <Layout name={'Profesores'} menuItems={menuItems}>
             <div className='flex justify-between items-center py-4 border-b border-secondary'>
                 <p className='text-h4'>Filtrar</p>
-                <Link href={'/profesores/agregar'}>
+                <Link href={'/admin/profesores/agregar'}>
                     <Button text={'Agregar profesor'} variant={'interactive'} visible={true} />
                 </Link>
             </div>

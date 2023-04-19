@@ -7,9 +7,9 @@ import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sid
 
 const menuItems = [
   { label: 'Inicio', url: '/', icon: <HomeIcon /> },
-  { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
-  { label: 'Estudiantes', url: '/estudiantes', icon: <StarIcon /> },
-  { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
+  { label: 'Profesores', url: '/admin/profesores', icon: <SubjectsIcon /> },
+  { label: 'Estudiantes', url: '/admin/estudiantes', icon: <StarIcon /> },
+  { label: 'Carreras', url: '/admin/carreras', icon: <CalendarIcon /> },
 ];
 
 const Agregar = () => {
@@ -55,7 +55,7 @@ const Agregar = () => {
     }
 
     await createStudent();
-    await router.push("/estudiantes");
+    await router.push("/admin/estudiantes");
   };
 
   const handleChange = (e) => {

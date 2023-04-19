@@ -6,9 +6,9 @@ import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sid
 
 const menuItems = [
     { label: 'Inicio', url: '/', icon: <HomeIcon /> },
-    { label: 'Profesores', url: '/profesores', icon: <SubjectsIcon /> },
-    { label: 'Estudiantes', url: '/estudiantes', icon: <StarIcon /> },
-    { label: 'Carreras', url: '/carreras', icon: <CalendarIcon /> },
+    { label: 'Profesores', url: '/admin/profesores', icon: <SubjectsIcon /> },
+    { label: 'Estudiantes', url: '/admin/estudiantes', icon: <StarIcon /> },
+    { label: 'Carreras', url: '/admin/carreras', icon: <CalendarIcon /> },
 ];
 
 const Carreras = ({ grads }) => {
@@ -16,15 +16,15 @@ const Carreras = ({ grads }) => {
         <Layout name='Carreras' menuItems={menuItems}>
             <div className='flex justify-between items-center py-4 border-b border-secondary'>
                 <p className='text-h4'>Filtrar</p>
-                <Link href={'/carreras/agregar'}>
+                <Link href={'/admin/carreras/agregar'}>
                     <Button text={'Agregar carrera'} variant={'disabled'} visible={true} />
                 </Link>
             </div>
 
             <div className='grid gap-4 md:grid-cols-4 pt-5'>
-                {grads && grads.map((grad, id) => {
+                {grads.careers.map((grad, id) => {
                     return (
-                        <GradCard key={id} name={grad.name} path={`/carreras/${grad.slug}`} />
+                        <GradCard key={id} name={grad.careerName} path={`/admin/carreras/${grad.id}`} />
                     )
                 })}
             </div>
@@ -36,7 +36,7 @@ const Carreras = ({ grads }) => {
 export default Carreras;
 
 export const getServerSideProps = async () => {
-    const res = await fetch('http://localhost:3001/grads');
+    const res = await fetch('https://s7-22-t-nodereact-production.up.railway.app/api/career');
     const grads = await res.json();
 
     return {
