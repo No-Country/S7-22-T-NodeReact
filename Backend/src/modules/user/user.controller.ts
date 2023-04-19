@@ -244,4 +244,20 @@ export class UserController extends UserServices {
       }
     }
   }
+
+  async getByUserEmail(req: Request, res: Response) {
+    const { email } = req.body;
+    try {
+      const user = await this.getUserDetailByEmail(email);
+
+      if (!user) return res.status(403).json({ status: false, msg: "User not found" });
+
+      res.status(200).json({
+        status: true,
+        result: user
+      });
+    } catch (error) {
+      res.status(500).json({ msg: error });
+    }
+  }
 }

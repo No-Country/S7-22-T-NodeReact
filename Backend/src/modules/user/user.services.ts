@@ -157,7 +157,6 @@ export class UserServices extends BaseServices<UserEntity> {
     const students = await (
       await this.getRepository(ClaseStudentStatusEntity)
     ).find({ where: { user: { userId } }, relations: ["clase"] });
-    
 
     if (students) {
       students.forEach((student) => {
@@ -168,5 +167,12 @@ export class UserServices extends BaseServices<UserEntity> {
     }
 
     return students;
+  }
+
+  async getUserDetailByEmail(email: string) {
+    return await this.repository.findOne({
+      where: { email },
+      relations: ["role", "commissions", "career"],
+    });
   }
 }
