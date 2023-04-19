@@ -3,6 +3,14 @@ import Button from "@/components/Button";
 import InputField from "@/components/InputField";
 import { useState } from "react";
 import { useRouter } from 'next/router';
+import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sidebar";
+
+const menuItems = [
+    { label: 'Inicio', url: '/', icon: <HomeIcon /> },
+    { label: 'Profesores', url: '/admin/profesores', icon: <SubjectsIcon /> },
+    { label: 'Estudiantes', url: '/admin/estudiantes', icon: <StarIcon /> },
+    { label: 'Carreras', url: '/admin/carreras', icon: <CalendarIcon /> },
+];
 
 const Agregar = () => {
     const [newProfessor, setNewProfessor] = useState({
@@ -41,7 +49,7 @@ const Agregar = () => {
         if (Object.keys(errors).length) return setErrors(errors);
 
         await createProfessor();
-        await router.push('/profesores');
+        await router.push('/admin/profesores');
     }
 
     const handleChange = (e) => {
@@ -66,7 +74,7 @@ const Agregar = () => {
     }
 
     return (
-        <Layout name={'Agregar profesor'}>
+        <Layout name={'Agregar profesor'} menuItems={menuItems}>
             <div className='flex justify-between items-center py-4 border-b border-secondary'>
                 <p className='text-h4'>Filtrar</p>
                 <Button text={'Guardar'} variant={'success'} visible={true} type={'button'} onClick={handleSubmit} />

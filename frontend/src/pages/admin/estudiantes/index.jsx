@@ -4,6 +4,14 @@ import Link from "next/link";
 import {useRouter} from "next/router";
 import Button from "@/components/Button";
 import InputField from "@/components/InputField";
+import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sidebar";
+
+const menuItems = [
+  { label: 'Inicio', url: '/', icon: <HomeIcon /> },
+  { label: 'Profesores', url: '/admin/profesores', icon: <SubjectsIcon /> },
+  { label: 'Estudiantes', url: '/admin/estudiantes', icon: <StarIcon /> },
+  { label: 'Carreras', url: '/admin/carreras', icon: <CalendarIcon /> },
+];
 
 function Alumnos({ students }) {
   const [selectedStudent, setSelectedStudent] = useState({
@@ -43,7 +51,7 @@ function Alumnos({ students }) {
 
   const handleDelete = async (id) => {
     await deleteStudent(id);
-    await router.push("/estudiantes");
+    await router.push("/admin/estudiantes");
     setSelectedStudent({
       id: '',
       firstName: '',
@@ -60,7 +68,7 @@ function Alumnos({ students }) {
 
   const handleUpdate = async (id) => {
     await updateStudent(id);
-    await router.push("/estudiantes");
+    await router.push("/admin/estudiantes");
     setEditStatus(false);
   };
 
@@ -89,10 +97,10 @@ function Alumnos({ students }) {
 
   return (
       <>
-        <Layout name={'Estudiantes'}>
+        <Layout name={'Estudiantes'} menuItems={menuItems}>
           <div className='flex justify-between items-center py-4 border-b border-secondary'>
             <p className='text-h4'>Filtrar</p>
-            <Link href={'/estudiantes/agregar'}>
+            <Link href={'/admin/estudiantes/agregar'}>
               <Button text={'Agregar alumno'} variant={'interactive'} visible={true}/>
             </Link>
           </div>
@@ -162,7 +170,14 @@ function Alumnos({ students }) {
 
                 <div className="w-full">
                   <InputField label={"Teléfono"} type={"number"} name={"phone"} disabled={!editStatus} value={selectedStudent.phone} onChange={handleChange}/>
-                  <InputField label={"Carrera"} type={"text"} name={"degree"} disabled={!editStatus} value={selectedStudent.degree} onChange={handleChange}/>
+                  {/*<InputField label={"Carrera"} type={"text"} name={"degree"} disabled={!editStatus} value={selectedStudent.degree} onChange={handleChange}/>*/}
+                  <div className='flex flex-col gap-1.5'>
+                    <label className="text-body font-semibold">Carrera</label>
+                    <select disabled={!editStatus} className={`border w-full rounded-md px-3 py-2 text-body focus:outline-none`}>
+                      <option value="1">Carrera 1</option>
+                    </select>
+                  </div>
+
                   <div className={`md:absolute md:bottom-0 md:right-5 mt-6 md:mt-0 flex gap-2 ${editStatus ? 'block' : 'hidden'}`}>
                     <Button text={"Guardar"} variant={"success"} size={"full"} type={"button"} visible={saveButton} onClick={() => handleUpdate(selectedStudent.id)}/>
                     <Button text={"Eliminar"} variant={"danger"} size={"full"} type={"button"} visible={saveButton} onClick={() => handleDelete(selectedStudent.id)}/>

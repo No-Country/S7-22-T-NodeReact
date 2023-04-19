@@ -5,7 +5,7 @@ const GradCard = ({ name, path }) => {
     const router = useRouter();
 
     return (
-        <div className='cursor-pointer' onClick={() => router.push(`/carreras/${path}`)}>
+        <div className='cursor-pointer' onClick={() => router.push(path)}>
             <div className='bg-danger-bg rounded-t-lg py-16 flex justify-center'>
                 <HomeIcon />
             </div>

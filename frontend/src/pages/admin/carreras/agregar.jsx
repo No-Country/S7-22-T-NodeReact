@@ -1,9 +1,9 @@
 import Layout from "@/components/Layout";
 
-const Agregar = () => {
+const Index = () => {
     return (
         <Layout name='Agregar carrera'>
-            <h1>Agregar carrera</h1>
+            <h1>Index carrera</h1>
         </Layout>
     )
 }
