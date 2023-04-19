@@ -14,11 +14,12 @@ export class AuthController extends AuthServices {
   }
 
   async authLoginUser(req: Request, res: Response) {
+    const { email } = req.body;
     try {
-      const { email }: AuthEntity = req.body;
-      const userFound = await this.repository.findOne({ where: { email } });
+      const user = await this.getUserDetailByEmail(email);
 
-      const { id, password, ...user } = userFound as UserEntity;
+      if (!user) return res.status(403).json({ status: false, msg: "User not found" });
+
 
       const token = generateToken(user);
 

@@ -6,4 +6,10 @@ export class AuthServices extends BaseServices<UserEntity> {
     super(UserEntity);
   }
   
+  async getUserDetailByEmail(email: string) {
+    return await this.repository.findOne({
+      where: { email },
+      relations: ["role", "commissions", "career"],
+    });
+  }
 }
