@@ -1,16 +1,10 @@
-<img src="assets/s7-22-EduWeb-logo-(white-silhouette).svg" width="40%" style="display: block; margin: 0 auto">
+<img src="assets/s7-22-EduWeb-logo-(white-silhouette).svg" width="100%">
 
-# EduWeb - Virtual Campus
-
-### Description
-
-An institutional/educational platform for educational centers and / or universities, which will serve as a homework and session management App, in which both students and teachers can interact and manage academic activities in a simple and interactive way and even with login with a unique institutional email for each educational center.
 
 ## Content 📑
 
 - [EduWeb - Virtual Campus](#eduweb---virtual-campus)
     - [Description](#description)
-  - [Content 📑](#content-)
   - [User Stories 🕵️‍♂️](#user-stories-️️)
   - [Technologies / Tools Used 🛠](#technologies--tools-used-)
       - [ UX/UI](#-uxui)
@@ -21,6 +15,12 @@ An institutional/educational platform for educational centers and / or universit
     - [ UX/UI](#-uxui-1)
     - [ FRONTEND](#-frontend-1)
     - [ BACKEND](#-backend-1)
+
+# EduWeb - Virtual Campus
+
+### Description
+
+An institutional/educational platform for educational centers and / or universities, which will serve as a homework and session management App, in which both students and teachers can interact and manage academic activities in a simple and interactive way and even with login with a unique institutional email for each educational center.
 
 ## User Stories 🕵️‍♂️
 
