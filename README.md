@@ -6,7 +6,23 @@
 
 An institutional/educational platform for educational centers and / or universities, which will serve as a homework and session management App, in which both students and teachers can interact and manage academic activities in a simple and interactive way and even with login with a unique institutional email for each educational center.
 
-### User Stories
+## Content 📑
+
+- [EduWeb - Virtual Campus](#eduweb---virtual-campus)
+    - [Description](#description)
+  - [Content 📑](#content-)
+  - [User Stories 🕵️‍♂️](#user-stories-️️)
+  - [Technologies / Tools Used 🛠](#technologies--tools-used-)
+      - [ UX/UI](#-uxui)
+      - [ FRONTEND](#-frontend)
+      - [ BACKEND](#-backend)
+  - [Deploy Links ](#deploy-links-)
+  - [Authors 🎖](#authors-)
+    - [ UX/UI](#-uxui-1)
+    - [ FRONTEND](#-frontend-1)
+    - [ BACKEND](#-backend-1)
+
+## User Stories 🕵️‍♂️
 
 - As a "student", I want to be informed and have access to study material, so I don't miss exam tables and I can study at my own pace.
 - As a "student", I want to be in tune in an agile way with the teacher every time he wants to make a query about a topic about a course.
@@ -18,7 +34,7 @@ An institutional/educational platform for educational centers and / or universit
 - As a "secretary", I want to have a practical tool to do my job efficiently and minimize wasted time.
 - As a "secretary", I want to have a platform that allows me to manage courses and establish for each teacher certain courses to teach.
 
-## Technologies / Tools Used
+## Technologies / Tools Used 🛠
 
 #### <img src="https://www.svgrepo.com/show/48922/light-bulb.svg" height="18px"> UX/UI
 
@@ -275,7 +291,7 @@ An institutional/educational platform for educational centers and / or universit
 
 - Backend API Deploy &#8658; https://s7-22-t-nodereact-production.up.railway.app/
 
-## Authors
+## Authors 🎖
 
 <table>
 
