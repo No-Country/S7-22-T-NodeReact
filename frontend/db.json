@@ -1,0 +1,225 @@
+{
+  "students": [
+    {
+      "id": 1,
+      "firstName": "Carlos",
+      "surname": "Perez",
+      "email": "juanp@eduweb.com",
+      "address": "123 Main St",
+      "degree": "Ingenieria informatica",
+      "dni": "54587965",
+      "dateOfBirth": "1977-12-03",
+      "phone": "1122334455"
+    },
+    {
+      "id": 2,
+      "firstName": "Nahuel",
+      "surname": "Lopez",
+      "email": "nahuell@eduweb.com",
+      "address": "142 Main St",
+      "degree": "Ingenieria electronica",
+      "dni": "54587965",
+      "dateOfBirth": "1977-09-15",
+      "phone": "1122334455"
+    },
+    {
+      "id": 3,
+      "firstName": "Pedro",
+      "surname": "Pascal",
+      "email": "pedrop@eduweb.com",
+      "address": "235 Main St",
+      "degree": "Derecho",
+      "dni": "54587965",
+      "dateOfBirth": "1977-09-15",
+      "phone": "1122334455"
+    }
+  ],
+  "professors": [
+    {
+      "id": 5,
+      "firstName": "Laura",
+      "surname": "Gomez",
+      "email": "monicag@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455,
+      "subjects":"Fisica"
+    },
+    {
+      "id": 7,
+      "firstName": "Andrea",
+      "surname": "Gonzalez",
+      "email": "andreag@eduweb.com",
+      "dni": 12345678,
+      "dateOfBirth": "1975-12-03",
+      "phone": 1122334455,
+      "subjects":"Fisica"
+    },
+    {
+      "id": 8,
+      "firstName": "Joaquin",
+      "surname": "Guzman",
+      "email": "joaquing@eduweb.com",
+      "dni": "42247946",
+      "dateOfBirth": "1999-12-03",
+      "phone": "1134875498",
+      "subjects": "Fisica"
+    },
+    {
+      "id": 9,
+      "firstName": "Roberto",
+      "surname": "Gomez",
+      "email": "robertog@eduweb.com",
+      "dni": "239847837",
+      "dateOfBirth": "1987-03-31",
+      "phone": "1193284098",
+      "subjects": "Fisica"
+    },
+    {
+      "id": 10,
+      "firstName": "Arturo",
+      "surname": "Guzman",
+      "email": "arturog@eduweb.com",
+      "dni": "32947298",
+      "dateOfBirth": "1999-12-03",
+      "phone": "1149348347",
+      "subjects": "Fisica"
+    },
+    {
+      "id": 11,
+      "firstName": "Raul",
+      "surname": "Hernandez",
+      "email": "raulh@eduweb.com",
+      "dni": "35126584",
+      "dateOfBirth": "1978-12-03",
+      "phone": "1154875632",
+      "subjects": "Fisica"
+    },
+    {
+      "id": 12,
+      "firstName": "Joaquin",
+      "surname": "Guzman",
+      "email": "mail@mail.com",
+      "dni": "42247964",
+      "dateOfBirth": "1999-12-03",
+      "phone": "16515654",
+      "subjects": "Fisica"
+    },
+    {
+      "id": 13,
+      "firstName": "Marcos",
+      "surname": "Britos",
+      "email": "mail@mail.com",
+      "dni": "15456598",
+      "dateOfBirth": "1987-12-02",
+      "phone": "54659878",
+      "subjects": "Fisica"
+    }
+  ],
+  "subjects": [
+    {
+      "id": 1,
+      "name": "Matematica",
+      "gradId": 1,
+      "commissionId": 1
+    },
+    {
+      "id": 2,
+      "name": "Fisica",
+      "gradId": 1
+    },
+    {
+      "id": 3,
+      "name": "Quimica",
+      "gradId": 2
+    },
+    {
+      "id": 4,
+      "name": "Biologia",
+      "gradId": 3
+    }
+  ],
+  "grads": [
+    {
+      "id": 1,
+      "name": "Ingenieria informatica",
+      "slug": "ingenieria-informatica",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos",
+      "commissionId": 1
+    },
+    {
+      "id": 2,
+      "name": "Ingenieria mecanica",
+      "slug": "ingenieria-mecanica",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
+    },
+    {
+      "id": 3,
+      "name": "Ingenieria civil",
+      "slug": "ingenieria-civil",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
+    },
+    {
+      "id": 4,
+      "name": "Medicina",
+      "slug": "medicina",
+      "description": "El perfil profesional del Bachillerato Técnico en Informática pretende una sólida formación técnica, ética y humanística que le permita proyectar las competencias para incorporar y desarrollar programas informáticos"
+    }
+  ],
+  "commissions": [
+    {
+      "id": 1,
+      "name": "Comision 1",
+      "gradId": 1,
+      "subjectId": 1,
+      "schedule": "Lunes 10:00 a 12:00",
+      "students": [
+        {
+          "id": 1,
+          "firstName": "Juan",
+          "surname": "Perez",
+          "dni": "12345678"
+        },
+        {
+          "id": 2,
+          "firstName": "Maria",
+          "surname": "Gomez",
+          "dni": "12345678"
+        },
+        {
+          "id": 3,
+          "firstName": "Pedro",
+          "surname": "Pascal",
+          "dni": "12345678"
+        }
+      ]
+    },
+    {
+      "id": 2,
+      "name": "Comision 2",
+      "gradId": 2,
+      "subjectId": 2,
+      "schedule": "Martes 10:00 a 12:00",
+      "students": [
+        {
+          "id": 1,
+          "firstName": "Juan",
+          "surname": "Perez",
+          "dni": "12345678"
+        },
+        {
+          "id": 2,
+          "firstName": "Maria",
+          "surname": "Gomez",
+          "dni": "12345678"
+        },
+        {
+          "id": 3,
+          "firstName": "Pedro",
+          "surname": "Pascal",
+          "dni": "12345678"
+        }
+      ]
+    }
+  ]
+}

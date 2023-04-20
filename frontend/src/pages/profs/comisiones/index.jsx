@@ -1,0 +1,30 @@
+import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sidebar";
+
+import ComCard from "@/components/ComCard";
+import Layout from "@/components/Layout";
+
+const menuItems = [
+    { label: 'Inicio', url: '/profs', icon: <HomeIcon /> },
+    { label: 'Comisiones', url: '/profs/comisiones', icon: <SubjectsIcon /> },
+    { label: 'Calificaciones', url: '/profs/calificaciones', icon: <StarIcon /> },
+    { label: 'Anuncios', url: '/profs/anuncios', icon: <CalendarIcon /> },
+];
+
+const Index = () => {
+    return (
+        <Layout name={'Inicio'} menuItems={menuItems}>
+        
+        <div className='mt-5 flex flex-col gap-2.5'>
+            <h1 className='text-h3 font-semibold'>Comisiones</h1>
+            <p className='md:mb-2.5'>Haz click sobre una comisión para ver los detalles</p>
+            <div className='grid md:grid-cols-3 gap-5'>
+                <ComCard title={'Comisión 1025'} degree={'Ingeniería informática'} subject={'Matemáticas'} path={'1'} />
+                <ComCard title={'Comisión 25562'} degree={'Ingeniería informática'} subject={'Matemáticas'} path={'2'} />
+                <ComCard title={'Comisión 38554'} degree={'Ingeniería informática'} subject={'Matemáticas'} path={'3'} />
+            </div>
+        </div>
+    </Layout>
+    )
+}
+
+export default Index;

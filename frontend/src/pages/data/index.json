@@ -1,0 +1,21 @@
+{
+  "status": true,
+  "careers": [
+      {
+          "id": 1,
+          "careerName": "Licenciatura en Biología"
+      },
+      {
+          "id": 2,
+          "careerName": "Licenciatura en Contaduría Pública y Finanzas"
+      },
+      {
+          "id": 3,
+          "careerName": "Ingeniería en Sistemas"
+      },
+      {
+          "id": 4,
+          "careerName": "Ingeniería Industrial"
+      }
+  ]
+}
