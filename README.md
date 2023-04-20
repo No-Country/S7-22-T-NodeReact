@@ -1,4 +1,4 @@
-<img src="assets/s7-22-EduWeb-logo-(white-silhouette).svg" width="40%">
+<img src="assets/s7-22-EduWeb-logo-(white-silhouette).svg" width="40%" style="display: block; margin: 0 auto">
 
 # EduWeb - Virtual Campus
 
