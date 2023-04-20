@@ -1,5 +1,4 @@
-<img src="assets/s7-22-EduWeb-logo-(white-silhouette).svg" width="100%">
-
+<img src="assets/s7-22-EduWeb-logo-(white-silhouette).svg" width="65%">
 
 ## Content 📑
 
