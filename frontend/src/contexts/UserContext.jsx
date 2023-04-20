@@ -1,18 +1,17 @@
 import { createContext, useState } from 'react';
 
-const UserContext = createContext({});
+export const UserContext = createContext({});
 
 export function UserContextProvider({ children }) {
   // ----------------- INICIALIZANDO LOS HOOKS ----------------- //
-  const [usuario, setUsuario] = useState(undefined);
+  const [user, setUser] = useState(undefined);
 
   // ----------------- DEVUELVE LOS VALORES SELECCIONADOS DEL CONTEXTO ----------------- //
   const UserContextInit = {
-    user: {
-      get: usuario,
-      set: setUsuario,
-    },
+    user,
+    setUser,
   };
+
   return (
     <UserContext.Provider value={UserContextInit}>
       {children}

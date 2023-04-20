@@ -1,5 +1,9 @@
 import Layout from "@/components/Layout";
 import {CalendarIcon, HomeIcon, StarIcon, SubjectsIcon} from "@/assets/icons-sidebar";
+import { useContext } from "react";
+import { UserContext } from "@/contexts/UserContext";
+import Link from "next/link";
+import Button from "@/components/Button";
 
 const menuItems = [
     { label: 'Inicio', url: '/', icon: <HomeIcon /> },
@@ -9,10 +13,16 @@ const menuItems = [
 ];
 
 export default function Home() {
+    const { user } = useContext(UserContext);
+    console.log(user)
+
   return (
       <Layout name={'Inicio'} menuItems={menuItems}>
-          <div className='h-screen'>
-              <h1>Inicio</h1>
+          <div className='flex justify-between items-center py-4 border-b border-secondary'>
+              <p className='text-h4'>Bienvenido {user.result.user.name} {user.result.user.lastName}</p>
+              {/*<Link href={'/admin/carreras/agregar'}>*/}
+              {/*    <Button text={'Agregar carrera'} variant={'disabled'} visible={true} />*/}
+              {/*</Link>*/}
           </div>
       </Layout>
   )
