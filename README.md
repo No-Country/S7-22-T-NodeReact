@@ -1,14 +1,26 @@
 # EduWeb - Virtual Campus
 
-A web application for the administration of colleges, which provides easy-to-configure operations and a simple-to-use interface. Providing professors the ability to create task to students, who can check their current tasks and qualifications. For college staff, the ability to create users with professors and students roles, and assign commissions.
+An institutional/educational platform for educational centers and / or universities, which will serve as a homework and session management App, in which both students and teachers can interact and manage academic activities in a simple and interactive way and even with login with a unique institutional email for each educational center.
+
+### User Stories
+
+- As a "student", I want to be informed and have access to study material, so I don't miss exam tables and I can study at my own pace.
+- As a "student", I want to be in tune in an agile way with the teacher every time he wants to make a query about a topic about a course.
+
+- As a "teacher", I want to have an easy-to-use and agile platform to simplify my work.
+- As a "teacher", I want to be able to upload multimedia material easily to offer in my courses for all my students.
+- As a "teacher", I want to be able to create, edit, modify or edit activities in my courses and set deadlines for students.
+
+- As a "secretary", I want to have a practical tool to do my job efficiently and minimize wasted time.
+- As a "secretary", I want to have a platform that allows me to manage courses and establish for each teacher certain courses to teach.
 
 ## Technologies / Tools Used
 
-#### UX/UI <img src="https://www.svgrepo.com/show/48922/light-bulb.svg" height="14px">
+#### <img src="https://www.svgrepo.com/show/48922/light-bulb.svg" height="18px"> UX/UI
 
 - Design App &#8658; [Figma](https://www.figma.com/)
 
-#### FRONTEND <img src="https://www.svgrepo.com/show/430176/laptop-device-pc.svg" height="14px">
+#### <img src="https://www.svgrepo.com/show/430176/laptop-device-pc.svg" height="18px"> FRONTEND 
 
 - Language &#8658; [JavaScript](https://developer.mozilla.org/es/docs/Web/JavaScript)
 - Framework &#8658; [Next.js](https://nextjs.org/)
@@ -81,7 +93,7 @@ A web application for the administration of colleges, which provides easy-to-con
 
   </table>
 
-#### BACKEND <img src="https://www.svgrepo.com/show/282006/server.svg" height="14px">
+#### <img src="https://www.svgrepo.com/show/282006/server.svg" height="18px"> BACKEND 
 
 - Language &#8658; [Typescript](https://www.typescriptlang.org/)
 - Framework &#8658; [Express.js](https://expressjs.com/)
@@ -251,6 +263,13 @@ A web application for the administration of colleges, which provides easy-to-con
   </tr>
 
   </table>
+
+
+## Deploy Links
+
+- Figma Preview &#8658; https://www.figma.com/file/4Cv4bNZ83VInNgVEsX8opb/Seleccionado-7-NC?node-id=8-2&t=JwCxwAdZ7JToD3QX-0
+
+- Backend API Deploy &#8658; https://s7-22-t-nodereact-production.up.railway.app/
 
 ## Authors
 
