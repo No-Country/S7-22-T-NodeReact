@@ -1,0 +1,17 @@
+paths:
+  /api/user/post:
+    post:
+      tags:
+        - User
+      summary: 'Add new user'
+      description: Add new user in database.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/user'
+      responses:
+        '200':
+          description: New user add.
+        '422':
+          description: This user is already registered.

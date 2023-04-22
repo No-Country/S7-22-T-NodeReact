@@ -1,0 +1,17 @@
+paths:
+  /api/classes/post:
+    post:
+      tags:
+        - Classes
+      summary: "Add new class"
+      description: Add new class in database.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/classes"
+      responses:
+        "200":
+          description: New class add.
+        "422":
+          description: This class is already registered.

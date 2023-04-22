@@ -1,0 +1,24 @@
+paths:
+  /api/user-roles/put/{id}:
+    put:
+      tags:
+        - User Roles
+      summary: 'update user role data'
+      description: update the user role data in the database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the user role to update.
+          required: true
+          schema:
+            type: integer
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/userRoles'
+      responses:
+        '200':
+          description: updated user role data.
+        '422':
+          description: Failed to update user role.

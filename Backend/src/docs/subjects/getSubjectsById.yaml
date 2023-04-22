@@ -1,0 +1,23 @@
+paths:
+  /api/subjects/{id}:
+    get:
+      tags:
+        - Subjects
+      summary: 'Get subject by id'
+      description: Get subject by id from database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the subject to retrieve.
+          required: true
+          schema:
+            type: integer
+      responses:
+        '200':
+          description: Get subject by id from database.
+          content:
+            application/json:
+              schema:
+                $ref: '#/components/schemas/subject'
+        '422':
+          description: Could not fetch subject by id.

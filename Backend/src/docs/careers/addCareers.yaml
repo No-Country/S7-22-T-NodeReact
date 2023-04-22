@@ -1,0 +1,17 @@
+paths:
+  /api/career/post:
+    post:
+      tags:
+        - Careers
+      summary: "Add new career"
+      description: Add new career in database.
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: "#/components/schemas/careers"
+      responses:
+        "200":
+          description: New career add.
+        "422":
+          description: This career is already registered.

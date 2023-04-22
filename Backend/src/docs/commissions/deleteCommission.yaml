@@ -1,0 +1,23 @@
+paths:
+  /api/commissions/delete/{id}:
+    delete:
+      tags:
+        - Commissions
+      summary: "Delete commission"
+      description: remove commission from database.
+      parameters:
+        - name: id
+          in: path
+          description: ID of the commission to delete.
+          required: true
+          schema:
+            type: integer
+      responses:
+        "200":
+          description: remove commission from database.
+          content:
+            application/json:
+              schema:
+                $ref: "#/components/schemas/commissions"
+        "422":
+          description: could not delete commission.
