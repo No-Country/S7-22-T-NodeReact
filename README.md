@@ -308,7 +308,7 @@ An institutional/educational platform for educational centers and / or universit
 
   <img style="border-radius:100%;" src="https://media.licdn.com/dms/image/D4D35AQEnAzMhzxOXNw/profile-framedphoto-shrink_800_800/0/1680697018429?e=1682488800&v=beta&t=yr0lonmuxb2xmpFE25EimrAJHg28qIp6gOTJXHQp1cM" height = "100">
 
-  <span style="font-size:16px"> Emanuel Manrique </span>
+  <span style="font-size:16px"> Laura Cattaneo </span>
 
   </kbd>
 
